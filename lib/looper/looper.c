@@ -23,7 +23,13 @@ uint8_t loop_quit;
 
 
 void loop_sleep( uint32_t sleep_us ){
-  SDL_Delay( sleep_us );
+  uint32_t sleep_us_temp = sleep_us;
+  while( sleep_us_temp-- ){
+    tv_key_poll( );
+    SDL_Delay( 1 );
+  }
+
+
   slept_us += sleep_us;
 }
 
