@@ -17,7 +17,7 @@
 #include "../../../lib/path/path.h"
 #include "../../../lib/prg/prg.h"
 #include "../../../lib/vect/vect.h"
-#include "../../../lib/waves.h"
+#include "../../../lib/waves/waves.h"
 
 #include "../main.c"
 

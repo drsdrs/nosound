@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#include "term.h"
 
 void term_newLine( ){ printf("\n"); }
 

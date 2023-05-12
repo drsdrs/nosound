@@ -17,17 +17,20 @@ add_library( prg STATIC ../../../lib/prg/prg.c)
 add_library( file STATIC ../../../lib/file/file.c)
 add_library( alsa STATIC ../../../lib/alsa/alsa.c)
 add_library( vect STATIC ../../../lib/vect/vect.c)
-add_library( waves STATIC ../../../lib/waves.c)
-add_library( term STATIC ../../../lib/term.c)
+add_library( term STATIC ../../../lib/term/term.c)
+add_library( waves STATIC ../../../lib/waves/waves.c)
 
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BINARY_DIR} )
 add_executable( ${projectName} ${SOURCES} )
 
 target_link_libraries( ${projectName}
     PRIVATE
+    prgManager
+    tv
 		m
     SDL2
     asound
+    looper
     waves
     term
     path
@@ -35,10 +38,7 @@ target_link_libraries( ${projectName}
     vect
     prg
     file
-    looper
-		tv
 		SDL2_inprint
 		beeper
     alsa
-    prgManager
 )

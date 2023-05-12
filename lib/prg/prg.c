@@ -8,6 +8,8 @@
 
 #include "../path/path.h"
 
+#include "prg.h"
+
 char path[0xff];
 
 const char* prg_name_get(){

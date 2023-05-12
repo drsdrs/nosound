@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
+#include "string.h"
 
 char* string_temp_get(char *fmt, ...) {
   static char buf[99];
@@ -16,8 +17,9 @@ char* string_temp_get(char *fmt, ...) {
   return buf;
 }
 
-char* string_append( char* str0, char* str1 ){
-  char * new_str ;
+char* string_append( const char* str0, const char* str1 ){
+  if( str0==NULL || str1==NULL ){ printf("STRING_APPEND error %s - %s \n", str0, str1); return NULL; }
+  char* new_str ;
   if((new_str = malloc( strlen(str0)+strlen(str1)+1) ) != NULL){
       new_str[0] = '\0';   // ensures the memory is an empty string
       strcat(new_str, str0);

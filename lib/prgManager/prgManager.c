@@ -1,21 +1,23 @@
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdbool.h>
 #include <time.h>
 #include <string.h>
 #include <dirent.h>
 #include <unistd.h>
 #include <errno.h>
-#include <stdarg.h>
-#include <stdbool.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include "sys/wait.h"
-#include <stdio.h>
 
 #include "../path/path.h"
 #include "../file/file.h"
 #include "../string/string.h"
 #include "../term/term.h"
+
+#include "prgManager.h"
 
 int8_t prgRunning = false;
 char** prgManager_list;
@@ -219,22 +221,28 @@ void prgManager_clean( const char* prgName ){
 int prgManager_init( const char* startPrgName, const char* cleanup ){
   prgManager_list_get( &prgManager_list, &prgManager_prgList_length );
   int foundPrgToStart = false;
-  //printf("ArrayPointer: %i - %i \n", prgManager_list, *prgManager_list);
+  const char* prgName;
 
   for (size_t i = 0; i < prgManager_prgList_length; i++) {
-    char* prgName = prgManager_list[i];
+    prgName = prgManager_list[i];
+    printf("init prgName: %s \n", prgName);
     if( prgName==NULL ) continue;
     if( foundPrgToStart==false && strcmp(startPrgName, prgName)==0 ){
       foundPrgToStart = true;
     }
+
+
     if( cleanup!=NULL ){
+      printf("prgNameCleanup: %s \n", prgName);
       folder_remove( path_build_get( prgName ) );
     }
+    
     if( !prgManager_timestamp_compile_changed( prgName ) && file_exist( path_build_get( prgName ) ) ){
       printf("No changes on prg: %s\n", prgName);
       continue;
     }
 
+    printf("prgNameCompile: %s \n", prgName);
     prgManager_compile( prgName, true );
 
   }

@@ -6,6 +6,8 @@
 #include "../string/string.h"
 #include <math.h>
 
+#include "path.h"
+
 char* path_cwd_get(){
   // TODO make path only once
   static char cwdPath[0xff];
@@ -24,7 +26,7 @@ char* path_root_get( ){   // get abs path from nosound dir
   char* cwdPath = path_cwd_get();
   char** cwdSplit = string_split( cwdPath, "/" );
   size_t cwdSplitLen = sizeof(cwdSplit);
-  char* rootDir = "no_nosound";
+  char* rootDir = "nosound";
   for (size_t i = 0; i < cwdSplitLen; i++) {
     pathRes = string_append(pathRes, cwdSplit[i]);
     pathRes = string_append(pathRes, "/");

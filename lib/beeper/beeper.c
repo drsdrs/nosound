@@ -4,7 +4,8 @@
 #include <pthread.h>
 
 #include "../alsa/alsa.h"
-#include "../waves.h"
+#include "../waves/waves.h"
+
 #include "beeper.h"
 
 int waveType = 0;

@@ -6,18 +6,20 @@ uint8_t cursorY;
 
 uint16_t prgListLength;
 char** prgList;
-char* myPrgName;
+const char* myPrgName;
 
 
 void setup(){
-  loop_interval_set(50);
+  loop_interval_set(1000000/20);
   prgManager_list_get( &prgList, &prgListLength );
   myPrgName = prg_name_get();
 }
 
 
 void loop(){
+
   tv_clear(0);
+
   for (size_t prgIndex = 0; prgIndex < prgListLength; prgIndex++) {
     if( cursorY==prgIndex )
     tv_lineY( 13+8*prgIndex, 0x444 );
@@ -36,11 +38,10 @@ void loop(){
     cursorY++;
     cursorY %= prgListLength;
   } else if( tv_key_pressed( BTN_A ) ){
-    loop_exit(); // have to be in scope !!!
+    loop_exit();
     //sleep(5);
     prg_change( prgList[ cursorY ] );
   }
-  //SDL_Delay(25);
 
   tv_render();
 

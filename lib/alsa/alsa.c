@@ -6,9 +6,8 @@
 #include "alsa/asoundlib.h"
 
 #include "../beeper/beeper.h"
-#include "alsa.h"
-//#include "../tv/tv.h"
 
+#include "alsa.h"
 
 snd_timer_t *handle;
 uint8_t* alsa_audio_buffer;

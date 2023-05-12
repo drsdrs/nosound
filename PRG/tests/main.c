@@ -3,7 +3,7 @@ uint8_t defaultScale = 2;
 uint16_t k;
 
 void setup(){
-  loop_interval_set(250);
+  loop_interval_set(250*1000);
 }
 
 

@@ -1,13 +1,13 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <time.h>
-
 #include "looper.h"
 
 #include "../beeper/beeper.h"
 #include "../prgManager/prgManager.h"
 #include "../tv/tv.h"
-#include "../waves.h"
+#include "../waves/waves.h"
+
 
 struct timespec start, end, finish;
 uint32_t loop_interval_us = 250;
@@ -69,6 +69,7 @@ void loop_exit(){
   loop_quit = true;
   Beeper_exit();
   tv_exit();
+  exit(1);
 }
 
 
@@ -86,7 +87,7 @@ void loop_setup_PRIVATE( void (*setup_funct)(), void (*loop_funct)(), uint32_t n
   start = end;
   clock_gettime(CLOCK_MONOTONIC_RAW, &end);
   delta_us = (end.tv_sec - start.tv_sec) * 1000 + (end.tv_nsec - start.tv_nsec) / 1000000;
-  
+
   printf("SDL_SETUP took: %li ms\n", delta_us);
 
   Beeper_setup();
@@ -98,10 +99,10 @@ void loop_setup_PRIVATE( void (*setup_funct)(), void (*loop_funct)(), uint32_t n
   loop_interval_us = new_interval;
 
   waves_all_generate();
-  start = end;
-  clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-  delta_us = (end.tv_sec - start.tv_sec) * 1000 + (end.tv_nsec - start.tv_nsec) / 1000000;
-  printf("waves_all_generate took: %lims\n", delta_us);
+  // start = end;
+  // clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+  // delta_us = (end.tv_sec - start.tv_sec) * 1000 + (end.tv_nsec - start.tv_nsec) / 1000000;
+  // printf("waves_all_generate took: %lims\n", delta_us);
 
   setup_funct();
 

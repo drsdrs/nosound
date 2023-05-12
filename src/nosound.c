@@ -10,11 +10,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#include "../lib/waves.h"
 
-//#include "../lib/beeper/beeper.h"
-//#include "../lib/tv/tv.h"
-#include "../lib/looper/looper.h"
+//#include "../lib/looper/looper.h"
 #include "../lib/path/path.h"
 #include "../lib/prg/prg.h"
 #include "../lib/prgManager/prgManager.h"
@@ -24,15 +21,15 @@
 
 int main(int argc, char const *argv[]) {
 
-
   const char* startPrgName;
-  if(argv[1]){
+  if(argv[1]!=NULL){
     startPrgName = argv[1];
   } else {
     startPrgName = "prgManagerUI";//argv[1];
   }
   const char* cleanup = argv[2];
   printf("Cleanup? %s\n", cleanup);
+  printf("StartPRG %s\n", startPrgName);
   prgManager_init( startPrgName, cleanup );
   // if( argc>1 ){
   //   prgManager_init( startPrgName );
