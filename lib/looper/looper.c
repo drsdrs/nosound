@@ -32,9 +32,13 @@ void loop_loop ( void (*loop_funct)() ) {
 
   slept_us = 0;
   loop_funct();
-  loop_frames++;
 
   tv_keys_clear();
+
+  tv_key_poll( );
+
+  loop_frames++;
+
 
   clock_gettime(CLOCK_MONOTONIC_RAW, &end);
 
@@ -47,7 +51,6 @@ void loop_loop ( void (*loop_funct)() ) {
       return;
   }
 
-  tv_key_poll( );
   while( diff_us >= -diff_us_averaged && loop_interval_us!=-1){    //     finish needed time to poll keys
       //for (size_t i = 0; i < 0xf; i++) {
         tv_key_poll( );
@@ -69,7 +72,6 @@ void loop_exit(){
   loop_quit = true;
   Beeper_exit();
   tv_exit();
-  exit(1);
 }
 
 
@@ -107,5 +109,6 @@ void loop_setup_PRIVATE( void (*setup_funct)(), void (*loop_funct)(), uint32_t n
   setup_funct();
 
   while( loop_quit==false ) loop_loop( loop_funct );
-
+  printf("Final PRG exit in loop_setup_PRIVATE\n");
+  exit(0);
 }

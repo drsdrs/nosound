@@ -4,6 +4,8 @@
 
 #include "../SDL_inprint/SDL2_inprint.h"
 #include "../looper/looper.h"
+#include "../prg/prg.h"
+
 
 #include "tv.h"
 
@@ -161,7 +163,6 @@ void tv_keys_clear( ){
 }
 
 void tv_key_poll( ){
-  printf("POLL\n");
   static uint16_t tempBtnValues;
   SDL_Event e;
   if( SDL_PollEvent(&e)==0 ) return;
@@ -172,10 +173,9 @@ void tv_key_poll( ){
 
 	} else if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP) {
     static uint16_t lastKeyboardKey;
-    SDL_Keymod key_mod = SDL_GetModState();
-    printf("km: %i \n", key_mod);
+    SDL_Keymod key_mod = SDL_GetModState()&4095;
     tempBtnValues = 0;
-    printf("key pressed %i - %c\n", e.key.keysym.sym ,e.key.keysym.sym );
+    //printf("key pressed %i - %c\n", e.key.keysym.sym ,e.key.keysym.sym );
     if( e.key.keysym.sym == 'w' ){
       tempBtnValues = BTN_UP;
     } else if( e.key.keysym.sym == 's' ){
@@ -187,8 +187,13 @@ void tv_key_poll( ){
     } else if( e.key.keysym.sym == ' ' ){
       tempBtnValues = BTN_A;
     } else if( key_mod==KMOD_LSHIFT && e.key.keysym.sym == 27 ){
-      printf("Quit key ESC\n");
+      printf("Quit key SHIFT+ESC\n");
       loop_exit();
+      //exit(0);
+    } else if( key_mod==KMOD_LCTRL && e.key.keysym.sym == 27 ){
+      printf("GOTO prgManagerUI CTRL+ESC\n");
+      loop_exit();
+      prg_change("prgManagerUI");
     }
 
     if( e.type == SDL_KEYDOWN && lastKeyboardKey!=tempBtnValues ){

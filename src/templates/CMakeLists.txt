@@ -27,6 +27,7 @@ target_link_libraries( ${projectName}
     PRIVATE
     prgManager
     tv
+    prg
 		m
     SDL2
     asound
@@ -36,7 +37,6 @@ target_link_libraries( ${projectName}
     path
     string
     vect
-    prg
     file
 		SDL2_inprint
 		beeper

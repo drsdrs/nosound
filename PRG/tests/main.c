@@ -68,7 +68,13 @@ void showTestName( char* testName ){
 void loop(){
   scale = 0;
   showTestName( "Scaling Test" );
-  while( test_scale() ){ loop_sleep(1000); }
+  while( test_scale() ){
+    for (size_t sec = 0; sec < 1000; sec++) {
+      /* code */
+    loop_sleep(1);
+    tv_key_poll( );
+  }
+  }
   showTestName( "Scaling Test - END" );
 
 }
