@@ -49,10 +49,23 @@ void async_callback(snd_async_handler_t *ahandler){
     if ((frames_to_deliver = snd_pcm_avail_update(pcm)) < 0) { /* find out how much space is available for playback data */
         if (frames_to_deliver == -EPIPE) {
             fprintf(stderr, "an xrun occured\n");
+            int err;
+            if ((err = snd_pcm_prepare(pcm)) < 0) {
+                fprintf(stderr, "cannot prepare audio interface for use (%s)\n", snd_strerror(err));
+                exit(1);
+            }
+            if ((err = snd_pcm_recover( pcm, frames_to_deliver, 0)) < 0) {
+                fprintf(stderr, "cannot snd_pcm_recover. (%s)\n", snd_strerror(err));
+                exit(1);
+            }
+            framesMust = 0;
+            //snd_async_add_timer_handler(&ahandler, handle, async_callback, 0);
+
         } else {
             fprintf(stderr, "unknown ALSA avail update return value (%ld)\n", frames_to_deliver);
         }
-        exit(EXIT_FAILURE);
+        return;
+        //exit(EXIT_FAILURE);
     }
     frames_to_deliver = frames_to_deliver > framesMust ? framesMust : frames_to_deliver;
     frames_to_deliver = frames_to_deliver > 4096 ? 4096 : frames_to_deliver;
@@ -102,6 +115,17 @@ int alsa_setup(){
       fprintf(stderr, "cannot set start mode (%s)\n", snd_strerror(err));
       exit(1);
   }
+
+  if ((err = snd_pcm_sw_params_set_stop_threshold(pcm, sw_params, 367*2)) < 0) {
+      fprintf(stderr, "cannot set snd_pcm_sw_params_set_stop_threshold mode (%s)\n", snd_strerror(err));
+      exit(1);
+  }
+
+  if ((err = snd_pcm_sw_params_set_silence_threshold(pcm, sw_params, 367*2)) < 0) {
+      fprintf(stderr, "cannot set snd_pcm_sw_params_set_silence_threshold mode (%s)\n", snd_strerror(err));
+      exit(1);
+  }
+
   if ((err = snd_pcm_sw_params(pcm, sw_params)) < 0) {
       fprintf(stderr, "cannot set software parameters (%s)\n", snd_strerror(err));
       exit(1);

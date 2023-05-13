@@ -22,7 +22,7 @@ uint64_t loop_millis;
 uint8_t loop_quit;
 
 
-void loop_sleep( uint32_t sleep_us ){
+void loop_sleep( uint32_t sleep_us ){ // in-accurate // TODO
   uint32_t sleep_us_temp = sleep_us;
   while( sleep_us_temp-- ){
     tv_key_poll( );
@@ -85,36 +85,56 @@ void loop_interval_set( uint32_t new_interval ){
   loop_interval_us = new_interval;
 }
 
+
+long int loop_measure_ns( uint8_t start_end ){
+  static struct timespec start, end;
+  static long int avg = -1;
+  long int res;
+
+  if( start_end==MEASURE_START ){
+    clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+    res = 0;
+    //avg = -1;
+  } else if( start_end==MEASURE_STOP || start_end==MEASURE_STOP_AVG ){
+    start = end;
+    clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+    res = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
+  }
+
+  if( start_end==MEASURE_STOP_AVG ){
+    if(avg==-1){
+      avg = res;
+    } else {
+      res = avg*.98f + res*.02f;
+      avg = res;
+    }
+  }
+
+  return res;
+
+}
+
 void loop_setup_PRIVATE( void (*setup_funct)(), void (*loop_funct)(), uint32_t new_interval ){
   printf("Start loop_setup_PRIVATE\n");
   loop_frames = 0;
-  struct timespec start, end;
-  clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-
-  tv_setup();
-  start = end;
-  clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-  delta_us = (end.tv_sec - start.tv_sec) * 1000 + (end.tv_nsec - start.tv_nsec) / 1000000;
-
-  printf("SDL_SETUP took: %li ms\n", delta_us);
-
-  Beeper_setup();
-  start = end;
-  clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-  delta_us = (end.tv_sec - start.tv_sec) * 1000 + (end.tv_nsec - start.tv_nsec) / 1000000;
-  printf("Beeper_setup took: %lims\n", delta_us);
-
   loop_interval_us = new_interval;
 
+  loop_measure_ns( MEASURE_START );
+
+  tv_setup();
+  printf("tv_setup took: %li ns\n", loop_measure_ns( MEASURE_STOP ));
+
+  Beeper_setup();
+  printf("Beeper_setup took: %li ns\n",  loop_measure_ns( MEASURE_STOP ));
+
   waves_all_generate();
-  // start = end;
-  // clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-  // delta_us = (end.tv_sec - start.tv_sec) * 1000 + (end.tv_nsec - start.tv_nsec) / 1000000;
-  // printf("waves_all_generate took: %lims\n", delta_us);
+  printf("waves_all_generate took: %li ns\n",  loop_measure_ns( MEASURE_STOP ));
 
   setup_funct();
+  printf("setup_funct took: %li ns\n",  loop_measure_ns( MEASURE_STOP ));
 
   while( loop_quit==false ) loop_loop( loop_funct );
+
   printf("Final PRG exit in loop_setup_PRIVATE\n");
   exit(0);
 }

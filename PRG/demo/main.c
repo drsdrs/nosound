@@ -19,8 +19,6 @@ int tickerLength;
 int tickerY=0;
 
 
-
-
 void setup(){
 
   tv_scale_set(1);
@@ -33,7 +31,14 @@ void setup(){
   textSineY = HEIGHT/2;
 }
 
+int note=88;
+
 void loop(){ // need phase inc based on inverval // OR fixed delta based on sec=1000000us
+  loop_measure_ns( MEASURE_START );
+
+  if( (rand()&0x7) == 0 ) Beeper_set(0, note, 5);
+  loop_sleep(16);
+  Beeper_set(0, 0, 0);
 
   tv_clear(0);
   circX += 16;
@@ -60,7 +65,6 @@ void loop(){ // need phase inc based on inverval // OR fixed delta based on sec=
     sinPosMain += 1+modX;
   }
 
+  tv_print( HEIGHT/8*7, WIDTH/2, 0xfff, "Loop needed %4i ns", loop_measure_ns( MEASURE_STOP_AVG ) );
   tv_render();
-  //textSineY = (HEIGHT/2)+getSine12(sinPosMain) / 2;
-
 }

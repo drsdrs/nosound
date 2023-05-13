@@ -263,9 +263,6 @@ void tv_key_poll( ){
 	}
 }
 
-/*  scale max:0/1:(640,480) 1/2:(320,240) 2/4:(160,120) 3/8:(80,60) 4/16:(40,30) 5/32:(20,15) */
-
-
 uint8_t tv_scale_set( int8_t scale){
   if( scale>5 || scale<0){ printf("Wrong scale: %i\n", scale); return 0; }
   //printf("setScale: %i\n", SCALE);

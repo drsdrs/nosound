@@ -27,7 +27,7 @@ int main(int argc, char const *argv[]) {
   } else {
     startPrgName = "prgManagerUI";//argv[1];
   }
-  const char* cleanup = argv[2];
+  const char* cleanup = NULL;//argv[2];
   printf("Cleanup? %s\n", cleanup);
   printf("StartPRG %s\n", startPrgName);
   prgManager_init( startPrgName, cleanup );
