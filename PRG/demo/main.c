@@ -2,7 +2,6 @@
 uint16_t sinPos;
 uint16_t sinPosMain;
 
-
 char* textSine = "!!! Cracked by DRS !!!";
 char* textTicker = "Intently sniff hand thinking about you i'm joking it's food always food. Human is in bath tub, emergency! drowning! meooowww!. Furrier and even more furrier hairball sleeping in the box yet naughty running cat for blow up sofa in 3 seconds, or get away from me stupid dog meow to be let in one of these days i'm going to get that red dot, just you wait and see . Run around the house at 4 in the morning see brother cat receive pets, attack out of jealousy growl at dogs in my sleep claw drapes, and play riveting piece on synthesizer keyboard so i see a bird i stare at it i meow at it i do a wiggle come here birdy. Reaches under door into adjacent room demand to be let outside at once, and expect owner to wait for me as i think about it that box? i can fit in that box, and go crazy with excitement when plates are clanked together signalling the arrival of cat food. Scratch so owner bleeds cry louder at reflection. Push your water glass on the floor run in circles eat prawns daintily with a claw then lick paws clean wash";
 int text_len;
@@ -26,7 +25,7 @@ void setup(){
   text_len = strlen(textSine);
   tickerLength = strlen(textTicker)*8;
   tickerX = WIDTH;
-  loop_interval_set(1000000/30);
+  loop_interval_set(1000000/100);
   textSineX = ( WIDTH - strlen(textSine)*8 ) / 2 ;
   textSineY = HEIGHT/2;
 }
@@ -34,13 +33,14 @@ void setup(){
 int note=88;
 
 void loop(){ // need phase inc based on inverval // OR fixed delta based on sec=1000000us
-  loop_measure_ns( MEASURE_START );
 
-  if( (rand()&0x7) == 0 ) Beeper_set(0, note, 5);
-  loop_sleep(16);
-  Beeper_set(0, 0, 0);
+  //loop_measure_ns( MEASURE_START );
 
-  tv_clear(0);
+  // if( (rand()&0x7) == 0 ){
+  //   Beeper_set(0, note, 5);
+  // } else{ Beeper_set(0, 0, 0); }
+  //loop_sleep(0);
+
   circX += 16;
   circY += 16;
   circX &= 0xfff;
@@ -65,6 +65,6 @@ void loop(){ // need phase inc based on inverval // OR fixed delta based on sec=
     sinPosMain += 1+modX;
   }
 
-  tv_print( HEIGHT/8*7, WIDTH/2, 0xfff, "Loop needed %4i ns", loop_measure_ns( MEASURE_STOP_AVG ) );
-  tv_render();
+  tv_print( WIDTH/2, HEIGHT/20*17, 0xfff, "Loop needed %8i ns", loop_measure_ns( MEASURE_STOP_AVG ) );
+  tv_print( WIDTH/2, HEIGHT/20*18, 0xfff, "loop_lifetime %8i s", loop_lifetime_ns/1000000 );
 }

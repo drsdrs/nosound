@@ -23,6 +23,6 @@
 
 int main(int argc, char const *argv[]) {
 
-  loop_setup_PRIVATE( setup, loop, loop_interval_us );
+  loop_setup_PRIVATE( setup, loop, loop_interval_ns );
 
 }

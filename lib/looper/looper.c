@@ -10,66 +10,66 @@
 
 
 struct timespec start, end, finish;
-uint32_t loop_interval_us = 250;
+uint32_t loop_interval_ns = 250;
 
-int64_t delta_us;
-int64_t diff_us;
+int64_t delta_ns;
+int64_t diff_ns;
 int64_t diff_us_averaged;
-uint64_t slept_us;
+uint64_t slept_ns;
 uint64_t loop_frames;
-uint64_t loop_millis;
+uint64_t loop_lifetime_ns;
 
 uint8_t loop_quit;
 
-
-void loop_sleep( uint32_t sleep_us ){ // in-accurate // TODO
-  uint32_t sleep_us_temp = sleep_us;
-  while( sleep_us_temp-- ){
+void loop_sleep_ns( uint32_t sleep_ns ){ // in-accurate // TODO
+  static struct timespec start, end;
+  uint32_t slept_ns_temp;
+  clock_gettime(CLOCK_MONOTONIC_RAW, &start);
+  while( slept_ns_temp < sleep_ns ){
     tv_key_poll( );
-    SDL_Delay( 1 );
+    SDL_Delay(0);
+    clock_gettime(CLOCK_MONOTONIC_RAW, &finish);
+    slept_ns_temp = (finish.tv_sec - start.tv_sec) * 1000000 + (finish.tv_nsec - start.tv_nsec) / 1000;
   }
 
+  slept_ns += slept_ns_temp;
+}
 
-  slept_us += sleep_us;
+
+void loop_sleep( uint32_t sleep_us ){ // in-accurate // TODO
+  loop_sleep_ns(sleep_us*1000);
 }
 
 void loop_loop ( void (*loop_funct)() ) {
   clock_gettime(CLOCK_MONOTONIC_RAW, &start);
 
-  slept_us = 0;
+  slept_ns = 0;
+
+  tv_clear(0);
   loop_funct();
+  tv_render();
 
   tv_keys_clear();
-
   tv_key_poll( );
-
   loop_frames++;
-
 
   clock_gettime(CLOCK_MONOTONIC_RAW, &end);
 
-  delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
-  diff_us = (loop_interval_us) - (delta_us);
-  diff_us += slept_us;
+  delta_ns = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
+  diff_ns = (loop_interval_ns) - (delta_ns);
+  diff_ns += slept_ns;
 
-  if (diff_us < 0 && loop_interval_us > 0) { //
-      printf("Loop needs too much time, overrun us:%li\n", diff_us );
+  if (diff_ns < 0 && loop_interval_ns > 0) { //
+      printf("Loop needs too much time, overrun us:%li\n", diff_ns );
+      loop_lifetime_ns += delta_ns;
+      diff_us_averaged = (diff_us_averaged + diff_ns)>>1;
       return;
   }
 
-  while( diff_us >= -diff_us_averaged && loop_interval_us!=-1){    //     finish needed time to poll keys
-      //for (size_t i = 0; i < 0xf; i++) {
-        tv_key_poll( );
-        SDL_Delay(0);
-      //}
+  loop_sleep_ns(diff_ns);
 
-      clock_gettime(CLOCK_MONOTONIC_RAW, &finish);
-      delta_us = (finish.tv_sec - start.tv_sec) * 1000000 + (finish.tv_nsec - start.tv_nsec) / 1000;
-      diff_us = (loop_interval_us) - (delta_us);
-      diff_us += slept_us;
-  }
-  loop_millis += delta_us;
-  diff_us_averaged = (diff_us_averaged + diff_us)>>1;
+  loop_lifetime_ns += delta_ns+slept_ns;
+  diff_us_averaged = (diff_us_averaged + diff_ns)>>1;
   //printf("Loop diff_us_averaged:%li\n", diff_us_averaged );
 }
 
@@ -82,7 +82,7 @@ void loop_exit(){
 
 
 void loop_interval_set( uint32_t new_interval ){
-  loop_interval_us = new_interval;
+  loop_interval_ns = new_interval;
 }
 
 
@@ -117,7 +117,7 @@ long int loop_measure_ns( uint8_t start_end ){
 void loop_setup_PRIVATE( void (*setup_funct)(), void (*loop_funct)(), uint32_t new_interval ){
   printf("Start loop_setup_PRIVATE\n");
   loop_frames = 0;
-  loop_interval_us = new_interval;
+  loop_interval_ns = new_interval;
 
   loop_measure_ns( MEASURE_START );
 
@@ -133,6 +133,7 @@ void loop_setup_PRIVATE( void (*setup_funct)(), void (*loop_funct)(), uint32_t n
   setup_funct();
   printf("setup_funct took: %li ns\n",  loop_measure_ns( MEASURE_STOP ));
 
+  tv_clear(0);
   while( loop_quit==false ) loop_loop( loop_funct );
 
   printf("Final PRG exit in loop_setup_PRIVATE\n");

@@ -105,6 +105,7 @@ uint8_t prgManager_compile( const char* prgName, int waitForProcess ){
   char* argvCmake[] = { "cmake",
     "-B", path_build_get( prgName ),
     "-S", path_build_get( prgName ),
+    "-D", "CMAKE_BUILD_TYPE=Debug",
     "-G", "Ninja",
     NULL
   };
@@ -236,7 +237,7 @@ int prgManager_init( const char* startPrgName, const char* cleanup ){
       printf("prgNameCleanup: %s \n", prgName);
       folder_remove( path_build_get( prgName ) );
     }
-    
+
     if( !prgManager_timestamp_compile_changed( prgName ) && file_exist( path_build_get( prgName ) ) ){
       printf("No changes on prg: %s\n", prgName);
       continue;

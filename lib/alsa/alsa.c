@@ -59,6 +59,8 @@ void async_callback(snd_async_handler_t *ahandler){
                 exit(1);
             }
             framesMust = 0;
+            Beeper_audio_write(4096, &alsa_audio_buffer);
+            alsa_write(4096, alsa_audio_buffer);
             //snd_async_add_timer_handler(&ahandler, handle, async_callback, 0);
 
         } else {
@@ -131,7 +133,7 @@ int alsa_setup(){
       exit(1);
   }
 
-  for (size_t i = 0; i < 0x0F ; i++) alsa_write(409, alsa_audio_buffer);   //   PRE-BUFFERING
+  for (size_t i = 0; i < 0x08 ; i++) alsa_write(409, alsa_audio_buffer);   //   PRE-BUFFERING
 
 /* ###########################/
 --      SETUP TIMER       ---/
