@@ -116,7 +116,7 @@ void Beeper_set(uint8_t channel, uint8_t note, uint8_t pwm) { // 3bit 7bit 4bit 
 }
 
 
-pthread_t ptid[8];
+pthread_t ptid[8]; // no volatile needed ! only if in async
 uint8_t async_runnig[8];
 
 struct async_args {

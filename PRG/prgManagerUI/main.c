@@ -27,8 +27,8 @@ void loop(){
   }
 
   tv_print( WIDTH/2, HEIGHT/8*5, 0x0ff, "loop_frames:   %12i", loop_frames );
-  tv_print( WIDTH/2, HEIGHT/8*6, 0x0ff, "loop_interval_ns: %12ims", loop_interval_ns );
-  tv_print( WIDTH/2, HEIGHT/8*7, 0x0ff, "loop_lifetime_ns:   %12ims", loop_lifetime_ns );
+  tv_print( WIDTH/2, HEIGHT/8*6, 0x0ff, "loop_interval_us: %12ims", loop_interval_us );
+  tv_print( WIDTH/2, HEIGHT/8*7, 0x0ff, "loop_lifetime_us:   %12ims", loop_lifetime_us );
   tv_print( WIDTH/2, HEIGHT/2, 0xfff, "Prg.name: %s", myPrgName);
 
   if( tv_key_pressed( BTN_UP ) ){

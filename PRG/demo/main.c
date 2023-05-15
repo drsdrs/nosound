@@ -13,7 +13,7 @@ float charY;
 int circX=0;
 int circY=0;
 
-int tickerX=0;
+double tickerX=0;
 int tickerLength;
 int tickerY=0;
 
@@ -25,7 +25,7 @@ void setup(){
   text_len = strlen(textSine);
   tickerLength = strlen(textTicker)*8;
   tickerX = WIDTH;
-  loop_interval_set(1000000/100);
+  loop_interval_set(10000);
   textSineX = ( WIDTH - strlen(textSine)*8 ) / 2 ;
   textSineY = HEIGHT/2;
 }
@@ -34,7 +34,7 @@ int note=88;
 
 void loop(){ // need phase inc based on inverval // OR fixed delta based on sec=1000000us
 
-  //loop_measure_ns( MEASURE_START );
+  loop_measure_us( MEASURE_START );
 
   // if( (rand()&0x7) == 0 ){
   //   Beeper_set(0, note, 5);
@@ -53,7 +53,7 @@ void loop(){ // need phase inc based on inverval // OR fixed delta based on sec=
   tv_print( x, y, COLORS[(int)(HEIGHT-y)/31], "\1" );
 
   tv_print( tickerX, HEIGHT-CHAR_HEIGHT, 0x0ff, textTicker );
-  tickerX-=2;
+  tickerX -= loop_delta_get()*100;
   if(tickerX<-tickerLength/2) tickerX=WIDTH;
 
   for (size_t charX = 0; charX < text_len; charX++) {
@@ -65,6 +65,9 @@ void loop(){ // need phase inc based on inverval // OR fixed delta based on sec=
     sinPosMain += 1+modX;
   }
 
-  tv_print( WIDTH/2, HEIGHT/20*17, 0xfff, "Loop needed %8i ns", loop_measure_ns( MEASURE_STOP_AVG ) );
-  tv_print( WIDTH/2, HEIGHT/20*18, 0xfff, "loop_lifetime %8i s", loop_lifetime_ns/1000000 );
+  //loop_sleep_us(100000);
+  tv_print( WIDTH/2, HEIGHT/20*15, 0xfff, "loop_delta_get %f ", loop_delta_get() );
+  tv_print( WIDTH/2, HEIGHT/20*16, 0xfff, "loop_delta_full_ns %8i ns", loop_delta_full_ns );
+  tv_print( WIDTH/2, HEIGHT/20*17, 0xfff, "loop_lifetime %8i s", loop_lifetime_ns/1000000000 );
+  tv_print( WIDTH/2, HEIGHT/20*18, 0xfff, "Loop needed %8i us", loop_measure_us( MEASURE_STOP_AVG ) );
 }

@@ -96,7 +96,7 @@ void tv_char(int x, int y, int ch, int col){
   int color =  ((((col>>8)&0xf)*17)<<16)+((((col>>4)&0xf)*17)<<8)+((col&0xf)*17);
   //printf("Color: %3x %i-%i-%i \n", color, x, y, col);
   incolor(color, /* unused */ 0);
-  intv_char(renderer, ch, x, y);
+  inprint_char(renderer, ch, x, y);
 }
 
 void tv_print(int x, int y, int col, char* fmt, ...){
