@@ -1,17 +1,18 @@
 
-uint16_t sinPos;
-uint16_t sinPosMain;
+double sinPos;
+double sinPosMain;
 
 char* textSine = "!!! Cracked by DRS !!!";
 char* textTicker = "Intently sniff hand thinking about you i'm joking it's food always food. Human is in bath tub, emergency! drowning! meooowww!. Furrier and even more furrier hairball sleeping in the box yet naughty running cat for blow up sofa in 3 seconds, or get away from me stupid dog meow to be let in one of these days i'm going to get that red dot, just you wait and see . Run around the house at 4 in the morning see brother cat receive pets, attack out of jealousy growl at dogs in my sleep claw drapes, and play riveting piece on synthesizer keyboard so i see a bird i stare at it i meow at it i do a wiggle come here birdy. Reaches under door into adjacent room demand to be let outside at once, and expect owner to wait for me as i think about it that box? i can fit in that box, and go crazy with excitement when plates are clanked together signalling the arrival of cat food. Scratch so owner bleeds cry louder at reflection. Push your water glass on the floor run in circles eat prawns daintily with a claw then lick paws clean wash";
+
 int text_len;
 int textSineX;
 int textSineY;
 float modX;
 float charY;
 
-int circX=0;
-int circY=0;
+double circX=0;
+double circY=0;
 
 double tickerX=0;
 int tickerLength;
@@ -20,54 +21,53 @@ int tickerY=0;
 
 void setup(){
 
-  tv_scale_set(1);
+	tv_scale_set(1);
 
-  text_len = strlen(textSine);
-  tickerLength = strlen(textTicker)*8;
-  tickerX = WIDTH;
-  loop_interval_set(10000);
-  textSineX = ( WIDTH - strlen(textSine)*8 ) / 2 ;
-  textSineY = HEIGHT/2;
+	text_len = strlen(textSine);
+	tickerLength = strlen(textTicker)*8;
+	tickerX = WIDTH;
+	loop_interval_set(1000000/60);
+	textSineX = ( WIDTH - strlen(textSine)*8 ) / 2 ;
+	textSineY = HEIGHT/2;
 }
 
 int note=88;
+uint16_t colTestCnt = 0;
 
 void loop(){ // need phase inc based on inverval // OR fixed delta based on sec=1000000us
+	loop_measure_us( MEASURE_START );
 
-  loop_measure_us( MEASURE_START );
+	tv_print( tickerX, HEIGHT-CHAR_HEIGHT, 0x0ff, textTicker );
+	tickerX -= loop_delta_get()*32;
+	if(tickerX<-tickerLength/2) tickerX=WIDTH;
 
-  // if( (rand()&0x7) == 0 ){
-  //   Beeper_set(0, note, 5);
-  // } else{ Beeper_set(0, 0, 0); }
-  //loop_sleep(0);
+	for (size_t charX = 0; charX < text_len; charX++) {
+		char ch = textSine[charX];
+		modX = waves_sine12_get((sinPosMain+sinPos+charX*4));
+		charY = (waves_sine12_get(sinPos+(1/charX)*66)) * (waves_sine12_get(sinPosMain+charX*55));
 
-  circX += 16;
-  circY += 16;
-  circX &= 0xfff;
-  circY &= 0xfff;
-  int x = (WIDTH2)+(WIDTH2-CHAR_HEIGHT) * waves_sine12_get(circX);
-  int y = (HEIGHT2)+(HEIGHT2-CHAR_HEIGHT) * waves_sine12_get((0x1000/4+circY)&0xfff);
+		int charPosX = WIDTH2/2+WIDTH2/2*waves_sine12_get(circX)+charX*8+modX*31;
+		int charPosY = (HEIGHT2-CHAR_HEIGHT*4)+(HEIGHT2-CHAR_HEIGHT*4 )*charY/2;
+		uint16_t color = color12_from_hsl(
+			fabs(((float)(charPosY/2)/HEIGHT)-.5f)*3, 
+			.5f + waves_sine12_unbiased_get((colTestCnt++))/2, 
+			1-fabs(((float)(charPosX/2)/WIDTH2)-.5f)*1.9 );
 
 
-  //printf("%i _ %i \t\t\t\t\n",u, i);
-  tv_print( x, y, COLORS[(int)(HEIGHT-y)/31], "\1" );
+		tv_char( charPosX, charPosY, ch, color );
 
-  tv_print( tickerX, HEIGHT-CHAR_HEIGHT, 0x0ff, textTicker );
-  tickerX -= loop_delta_get()*100;
-  if(tickerX<-tickerLength/2) tickerX=WIDTH;
+		sinPos += loop_delta_get()*33;
+		circX += loop_delta_get()*34;
+	
 
-  for (size_t charX = 0; charX < text_len; charX++) {
-    char ch = textSine[charX];
-    modX = waves_sine12_get(sinPos+charX*24);
-    charY = (waves_sine12_get(sinPos+charX*66)) * (waves_sine12_get(sinPosMain+charX*77));
-    tv_char( WIDTH2/2+WIDTH2/2*waves_sine12_get(circX)+charX*8, (HEIGHT2-CHAR_HEIGHT*4)+(HEIGHT2-CHAR_HEIGHT*4 )*charY, ch, COLORS[(int)((1+charY)*8)] );
-    sinPos += 2+charY;
-    sinPosMain += 1+modX;
-  }
 
-  //loop_sleep_us(100000);
-  tv_print( WIDTH/2, HEIGHT/20*15, 0xfff, "loop_delta_get %f ", loop_delta_get() );
-  tv_print( WIDTH/2, HEIGHT/20*16, 0xfff, "loop_delta_full_ns %8i ns", loop_delta_full_ns );
-  tv_print( WIDTH/2, HEIGHT/20*17, 0xfff, "loop_lifetime %8i s", loop_lifetime_ns/1000000000 );
-  tv_print( WIDTH/2, HEIGHT/20*18, 0xfff, "Loop needed %8i us", loop_measure_us( MEASURE_STOP_AVG ) );
+		sinPosMain += loop_delta_get()*35;
+
+	}
+
+	//loop_sleep_us(100000);
+	tv_print( WIDTH/2, HEIGHT/20*15, 0xfff, "fps: %f ", 1/loop_delta_get() );
+	tv_print( WIDTH/2, HEIGHT/20*16, 0xfff, "loop_delta_full_ns %8i ns", loop_delta_full_ns );
+	tv_print( WIDTH/2, HEIGHT/20*17, 0xfff, "loop_lifetime %8i s", loop_lifetime_ns/1000000000 );
+	tv_print( WIDTH/2, HEIGHT/20*18, 0xfff, "Loop needed %8i us", loop_measure_us( MEASURE_STOP_AVG ) );
 }

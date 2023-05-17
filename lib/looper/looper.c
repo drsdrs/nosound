@@ -9,7 +9,7 @@
 #include "../waves/waves.h"
 
 
-uint32_t loop_interval_us = 1000000;
+uint32_t loop_interval_us = 1000000/20;
 
 uint64_t loop_delta_ns;
 uint64_t loop_delta_full_ns;
@@ -25,7 +25,7 @@ void loop_sleep_ns( int64_t sleep_ns ){
   static struct timespec start, end;
   uint32_t slept_ns_temp = 0;
   clock_gettime(CLOCK_MONOTONIC_RAW, &start);
-  while( slept_ns_temp < sleep_ns ){    // ~ 55 ns 1 cycle
+  while( slept_ns_temp < sleep_ns ){    // ~ 55 us 1 cycle
     //printf("slept_ns_temp %ins\n", slept_ns_temp);
     //for (size_t i = 0; i < 18; i++) {
       tv_key_poll( );
@@ -138,16 +138,16 @@ void loop_setup_PRIVATE( void (*setup_funct)(), void (*loop_funct)(), uint32_t n
   loop_measure_us( MEASURE_START );
 
   tv_setup();
-  printf("tv_setup took: %li ns\n", loop_measure_us( MEASURE_STOP ));
+  printf("tv_setup took: %li us\n", loop_measure_us( MEASURE_STOP ));
 
   Beeper_setup();
-  printf("Beeper_setup took: %li ns\n",  loop_measure_us( MEASURE_STOP ));
+  printf("Beeper_setup took: %li us\n",  loop_measure_us( MEASURE_STOP ));
 
   waves_all_generate();
-  printf("waves_all_generate took: %li ns\n",  loop_measure_us( MEASURE_STOP ));
+  printf("waves_all_generate took: %li us\n",  loop_measure_us( MEASURE_STOP ));
 
   setup_funct();
-  printf("setup_funct took: %li ns\n",  loop_measure_us( MEASURE_STOP ));
+  printf("setup_funct took: %li us\n",  loop_measure_us( MEASURE_STOP ));
 
   tv_clear(0);
   while( loop_quit==false ) loop_loop( loop_funct );

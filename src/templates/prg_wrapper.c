@@ -18,6 +18,7 @@
 #include "../../../lib/prg/prg.h"
 #include "../../../lib/vect/vect.h"
 #include "../../../lib/waves/waves.h"
+#include "../../../lib/color12/color12.h"
 
 #include "../main.c"
 

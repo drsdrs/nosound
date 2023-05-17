@@ -6,6 +6,9 @@ project( ${projectName} )
 set( SOURCES prg_wrapper.c )
 set( BINARY_DIR ../ )
 
+#add_compile_options(-fsanitize=address)
+#add_link_options(-fsanitize=address)
+
 add_library( beeper STATIC ../../../lib/beeper/beeper.c )
 add_library( prgManager STATIC ../../../lib/prgManager/prgManager.c )
 add_library( tv STATIC ../../../lib/tv/tv.c)
@@ -19,6 +22,7 @@ add_library( alsa STATIC ../../../lib/alsa/alsa.c)
 add_library( vect STATIC ../../../lib/vect/vect.c)
 add_library( term STATIC ../../../lib/term/term.c)
 add_library( waves STATIC ../../../lib/waves/waves.c)
+add_library( color12 STATIC ../../../lib/color12/color12.c)
 
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BINARY_DIR} )
 add_executable( ${projectName} ${SOURCES} )
@@ -28,7 +32,7 @@ target_link_libraries( ${projectName}
     prgManager
     tv
     prg
-		m
+	m
     SDL2
     asound
     looper
@@ -38,7 +42,8 @@ target_link_libraries( ${projectName}
     string
     vect
     file
-		SDL2_inprint
-		beeper
+	SDL2_inprint
+	beeper
     alsa
+    color12
 )
