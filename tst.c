@@ -1,5 +1,3 @@
-#include "./tv.h"
-
 #include <SDL2/SDL.h>
 #include <math.h>
 #include <stdio.h>
@@ -8,11 +6,13 @@
 #include "../looper/looper.h"
 #include "../prg/prg.h"
 
-SDL_Window* window;
-SDL_Surface* tv;
-SDL_Surface* pixels;
-SDL_Renderer* renderer;
-SDL_Joystick* gamepad;
+#include "tv.h"
+
+SDL_Window *window;
+SDL_Surface *tv;
+SDL_Surface *pixels;
+SDL_Renderer *renderer;
+SDL_Joystick *gamepad;
 
 uint16_t RES_W = 640;
 uint16_t RES_H = 480;
@@ -33,7 +33,8 @@ const int JOYSTICK_DEAD_ZONE = 8000;
 
 void tv_exit() {
   static uint8_t exit_flag = false;
-  if (exit_flag == true) return;
+  if (exit_flag == true)
+    return;
   exit_flag = true;
   printf("TV_Exit\n");
   SDL_JoystickClose(gamepad);
@@ -45,7 +46,8 @@ void tv_exit() {
 }
 
 void setColor(int col) {
-  if (col == -1) return;
+  if (col == -1)
+    return;
   SDL_SetRenderDrawColor(renderer, ((col >> 8) & 0xf) * 17,
                          ((col >> 4) & 0xf) * 17, (col & 0xf) * 17, 255);
 }
@@ -98,8 +100,8 @@ void tv_char(int x, int y, int ch, int col) {
   inprint_char(renderer, ch, x, y);
 }
 
-void tv_print(int x, int y, int col, char* fmt, ...) {
-  char* str = malloc(sizeof(str) * 80 * 60);
+void tv_print(int x, int y, int col, char *fmt, ...) {
+  char *str = malloc(sizeof(str) * 80 * 60);
   const int strHeight2 = 4 - 1;
   const int color = ((((col >> 8) & 0xf) * 17) << 16) +
                     ((((col >> 4) & 0xf) * 17) << 8) + ((col & 0xf) * 17);
@@ -175,12 +177,14 @@ uint16_t lastBtnsPressed;
 uint16_t lastBtnsReleased;
 
 uint16_t tv_key_pressed(uint16_t compairBtns) {
-  if (compairBtns == 0) return lastBtnsPressed;
+  if (compairBtns == 0)
+    return lastBtnsPressed;
   return (compairBtns == lastBtnsPressed);
 }
 
 uint16_t tv_key_released(uint16_t compairBtns) {
-  if (compairBtns == 0) return lastBtnsReleased;
+  if (compairBtns == 0)
+    return lastBtnsReleased;
   return (compairBtns == lastBtnsReleased);
 }
 
@@ -192,7 +196,8 @@ void tv_keys_clear() {
 void tv_key_poll() {
   static uint16_t tempBtnValues;
   SDL_Event e;
-  if (SDL_PollEvent(&e) == 0) return;
+  if (SDL_PollEvent(&e) == 0)
+    return;
 
   if (e.type == SDL_QUIT) {
     printf("e.type == SDL_QUIT\n");
@@ -258,11 +263,12 @@ void tv_key_poll() {
       lastBtnsReleased |= tempBtnValues;
     }
 
-  } else if (e.type == SDL_JOYAXISMOTION) {  // Motion on controller 0
+  } else if (e.type == SDL_JOYAXISMOTION) { // Motion on controller 0
     static uint8_t lastDirX = 0;
     static uint8_t lastDirY = 0;
     if (e.jaxis.which == 0) {
-      if (e.jaxis.axis == 0) {  //  LEFT - RIGHT
+
+      if (e.jaxis.axis == 0) { //  LEFT - RIGHT
         if (e.jaxis.value < -JOYSTICK_DEAD_ZONE) {
           lastBtnsPressed = BTN_LEFT;
           lastDirX = BTN_LEFT;
@@ -273,8 +279,8 @@ void tv_key_poll() {
           lastBtnsReleased = lastDirX;
           lastDirX = 0;
         }
-      } else if (e.jaxis.axis == 1) {               // UP - DOWN
-        if (e.jaxis.value < -JOYSTICK_DEAD_ZONE) {  // Below of dead zone
+      } else if (e.jaxis.axis == 1) {              // UP - DOWN
+        if (e.jaxis.value < -JOYSTICK_DEAD_ZONE) { // Below of dead zone
           lastBtnsPressed = BTN_UP;
           lastDirY = BTN_UP;
         } else if (e.jaxis.value > JOYSTICK_DEAD_ZONE) {
@@ -321,10 +327,9 @@ void initWindow(uint8_t scale) {
 
 void tv_setup() {
   if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK) < 0) {
-    printf(
-        "SDL could not be initialized!\n"
-        "SDL_Error: %s\n",
-        SDL_GetError());
+    printf("SDL could not be initialized!\n"
+           "SDL_Error: %s\n",
+           SDL_GetError());
   }
 
   initWindow(1);

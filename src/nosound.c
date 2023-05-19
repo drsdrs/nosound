@@ -25,7 +25,8 @@ int main(int argc, char const *argv[]) {
   if(argv[1]!=NULL){
     startPrgName = argv[1];
   } else {
-    startPrgName = "prgManagerUI";//argv[1];
+
+    startPrgName = "demo_entity";//argv[1];
   }
   const char* cleanup = NULL;//argv[2];
   printf("Cleanup? %s\n", cleanup);

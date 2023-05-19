@@ -62,16 +62,16 @@ void showTestName( char* testName ){
   tv_clear(0);
   tv_print( WIDTH/2, HEIGHT/2, 0xfff, "%s", testName);
   tv_render();
-  loop_sleep(1000);
+  loop_sleep(1);
 }
 
 void loop(){
   scale = 0;
   showTestName( "Scaling Test" );
   while( test_scale() ){
-    for (size_t sec = 0; sec < 1000; sec++) {
+    for (size_t sec = 0; sec < 3000; sec++) {
       /* code */
-    loop_sleep(1);
+    loop_sleep_us(1);
     tv_key_poll( );
   }
   }

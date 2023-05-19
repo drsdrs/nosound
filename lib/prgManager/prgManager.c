@@ -135,7 +135,7 @@ void prgManager_activePrg_kill(){
   if( prgRunning && prgActivePid!=-1 ){
     term_color_set(8);
     printf("KILL running prg...");
-    kill( prgActivePid, SIGINT );
+    kill( prgActivePid, SIGKILL );
     prgRunning = false;
     prgActivePid = -1;
   } else { printf("\n***\n**\n*KILL running prg went wrong, prgRunning: %i prgActivePid: %i \n", prgRunning ,prgActivePid); }
