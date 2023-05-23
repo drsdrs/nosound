@@ -1,15 +1,13 @@
 var searchData=
 [
-  ['text_5flen_0',['text_len',['../demo_2main_8c.html#aa1d18ff802ca2239a493dbb71a5acbcc',1,'main.c']]],
-  ['textsine_1',['textSine',['../demo_2main_8c.html#a25531dc594a2b7c9ddf5226965f6e52e',1,'main.c']]],
-  ['textsinex_2',['textSineX',['../demo_2main_8c.html#a628ef5d09346df3aa2af6e64b05ec3e1',1,'main.c']]],
-  ['textsiney_3',['textSineY',['../demo_2main_8c.html#abeab460fba832086df8b191d2e0b3162',1,'main.c']]],
-  ['textticker_4',['textTicker',['../demo_2main_8c.html#a62a1704eceb93e4c996803c5770d9953',1,'main.c']]],
-  ['texture_5',['texture',['../structMonoIMG.html#a859b8efbf9abe8e82757ee5c75a0c97c',1,'MonoIMG']]],
-  ['tickerlength_6',['tickerLength',['../demo_2main_8c.html#a679fd993b10115b3fec197412af33820',1,'main.c']]],
-  ['tickerx_7',['tickerX',['../demo_2main_8c.html#a1918e0b73e3ffd216dc83976e123cda4',1,'main.c']]],
-  ['tickery_8',['tickerY',['../demo_2main_8c.html#aae769fc2b598fb28f3e88381b4663bbe',1,'main.c']]],
-  ['triangle_5fwave_9',['TRIANGLE_WAVE',['../waves_8c.html#a6ef1bc1f798fde0b7c85bf5e3986b879',1,'waves.c']]],
-  ['tv_10',['tv',['../tv_8c.html#a35491f6472ccde6137077c625c68fadf',1,'tv():&#160;tv.c'],['../tst_8c.html#a35491f6472ccde6137077c625c68fadf',1,'tv():&#160;tst.c']]],
-  ['type_11',['type',['../structasync__args.html#a1d127017fb298b889f4ba24752d08b8e',1,'async_args']]]
+  ['watchcalls_0',['watchCalls',['../prgManager_8c.html#a7fcbe610195566c979ddbacaf95a6241',1,'prgManager.c']]],
+  ['waves_5frandom_5f12_1',['WAVES_RANDOM_12',['../waves_8c.html#aaca813fd6d87ad3eba210f0c1d633067',1,'waves.c']]],
+  ['waves_5fsine_5f12_2',['WAVES_SINE_12',['../waves_8c.html#a4340566190ec16324f39077a3bc803f5',1,'WAVES_SINE_12():&#160;waves.c'],['../waves_8h.html#a4340566190ec16324f39077a3bc803f5',1,'WAVES_SINE_12():&#160;waves.c']]],
+  ['waves_5fsine_5f8_3',['WAVES_SINE_8',['../waves_8c.html#a408779cb9bcc1f20d26d5fefb311736b',1,'WAVES_SINE_8():&#160;waves.c'],['../waves_8h.html#af4b9fa962ba9fbdd1b37e541e9c1458a',1,'WAVES_SINE_8():&#160;waves.c']]],
+  ['wavetone_4',['waveTone',['../beeper_8c.html#ae3b8db51ac151e61f5d257f1b31fdcd0',1,'beeper.c']]],
+  ['wavetype_5',['waveType',['../beeper_8c.html#a59e4b31649ec9f0cc1fe9c5393e17c99',1,'beeper.c']]],
+  ['width_6',['width',['../structMonoIMG.html#abbaaa03913f483ee47c168496ada406f',1,'MonoIMG']]],
+  ['width_7',['WIDTH',['../tv_8c.html#aeaf09a95d18250fbc1d8d1ec7308cc88',1,'WIDTH():&#160;tv.c'],['../tv_8h.html#aeaf09a95d18250fbc1d8d1ec7308cc88',1,'WIDTH():&#160;tv.c']]],
+  ['width2_8',['WIDTH2',['../tv_8c.html#a98a9d8ff074606bbf7f0f114b75c1681',1,'WIDTH2():&#160;tv.c'],['../tv_8h.html#a98a9d8ff074606bbf7f0f114b75c1681',1,'WIDTH2():&#160;tv.h']]],
+  ['window_9',['window',['../tv_8c.html#aaa8e409e04dcf575ef63fd5fb3db06f9',1,'tv.c']]]
 ];

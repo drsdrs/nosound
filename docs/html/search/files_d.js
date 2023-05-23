@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vect_2ec_0',['vect.c',['../vect_8c.html',1,'']]],
-  ['vect_2eh_1',['vect.h',['../vect_8h.html',1,'']]]
+  ['waves_2ec_0',['waves.c',['../waves_8c.html',1,'']]],
+  ['waves_2eh_1',['waves.h',['../waves_8h.html',1,'']]]
 ];

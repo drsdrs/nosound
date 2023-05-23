@@ -10,7 +10,6 @@ var dir_97aefd0d527b934f1d99a682da8fe6a9 =
     [ "prg", "dir_eb42b88d84e8f52ff9e394bbe0a09c36.html", "dir_eb42b88d84e8f52ff9e394bbe0a09c36" ],
     [ "prgManager", "dir_7cc4c6ba1e054c35a70466e783b3865f.html", "dir_7cc4c6ba1e054c35a70466e783b3865f" ],
     [ "rythm", "dir_9957c788d1bdeadb255c83f8ebd94e5c.html", "dir_9957c788d1bdeadb255c83f8ebd94e5c" ],
-    [ "SDL_inprint", "dir_3ba895a8e72da53a3d2f84068a1e1651.html", "dir_3ba895a8e72da53a3d2f84068a1e1651" ],
     [ "string", "dir_4ed80c7b869972837384e3c6a761e421.html", "dir_4ed80c7b869972837384e3c6a761e421" ],
     [ "term", "dir_552e463d8ed62502a626196b9720624b.html", "dir_552e463d8ed62502a626196b9720624b" ],
     [ "tv", "dir_720cb21b67723dec898de760e37ca60d.html", "dir_720cb21b67723dec898de760e37ca60d" ],

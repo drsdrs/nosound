@@ -1,5 +1,5 @@
 var structVect2 =
 [
-    [ "x", "structVect2.html#a4dde988b1b2adba65ae3efa69f65d960", null ],
-    [ "y", "structVect2.html#ab0580f504a7428539be299fa71565f30", null ]
+    [ "x", "structVect2.html#a74be8729b8c976a5e3e7abea9d149756", null ],
+    [ "y", "structVect2.html#a64659e1b9dc51383ebc3f33b173c7da0", null ]
 ];

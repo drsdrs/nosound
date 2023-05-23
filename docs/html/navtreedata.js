@@ -25,14 +25,6 @@
 var NAVTREE =
 [
   [ "nosound", "index.html", [
-    [ "SDL_inprint", "md_lib_SDL_inprint_README.html", [
-      [ "how to use", "md_lib_SDL_inprint_README.html#autotoc_md1", null ],
-      [ "SDL2", "md_lib_SDL_inprint_README.html#autotoc_md2", null ],
-      [ "font collection", "md_lib_SDL_inprint_README.html#autotoc_md3", null ],
-      [ "bitmap fonts", "md_lib_SDL_inprint_README.html#autotoc_md4", null ],
-      [ "inline fonts", "md_lib_SDL_inprint_README.html#autotoc_md5", null ]
-    ] ],
-    [ "nosound", "md_README.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Fields", "functions.html", [
@@ -44,8 +36,8 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", "globals_func" ],
-        [ "Variables", "globals_vars.html", "globals_vars" ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ]
       ] ]
     ] ]
@@ -54,10 +46,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"PRG_2demo_2build_2CMakeFiles_23_826_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html",
-"beeper_8c.html#ae1bdc8c5284d85fe7ecbd35fc1dcb65b",
-"globals_func_w.html",
-"tst_8c.html#a14f1b238c0596ce63349f81e5e23418a"
+"alsa_8c.html",
+"path_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>nosound: vect.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -24,17 +25,20 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">nosound
    </div>
-   <div id="projectbrief">my little c framework</div>
+   <div id="projectbrief">Little C framework</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
           <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
@@ -45,8 +49,7 @@
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
           </span>
         </div>
-</td>
- </tr>
+</td></tr>
  </tbody>
 </table>
 </div>
@@ -58,7 +61,6 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -101,12 +103,16 @@ $(document).ready(function(){initNavTree('vect_8c.html',''); initResizable(); })
   <div class="headertitle"><div class="title">vect.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="vect_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a00f3eebb8cbe9391e65564e63b188364"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vect_8c.html#a00f3eebb8cbe9391e65564e63b188364">vect2_add</a> (<a class="el" href="structVect2.html">Vect2</a> *srcPointer, <a class="el" href="structVect2.html">Vect2</a> *trgPointer)</td></tr>
+<tr class="memdesc:a00f3eebb8cbe9391e65564e63b188364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add target to source vect2.  <br /></td></tr>
 <tr class="separator:a00f3eebb8cbe9391e65564e63b188364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63eedcd21fe1df3796dcc6f50aa8de59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVect2.html">Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vect_8c.html#a63eedcd21fe1df3796dcc6f50aa8de59">vect2_new</a> (uint16_t x, uint16_t y)</td></tr>
+<tr class="memdesc:a63eedcd21fe1df3796dcc6f50aa8de59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get vect2 from X and Y choordinates.  <br /></td></tr>
 <tr class="separator:a63eedcd21fe1df3796dcc6f50aa8de59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a3b539c104076a9d99013541f5de9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVect2.html">Vect2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vect_8c.html#a88a3b539c104076a9d99013541f5de9e">vect2_copy</a> (<a class="el" href="structVect2.html">Vect2</a> src)</td></tr>
 <tr class="separator:a88a3b539c104076a9d99013541f5de9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,23 +144,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a88a3b539c104076a9d99013541f5de9e" name="a88a3b539c104076a9d99013541f5de9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88a3b539c104076a9d99013541f5de9e">&#9670;&#160;</a></span>vect2_copy()</h2>
+<p>Add target to source vect2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcPointer</td><td></td></tr>
+    <tr><td class="paramname">trgPointer</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structVect2.html">Vect2</a> vect2_copy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structVect2.html">Vect2</a>&#160;</td>
-          <td class="paramname"><em>src</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="vect_8c_source.html#l00006">6</a> of file <a class="el" href="vect_8c_source.html">vect.c</a>.</p>
 
 </div>
 </div>
@@ -183,6 +182,47 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get vect2 from X and Y choordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">b</td><td>blue range 0-255 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structVect2.html" title="2d vector struct">Vect2</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vect_8c_source.html#l00011">11</a> of file <a class="el" href="vect_8c_source.html">vect.c</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vect_8c_a63eedcd21fe1df3796dcc6f50aa8de59_icgraph.png" border="0" usemap="#avect_8c_a63eedcd21fe1df3796dcc6f50aa8de59_icgraph" alt=""/></div>
+<map name="avect_8c_a63eedcd21fe1df3796dcc6f50aa8de59_icgraph" id="avect_8c_a63eedcd21fe1df3796dcc6f50aa8de59_icgraph">
+<area shape="rect" title="Get vect2 from X and Y choordinates." alt="" coords="138,5,229,33"/>
+<area shape="rect" href="entity_8c.html#a6fdb175253d42cc21c3b7543aa43a81f" title=" " alt="" coords="5,5,90,33"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a88a3b539c104076a9d99013541f5de9e" name="a88a3b539c104076a9d99013541f5de9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88a3b539c104076a9d99013541f5de9e">&#9670;&#160;</a></span>vect2_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVect2.html">Vect2</a> vect2_copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structVect2.html">Vect2</a>&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vect_8c_source.html#l00015">15</a> of file <a class="el" href="vect_8c_source.html">vect.c</a>.</p>
 
 </div>
 </div>

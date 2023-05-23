@@ -1,3 +1,9 @@
+/**
+ * ********************************************
+ * \subpage audio
+ *  @file beeper.h
+ *  @brief ...
+ *********************************************/
 #pragma once
 
 #include "alsa/asoundlib.h"

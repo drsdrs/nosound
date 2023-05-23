@@ -4,14 +4,6 @@
 
 #include "color12.h"
 
-typedef struct rgb {
-  float r, g, b;
-} RGB;
-
-typedef struct hsl {
-  float h, s, l;
-} HSL;
-
 
 /* Converts an HUE to r, g or b. returns float in the set [0, 1]. */
 float hue2rgb(float p, float q, float t) {
@@ -23,9 +15,7 @@ float hue2rgb(float p, float q, float t) {
   return p;
 }
 
-
-/* Converts an HSL color value to RGB. Conversion formula adapted from http://en.wikipedia.org/wiki/HSL_color_space.
-Assumes h, s, and l are contained in the set [0, 1] and returns RGB in the set [0, 255]. */
+/* Converts an HSL color value to RGB. adapted from http://en.wikipedia.org/wiki/HSL_color_space. */
 RGB hsl2rgb(float h, float s, float l) {
   RGB result;
 

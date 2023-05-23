@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>nosound: file.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -24,17 +25,20 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">nosound
    </div>
-   <div id="projectbrief">my little c framework</div>
+   <div id="projectbrief">Little C framework</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
           <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
@@ -45,8 +49,7 @@
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
           </span>
         </div>
-</td>
- </tr>
+</td></tr>
  </tbody>
 </table>
 </div>
@@ -58,7 +61,6 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -118,31 +120,73 @@ Functions</h2></td></tr>
 <tr class="separator:acc6f493aeb5146fbaca06f59c1bd669a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="acc6f493aeb5146fbaca06f59c1bd669a" name="acc6f493aeb5146fbaca06f59c1bd669a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc6f493aeb5146fbaca06f59c1bd669a">&#9670;&#160;</a></span>file_copy()</h2>
+<a id="ac4064af4ee420efb42a4ebfe8f005921" name="ac4064af4ee420efb42a4ebfe8f005921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4064af4ee420efb42a4ebfe8f005921">&#9670;&#160;</a></span>folder_remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void file_copy </td>
+          <td class="memname">int folder_remove </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>path</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>trg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="file_8c_source.html#l00019">19</a> of file <a class="el" href="file_8c_source.html">file.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="file_8h_ac4064af4ee420efb42a4ebfe8f005921_cgraph.png" border="0" usemap="#afile_8h_ac4064af4ee420efb42a4ebfe8f005921_cgraph" alt=""/></div>
+<map name="afile_8h_ac4064af4ee420efb42a4ebfe8f005921_cgraph" id="afile_8h_ac4064af4ee420efb42a4ebfe8f005921_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,122,57"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="file_8h_ac4064af4ee420efb42a4ebfe8f005921_icgraph.png" border="0" usemap="#afile_8h_ac4064af4ee420efb42a4ebfe8f005921_icgraph" alt=""/></div>
+<map name="afile_8h_ac4064af4ee420efb42a4ebfe8f005921_icgraph" id="afile_8h_ac4064af4ee420efb42a4ebfe8f005921_icgraph">
+<area shape="rect" title=" " alt="" coords="283,29,399,57"/>
+<area shape="rect" href="prgManager_8c.html#ad02239435d966388234fcab2b4eb4210" title=" " alt="" coords="108,29,235,57"/>
+<area shape="rect" href="nosound_8c.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="Main function." alt="" coords="5,29,60,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7592a439a42eecf02be19ccb8034f14a" name="a7592a439a42eecf02be19ccb8034f14a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7592a439a42eecf02be19ccb8034f14a">&#9670;&#160;</a></span>folder_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void folder_create </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dirName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="file_8c_source.html#l00054">54</a> of file <a class="el" href="file_8c_source.html">file.c</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="file_8h_a7592a439a42eecf02be19ccb8034f14a_icgraph.png" border="0" usemap="#afile_8h_a7592a439a42eecf02be19ccb8034f14a_icgraph" alt=""/></div>
+<map name="afile_8h_a7592a439a42eecf02be19ccb8034f14a_icgraph" id="afile_8h_a7592a439a42eecf02be19ccb8034f14a_icgraph">
+<area shape="rect" title=" " alt="" coords="683,5,790,33"/>
+<area shape="rect" href="prgManager_8c.html#aca428cb098bfc5cd82f262e99e94e9b0" title=" " alt="" coords="476,5,635,33"/>
+<area shape="rect" href="prgManager_8c.html#ad02239435d966388234fcab2b4eb4210" title=" " alt="" coords="108,5,235,33"/>
+<area shape="rect" href="prgManager_8c.html#a9e26fbfca939c2a691ab30621a96f08b" title=" " alt="" coords="283,31,428,58"/>
+<area shape="rect" href="nosound_8c.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="Main function." alt="" coords="5,5,60,33"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -161,6 +205,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="file_8c_source.html#l00079">79</a> of file <a class="el" href="file_8c_source.html">file.c</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="file_8h_af2f23b7c66edbb76f3ed56808202db6d_icgraph.png" border="0" usemap="#afile_8h_af2f23b7c66edbb76f3ed56808202db6d_icgraph" alt=""/></div>
+<map name="afile_8h_af2f23b7c66edbb76f3ed56808202db6d_icgraph" id="afile_8h_af2f23b7c66edbb76f3ed56808202db6d_icgraph">
+<area shape="rect" title=" " alt="" coords="683,47,764,75"/>
+<area shape="rect" href="prgManager_8c.html#aca428cb098bfc5cd82f262e99e94e9b0" title=" " alt="" coords="476,22,635,50"/>
+<area shape="rect" href="prgManager_8c.html#ad02239435d966388234fcab2b4eb4210" title=" " alt="" coords="108,22,235,50"/>
+<area shape="rect" href="prgManager_8c.html#a9e26fbfca939c2a691ab30621a96f08b" title=" " alt="" coords="283,22,428,50"/>
+<area shape="rect" href="nosound_8c.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="Main function." alt="" coords="5,22,60,50"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -190,41 +248,62 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="file_8c_source.html#l00087">87</a> of file <a class="el" href="file_8c_source.html">file.c</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="file_8h_a42ed4a21bfb1ed1bde867e2640f61a4c_icgraph.png" border="0" usemap="#afile_8h_a42ed4a21bfb1ed1bde867e2640f61a4c_icgraph" alt=""/></div>
+<map name="afile_8h_a42ed4a21bfb1ed1bde867e2640f61a4c_icgraph" id="afile_8h_a42ed4a21bfb1ed1bde867e2640f61a4c_icgraph">
+<area shape="rect" title=" " alt="" coords="908,27,990,54"/>
+<area shape="rect" href="prgManager_8c.html#aca428cb098bfc5cd82f262e99e94e9b0" title=" " alt="" coords="476,5,635,33"/>
+<area shape="rect" href="prgManager_8c.html#a8b4dcc236fc01b284c9bfb2bf7a0c27c" title=" " alt="" coords="683,48,860,92"/>
+<area shape="rect" href="prgManager_8c.html#ad02239435d966388234fcab2b4eb4210" title=" " alt="" coords="108,31,235,58"/>
+<area shape="rect" href="prgManager_8c.html#a9e26fbfca939c2a691ab30621a96f08b" title=" " alt="" coords="283,56,428,84"/>
+<area shape="rect" href="nosound_8c.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="Main function." alt="" coords="5,31,60,58"/>
+</map>
+</div>
+
 </div>
 </div>
-<a id="a7592a439a42eecf02be19ccb8034f14a" name="a7592a439a42eecf02be19ccb8034f14a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7592a439a42eecf02be19ccb8034f14a">&#9670;&#160;</a></span>folder_create()</h2>
+<a id="acc6f493aeb5146fbaca06f59c1bd669a" name="acc6f493aeb5146fbaca06f59c1bd669a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc6f493aeb5146fbaca06f59c1bd669a">&#9670;&#160;</a></span>file_copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void folder_create </td>
+          <td class="memname">void file_copy </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>dirName</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"><em>src</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac4064af4ee420efb42a4ebfe8f005921" name="ac4064af4ee420efb42a4ebfe8f005921"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4064af4ee420efb42a4ebfe8f005921">&#9670;&#160;</a></span>folder_remove()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">int folder_remove </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>trg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="file_8c_source.html#l00062">62</a> of file <a class="el" href="file_8c_source.html">file.c</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="file_8h_acc6f493aeb5146fbaca06f59c1bd669a_icgraph.png" border="0" usemap="#afile_8h_acc6f493aeb5146fbaca06f59c1bd669a_icgraph" alt=""/></div>
+<map name="afile_8h_acc6f493aeb5146fbaca06f59c1bd669a_icgraph" id="afile_8h_acc6f493aeb5146fbaca06f59c1bd669a_icgraph">
+<area shape="rect" title=" " alt="" coords="683,5,763,33"/>
+<area shape="rect" href="prgManager_8c.html#aca428cb098bfc5cd82f262e99e94e9b0" title=" " alt="" coords="476,5,635,33"/>
+<area shape="rect" href="prgManager_8c.html#ad02239435d966388234fcab2b4eb4210" title=" " alt="" coords="108,5,235,33"/>
+<area shape="rect" href="prgManager_8c.html#a9e26fbfca939c2a691ab30621a96f08b" title=" " alt="" coords="283,31,428,58"/>
+<area shape="rect" href="nosound_8c.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="Main function." alt="" coords="5,5,60,33"/>
+</map>
+</div>
 
 </div>
 </div>

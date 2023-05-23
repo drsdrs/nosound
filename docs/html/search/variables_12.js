@@ -1,22 +1,5 @@
 var searchData=
 [
-  ['s_0',['s',['../structhsl.html#a874f74a4dc1c9a0cd9c6e0d79c298f55',1,'hsl']]],
-  ['samples_5fper_5ftimer_5fperiode_1',['samples_per_timer_periode',['../alsa_8c.html#ae2d347e31b3d135e3b7f574d997f4683',1,'alsa.c']]],
-  ['samplingindex_2',['samplingIndex',['../beeper_8c.html#a02af2903c88b7b3c0c913b50cde152e2',1,'beeper.c']]],
-  ['scale_3',['scale',['../test__scaling_2main_8c.html#a95df76d85a2315460f7999bfba249656',1,'main.c']]],
-  ['scale_4',['SCALE',['../tv_8c.html#a1333cfcfb07758b7767086f44a9d1192',1,'SCALE():&#160;tv.c'],['../tv_8h.html#a1333cfcfb07758b7767086f44a9d1192',1,'SCALE():&#160;tv.c'],['../tst_8c.html#a1333cfcfb07758b7767086f44a9d1192',1,'SCALE():&#160;tst.c']]],
-  ['scale_5',['scale',['../prgManagerUI_2main_8c.html#a95df76d85a2315460f7999bfba249656',1,'main.c']]],
-  ['seq_5fpattern_5factive_6',['seq_pattern_active',['../seq_2main_8c.html#a051ce989a675e3eea3e37374281def5e',1,'main.c']]],
-  ['seq_5fpattern_5fdata_7',['seq_pattern_data',['../seq_2main_8c.html#a7f91c88c1f53ad14d5a76f6bae9fe5a8',1,'main.c']]],
-  ['seq_5fpattern_5flength_8',['seq_pattern_length',['../seq_2main_8c.html#ae894ed2e9c2916ac2356611d6c32552b',1,'main.c']]],
-  ['seq_5fsong_5fdata_9',['seq_song_data',['../seq_2main_8c.html#a88d18137900e416545969e8334b93a0b',1,'main.c']]],
-  ['silence_10',['silence',['../beeper_8c.html#ae8bb8b576c79177d4a2fda9d79debc05',1,'beeper.c']]],
-  ['sinpos_11',['sinPos',['../demo_2main_8c.html#aab399979cf32230fa1e8525e346504b8',1,'main.c']]],
-  ['sinposmain_12',['sinPosMain',['../demo_2main_8c.html#a25684bce22e12475ab7d9acad729f4cc',1,'main.c']]],
-  ['slept_5fns_13',['slept_ns',['../looper_8c.html#adfa82d71f9efd1acbbfaeba0b3b0eb3a',1,'looper.c']]],
-  ['source_5fres_5fh_14',['SOURCE_RES_H',['../tv_8c.html#a14f1b238c0596ce63349f81e5e23418a',1,'SOURCE_RES_H():&#160;tv.c'],['../tst_8c.html#a14f1b238c0596ce63349f81e5e23418a',1,'SOURCE_RES_H():&#160;tst.c']]],
-  ['source_5fres_5fw_15',['SOURCE_RES_W',['../tst_8c.html#ab787c2f6f5cc094ad081ddae217c5721',1,'SOURCE_RES_W():&#160;tst.c'],['../tv_8c.html#ab787c2f6f5cc094ad081ddae217c5721',1,'SOURCE_RES_W():&#160;tv.c']]],
-  ['startmem_16',['startMem',['../demo__entity_2main_8c.html#a44c7cd9544a89aa86822cffdf5927d02',1,'main.c']]],
-  ['step_5fdelay_5fus_17',['step_delay_us',['../structasync__args.html#a98ddb4c28019d009f249528a0c189908',1,'async_args']]],
-  ['step_5finc_18',['step_inc',['../structasync__args.html#adb81847dba26d6d55fb0d7f78123c418',1,'async_args']]]
+  ['vel_0',['vel',['../structEntity.html#a560be247bd634a0b7990853ba1250ed5',1,'Entity']]],
+  ['volume_1',['volume',['../beeper_8c.html#a14cc77262954756b30c251feabce7ea6',1,'beeper.c']]]
 ];

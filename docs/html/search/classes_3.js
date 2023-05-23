@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['monoimg_0',['MonoIMG',['../structMonoIMG.html',1,'']]]
+  ['rgb_0',['RGB',['../structRGB.html',1,'']]]
 ];

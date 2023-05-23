@@ -9,6 +9,6 @@ var searchData=
   ['file_5fwrite_6',['file_write',['../file_8c.html#a42ed4a21bfb1ed1bde867e2640f61a4c',1,'file_write(char *fileName, char *content):&#160;file.c'],['../file_8h.html#a42ed4a21bfb1ed1bde867e2640f61a4c',1,'file_write(char *fileName, char *content):&#160;file.c']]],
   ['folder_5fcreate_7',['folder_create',['../file_8c.html#a7592a439a42eecf02be19ccb8034f14a',1,'folder_create(char *dirName):&#160;file.c'],['../file_8h.html#a7592a439a42eecf02be19ccb8034f14a',1,'folder_create(char *dirName):&#160;file.c']]],
   ['folder_5fremove_8',['folder_remove',['../file_8c.html#ac4064af4ee420efb42a4ebfe8f005921',1,'folder_remove(char *path):&#160;file.c'],['../file_8h.html#ac4064af4ee420efb42a4ebfe8f005921',1,'folder_remove(char *path):&#160;file.c']]],
-  ['frames_9',['frames',['../structMonoIMG.html#a31998ae783ef22ba0798d5705bd87d10',1,'MonoIMG']]],
+  ['frames_9',['frames',['../structMonoIMG.html#a8dd76791ef8ffc16e39e0e1224c51768',1,'MonoIMG']]],
   ['framesmust_10',['framesMust',['../alsa_8c.html#a3a9674df4eba8a054dc7b13383cd1e9e',1,'alsa.c']]]
 ];

@@ -1,3 +1,11 @@
+/**
+ * @file nosound.c
+ * @author drsdrs
+ * @brief the engine that could
+ *
+ * more extensive explanation
+ */
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -18,7 +26,11 @@
 
 #include "../lib/term/term.h"
 
-
+/** @brief Main function
+ * 
+ * Parsing arguments from commandline,
+ * starting prg_manager
+ * */
 int main(int argc, char const *argv[]) {
 
   const char* startPrgName;

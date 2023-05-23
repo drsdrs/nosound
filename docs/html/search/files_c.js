@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['main_2ec_0',['main.c',['../test__scaling_2main_8c.html',1,'']]],
-  ['term_2ec_1',['term.c',['../term_8c.html',1,'']]],
-  ['term_2eh_2',['term.h',['../term_8h.html',1,'']]],
-  ['tst_2ec_3',['tst.c',['../tst_8c.html',1,'']]],
-  ['tv_2ec_4',['tv.c',['../tv_8c.html',1,'']]],
-  ['tv_2eh_5',['tv.h',['../tv_8h.html',1,'']]],
-  ['tv_5fascii_2eh_6',['tv_ASCII.h',['../tv__ASCII_8h.html',1,'']]],
-  ['tv_5fcolors_2eh_7',['tv_COLORS.h',['../tv__COLORS_8h.html',1,'']]],
-  ['tv_5fkeys_2eh_8',['tv_KEYS.h',['../tv__KEYS_8h.html',1,'']]]
+  ['vect_2ec_0',['vect.c',['../vect_8c.html',1,'']]],
+  ['vect_2eh_1',['vect.h',['../vect_8h.html',1,'']]]
 ];
