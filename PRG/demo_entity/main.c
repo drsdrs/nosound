@@ -46,10 +46,9 @@ void loop(){
 
   for (int i = 1; i < 0xff; ++i) {
   	for (int u = 1; u < 0xff; ++u){
-	  	char* doing = malloc(1);
+	  	char* doing = malloc(100000);
   		int a = 99999/u*i/99999*sin(324234)*sin(234234);
   		free(doing);
   	}
   }
-  // Print the maximum resident set size used (in kilobytes).
 }

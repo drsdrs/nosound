@@ -38,7 +38,7 @@ int main(int argc, char const *argv[]) {
     startPrgName = argv[1];
   } else {
 
-    startPrgName = "demo_entity";//argv[1];
+    startPrgName = "seq";//argv[1];
   }
   const char* cleanup = NULL;//argv[2];
   printf("Cleanup? %s\n", cleanup);

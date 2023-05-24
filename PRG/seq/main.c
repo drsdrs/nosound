@@ -21,7 +21,7 @@ void seq_pattern_draw(){
 }
 
 void setup(){
-  loop_interval_set(860);
+  loop_interval_set(860000);
   tv_scale_set(1);
 }
 
