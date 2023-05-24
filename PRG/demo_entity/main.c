@@ -1,4 +1,4 @@
-#include "../../lib/entity/entity.c"
+#include "../../src/classes/entity.c"
 #include <sys/resource.h>
 
 
@@ -28,6 +28,7 @@ void loop(){
 	//testEntity(i++);
 	deltaAvg = deltaAvg*0.99f + loop_delta_full_ns*0.01f;
 
+	tv_print( WIDTH/2, HEIGHT/8*4, 0xfff, "lifetime: %2.2f s", (float)loop_lifetime_ns/1000000000 );
 	tv_print( WIDTH/2, HEIGHT/8*5, 0xfff, "delta: %7i us", deltaAvg/1000 );
 	// tv_print( WIDTH/2, HEIGHT/8*7, 0xfff, "fps: %f ", 1/(deltaAvg/1000000000.0f) );
 
@@ -37,18 +38,17 @@ void loop(){
 	clock_gettime(CLOCK_MONOTONIC_RAW, &time);
   	double number_of_processors = sysconf(_SC_NPROCESSORS_ONLN);
   	tv_print(
-  		WIDTH/2, HEIGHT/8*7,
-  		0xfff,
-  		"CPU: %f %\n", 
-  		((double)clock()/number_of_processors/(time.tv_sec+time.tv_nsec/1000000000))
+  		WIDTH/2, HEIGHT/8*7, 0xfff,
+  		"CPU: %f %\n", ((double)clock()/number_of_processors/(loop_lifetime_ns/1000000+1))
   	);
  
   if(prg_memory_usage()>1300000) loop_exit();
 
   for (int i = 1; i < 0xff; ++i) {
   	for (int u = 1; u < 0xff; ++u){
-	  	//char* doing = malloc(1);
+	  	char* doing = malloc(1);
   		int a = 99999/u*i/99999*sin(324234)*sin(234234);
+  		free(doing);
   	}
   }
   // Print the maximum resident set size used (in kilobytes).

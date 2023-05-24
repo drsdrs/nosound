@@ -1,0 +1,3 @@
+[submodule "ext/SDL_inprint"]
+	path = ext/SDL_inprint
+	url = https://github.com/drsdrs/SDL_inprint.git

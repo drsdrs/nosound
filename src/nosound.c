@@ -20,11 +20,11 @@
 
 
 //#include "../lib/looper/looper.h"
-#include "../lib/path/path.h"
-#include "../lib/prg/prg.h"
-#include "../lib/prgManager/prgManager.h"
+#include "term.h"
+#include "path.h"
+#include "prg.h"
+#include "prgManager.h"
 
-#include "../lib/term/term.h"
 
 /** @brief Main function
  * 
