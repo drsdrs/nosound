@@ -6,8 +6,8 @@ project( ${projectName} )
 set( SOURCES prg_wrapper.c )
 set( BINARY_DIR ../ )
 
-include_directories( ../../../include ) 
-include_directories( ../../../ext/SDL_inprint ) 
+include_directories( ../../../include )
+include_directories( ../../../ext/SDL_inprint )
 
 
 #add_compile_options(-fsanitize=address)
@@ -28,8 +28,9 @@ add_library( prg            STATIC ../../../src/utils/prg.c)
 add_library( file           STATIC ../../../src/utils/file.c)
 add_library( term           STATIC ../../../src/utils/term.c)
 
-add_library( vect           STATIC ../../../src/classes/vect.c)
-add_library( color12        STATIC ../../../src/classes/color12.c)
+add_library( Vect2           STATIC ../../../src/classes/Vect2.c)
+add_library( Color12        STATIC ../../../src/classes/Color12.c)
+add_library( MonoIMG        STATIC ../../../src/classes/MonoIMG.c)
 
 add_library( SDL2_inprint   STATIC ../../../ext/SDL_inprint/inprint2.c)
 
@@ -49,10 +50,11 @@ target_link_libraries( ${projectName}
     term
     path
     string
-    vect
+    Vect2
     file
 	SDL2_inprint
 	beeper
     alsa
-    color12
+    Color12
+    MonoIMG
 )

@@ -7,8 +7,8 @@ project( ${projectName} )
 set( SOURCES  src/nosound.c )
 set( BINARY_DIR ../ )
 
-include_directories( include ) 
-include_directories( ext/SDL_inprint ) 
+include_directories( include )
+include_directories( ext/SDL_inprint )
 
 
 #add_compile_options(-fsanitize=address)
@@ -30,8 +30,9 @@ add_library( prg            STATIC src/utils/prg.c)
 add_library( file           STATIC src/utils/file.c)
 add_library( term           STATIC src/utils/term.c)
 
-add_library( vect           STATIC src/classes/vect.c)
-add_library( color12        STATIC src/classes/color12.c)
+add_library( Vect2           STATIC src/classes/Vect2.c)
+add_library( Color12        STATIC src/classes/Color12.c)
+add_library( MonoIMG        STATIC src/classes/MonoIMG.c)
 
 add_library( SDL2_inprint   STATIC ext/SDL_inprint/inprint2.c)
 
@@ -41,9 +42,12 @@ add_executable( ${projectName} ${SOURCES} )
 
 target_link_libraries( ${projectName}
     PRIVATE
+	SDL2_inprint
     prgManager
     looper
+    alsa
     tv
+	beeper
 	m
     SDL2
     asound
@@ -51,11 +55,9 @@ target_link_libraries( ${projectName}
     waves
     path
     string
-    vect
     prg
     file
-	SDL2_inprint
-	beeper
-    alsa
-    color12
+    Color12
+    Vect2
+    MonoIMG
 )
