@@ -1,5 +1,3 @@
-#include "file.h"
-
 #include <dirent.h>
 #include <errno.h>
 #include <stdarg.h>
@@ -12,6 +10,8 @@
 #include <sys/types.h>
 #include <time.h>
 #include <unistd.h>
+
+#include "file.h"
 
 int folder_remove( char* path ) {
     DIR*   d        = opendir( path );
@@ -56,20 +56,18 @@ void folder_create( char* dirName ) {
 }
 
 void file_copy( char* src, char* trg ) {
-    FILE *f1, *f2;
-    char  ch;
+    char  c[4096];    // or any other constant you like
+    FILE* stream_R = fopen( src, "r" );
+    FILE* stream_W = fopen( trg, "w" );    // create and write to file
 
-    f1 = fopen( src, "r" );    // opening the file for reading.
-    f2 = fopen( trg, "w" );    // Opening in write mode
-
-    if ( f2 == NULL || f1 == NULL ) {
-        printf( "Error file_copy src: %s\t\ttrg: %s\n", src, trg );
-        exit( EXIT_FAILURE );
+    while ( !feof( stream_R ) ) {
+        size_t bytes = fread( c, 1, sizeof( c ), stream_R );
+        if ( bytes ) {
+            fwrite( c, 1, bytes, stream_W );
+        }
     }
-
-    while ( ( ch = fgetc( f1 ) ) != EOF ) fputc( ch, f2 );
-    fclose( f1 );
-    fclose( f2 );
+    fclose( stream_R );
+    fclose( stream_W );
 }
 
 uint8_t file_exist( char* fileName ) {
@@ -89,4 +87,26 @@ void file_write( char* fileName, char* content ) {
     fprintf( f, "%s", content );
     fclose( f );
     printf( "Done writing %s!\n", fileName );
+}
+
+char* file_read( char* fileName ) {
+    FILE* fp;
+    long  lSize;
+    char* buffer;
+
+    fp = fopen( fileName, "rb" );
+    if ( !fp ) perror( fileName ), exit( 1 );
+
+    fseek( fp, 0L, SEEK_END );
+    lSize = ftell( fp );
+    rewind( fp );
+
+    /* allocate memory for entire content */
+    buffer = calloc( 1, lSize + 1 );
+    if ( !buffer ) fclose( fp ), fputs( "memory alloc fails", stderr ), exit( 1 );
+    /* copy the file into the buffer */
+    if ( 1 != fread( buffer, lSize, 1, fp ) ) fclose( fp ), free( buffer ), fputs( "entire read fails", stderr ), exit( 1 );
+
+    fclose( fp );
+    return buffer;
 }

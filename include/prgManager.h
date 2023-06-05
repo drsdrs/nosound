@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 extern char**  prgManager_list;
 extern void    prgManager_watch_exit();

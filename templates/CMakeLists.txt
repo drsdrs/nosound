@@ -7,6 +7,7 @@ set( SOURCES prg_wrapper.c )
 set( BINARY_DIR ../ )
 
 include_directories( ../../../include )
+include_directories( ../../../ext )
 include_directories( ../../../ext/SDL_inprint )
 
 
@@ -18,7 +19,9 @@ add_library( beeper         STATIC ../../../src/audio/beeper.c )
 add_library( waves          STATIC ../../../src/waves.c)
 
 add_library( prgManager     STATIC ../../../src/prgManager.c )
-add_library( looper         STATIC ../../../src/loopManager.c)
+add_library( loopManager    STATIC ../../../src/loopManager.c)
+add_library( spriteManager  STATIC ../../../src/spriteManager.c)
+
 
 add_library( tv             STATIC ../../../src/video/tv.c)
 
@@ -28,7 +31,7 @@ add_library( prg            STATIC ../../../src/utils/prg.c)
 add_library( file           STATIC ../../../src/utils/file.c)
 add_library( term           STATIC ../../../src/utils/term.c)
 
-add_library( Vect2           STATIC ../../../src/classes/Vect2.c)
+add_library( Vect2          STATIC ../../../src/classes/Vect2.c)
 add_library( Color12        STATIC ../../../src/classes/Color12.c)
 add_library( MonoIMG        STATIC ../../../src/classes/MonoIMG.c)
 
@@ -39,13 +42,15 @@ add_executable( ${projectName} ${SOURCES} )
 
 target_link_libraries( ${projectName}
     PRIVATE
-    prgManager
-    tv
-    prg
 	m
     SDL2
+    SDL2_image
+    prgManager
+    loopManager
+    spriteManager
+    tv
+    prg
     asound
-    looper
     waves
     term
     path

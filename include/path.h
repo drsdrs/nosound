@@ -9,3 +9,6 @@ extern char* path_source_get( const char* prgName );
 extern char* path_wrapper_get( const char* prgName );
 extern char* path_timestamp_get( const char* prgName );
 extern char* path_cmakelist_get( const char* prgName );
+extern char* path_spritesheet_get( const char* prgName );
+extern char* path_spritesheetAtlas_get( const char* prgName );
+extern char* path_assets_get( const char* prgName );

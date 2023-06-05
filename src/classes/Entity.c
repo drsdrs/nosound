@@ -52,8 +52,7 @@ void Entity_collection_add( Entity this ) {
         collection_length   = 1;
     }
     if ( collection_pos >= collection_length ) {    // add elements if needed
-        collection_entities = (Entity*)realloc(
-            collection_entities, ( collection_length + collection_batch_size ) * sizeof( Entity ) );
+        collection_entities = (Entity*)realloc( collection_entities, ( collection_length + collection_batch_size ) * sizeof( Entity ) );
         collection_length += collection_batch_size;
         printf( "resizeArr: %i %i \n", collection_pos, collection_length );
     }

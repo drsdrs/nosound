@@ -9,10 +9,8 @@
 #include "stringHelper.h"
 
 char* path_cwd_get() {
-    // TODO make path only once
     static char cwdPath [ 0xff ];
-    if ( getcwd( cwdPath, sizeof( cwdPath ) ) != NULL ) {
-        // printf("Current working dir. CWD: %s\n", pBuf);
+    if ( getcwd( cwdPath, sizeof( cwdPath ) ) != NULL ) { // TODO make path only once
         int bytes = fmin( readlink( "/proc/self/exe", cwdPath, 0xff ), 0xff - 1 );
         if ( bytes >= 0 ) cwdPath [ bytes ] = '\0';
     }
@@ -40,11 +38,11 @@ char* path_root_get() {    // get abs path from nosound dir
 }
 
 char* path_binary_get( const char* prgName ) {
-    return string_temp_get( "PRG/%s/main", prgName );
+    return string_temp_get( "PRG/%s/main", prgName, prgName );
 }
 
 char* path_savefile_get( const char* prgName ) {
-    return string_temp_get( "PRG/%s/savefile", prgName );
+    return string_temp_get( "PRG/%s/assets/savefile", prgName );
 }
 
 char* path_build_get( const char* prgName ) {
@@ -66,4 +64,14 @@ char* path_wrapper_get( const char* prgName ) {
 
 char* path_timestamp_get( const char* prgName ) {
     return string_temp_get( "PRG/%s/build/timestamp_compile", prgName );
+}
+
+char* path_spritesheet_get( const char* prgName ) {
+    return string_temp_get( "PRG/%s/assets/spritesheet.png", prgName );
+}
+char* path_spritesheetAtlas_get( const char* prgName ) {
+    return string_temp_get( "PRG/%s/assets/spritesheet.json", prgName );
+}
+char* path_assets_get( const char* prgName ) {
+    return string_temp_get( "PRG/%s/assets", prgName );
 }

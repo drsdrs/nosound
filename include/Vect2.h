@@ -6,6 +6,7 @@
  *********************************************/
 
 #pragma once
+#include <stdint.h>
 
 /**
  * @brief 2d vector struct

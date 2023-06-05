@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 #include "SDL2_inprint.h"
-#include "looper.h"
+#include "loopManager.h"
 #include "prg.h"
 
 SDL_Window*   window;

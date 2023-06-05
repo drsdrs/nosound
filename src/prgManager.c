@@ -1,5 +1,3 @@
-#include "prgManager.h"
-
 #include <dirent.h>
 #include <errno.h>
 #include <stdarg.h>
@@ -15,6 +13,7 @@
 
 #include "file.h"
 #include "path.h"
+#include "prgManager.h"
 #include "stringHelper.h"
 #include "sys/wait.h"
 #include "term.h"
@@ -94,14 +93,19 @@ uint8_t prgManager_compile( const char* prgName, int waitForProcess ) {
     term_newLine();
 
     folder_create( path_build_get( prgName ) );
+    folder_create( path_assets_get( prgName ) );
 
-    prgName = prgName;
     file_copy( "templates/prg_wrapper.c", path_wrapper_get( prgName ) );
     file_copy( "templates/CMakeLists.txt", path_cmakelist_get( prgName ) );
 
-    if ( !file_exist( path_savefile_get( prgName ) ) ) {
+    // if ( !file_exist( path_spritesheet_get( prgName ) ) ) {
+    file_copy( "templates/spritesheet.png", path_spritesheet_get( prgName ) );
+    file_copy( "templates/spritesheet.json", path_spritesheetAtlas_get( prgName ) );
+    //}
+
+    //if ( !file_exist( path_savefile_get( prgName ) ) ) {
         file_write( path_savefile_get( prgName ), "" );
-    }
+    //}
 
     char* argvCmake [] = { "cmake",
                            "-B",

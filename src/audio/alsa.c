@@ -1,10 +1,9 @@
-#include "alsa.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/time.h>
 
+#include "alsa.h"
 #include "alsa/asoundlib.h"
 #include "beeper.h"
 
@@ -82,8 +81,8 @@ void async_callback( snd_async_handler_t *ahandler ) {
     }
 }
 
-int alsa_setup() {
-    alsa_audio_buffer = (uint8_t *)calloc( 4096, sizeof( uint8_t ) );
+int  alsa_setup() {
+    alsa_audio_buffer = (uint8_t *)malloc( 4096*sizeof( uint8_t ) );
     memset( alsa_audio_buffer, 127 /*silence*/, 4096 );
 
     snd_pcm_hw_params_t *hw_params;
@@ -153,7 +152,7 @@ int alsa_setup() {
     snd_timer_id_t      *id;
     snd_timer_info_t    *info;
     snd_timer_params_t  *params;
-    char                 timername [ 64 ];
+    char                 timername[64];
     snd_async_handler_t *ahandler;
 
     snd_timer_id_alloca( &id );

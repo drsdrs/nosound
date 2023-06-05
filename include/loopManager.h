@@ -1,6 +1,8 @@
 #pragma once
 
 #include <stdbool.h>
+#include <stdint.h>
+
 
 #define MEASURE_START    0
 #define MEASURE_STOP     1
@@ -10,6 +12,7 @@ extern uint64_t loop_delta_full_ns;
 extern uint64_t loop_lifetime_ns;
 extern uint64_t loop_frames;
 extern uint32_t loop_interval_us;
+
 extern void     loop_exit();
 extern double   loop_delta_get();
 extern void     loop_sleep_ns( int64_t sleep_ns );

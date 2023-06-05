@@ -1,6 +1,5 @@
 #include "Vect2.h"
 
-#include <stdint.h>
 
 void vect2_add( Vect2 *srcPointer, Vect2 *trgPointer ) {
     srcPointer->x += trgPointer->x;

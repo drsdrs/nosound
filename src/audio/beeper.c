@@ -22,7 +22,7 @@ uint32_t chCntOff [ 8 ];
 uint32_t chCntOn [ 8 ];
 uint16_t chPwm [ 8 ] = { 1, 1, 1, 1, 1, 1, 1, 1 };
 
-uint16_t notePhase [ 8 * 16 ];
+uint16_t notePhase [ 8 * 16 +1 ];
 #define noteAmount 16
 
 double noteDivider [ noteAmount ] = {
@@ -52,7 +52,7 @@ void makeFrequencys() {
             index               = note + ( oct * noteAmount );
             double noteFreq     = 4.4 * ( ( 1 << oct ) + ( noteDivider [ note ] * ( 1 << oct ) ) );
             notePhase [ index ] = (uint32_t)( SAMPLE_RATE / noteFreq );
-            notePhase [ index + 127 ] = (uint32_t)( SAMPLE_RATE / noteFreq );
+            //notePhase [ index + 127 ] = (uint32_t)( SAMPLE_RATE / noteFreq );
             // printf("%i: freq=%i\n", index, notePhase[index]);
         }
     }

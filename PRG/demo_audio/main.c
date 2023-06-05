@@ -11,7 +11,7 @@ void loop() {    // need phase inc based on inverval // OR fixed delta based on 
     // Beeper_set(1, 64, 1);
     tv_clear( 0x911 );
     // Beeper_pwm_set(0, pwm);
-    Beeper_note_fade( 0, note, 127, .015f, 13, 8550 );
+    Beeper_note_fade( 0, note, note+16, .005f, 63, 250 );
 
     // fadeState += 0.001;
     // if( fadeState>1 ) --fadeState;

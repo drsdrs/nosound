@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 extern void term_newLine();
 extern void term_color_reset();

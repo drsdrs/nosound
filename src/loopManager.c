@@ -3,20 +3,22 @@
 #include <time.h>
 
 #include "beeper.h"
-#include "looper.h"
+
+#include "loopManager.h"
+#include "spriteManager.h"
 #include "prgManager.h"
 #include "tv.h"
 #include "waves.h"
 
+uint64_t loop_delta_full_ns;
+uint64_t loop_lifetime_ns;
+uint64_t loop_frames;
 uint32_t loop_interval_us = 1000000 / 20;
 
 uint64_t loop_delta_ns;
-uint64_t loop_delta_full_ns;
 int64_t  diff_ns;
 int64_t  diff_ns_averaged;
 uint64_t slept_ns;
-uint64_t loop_frames;
-uint64_t loop_lifetime_ns;
 
 uint8_t loop_quit;
 
@@ -38,15 +40,15 @@ void loop_sleep_ns( int64_t sleep_ns ) {
     slept_ns += slept_ns_temp;
 }
 
-void loop_sleep_us( int64_t sleep_us ) {    // in-accurate // TODO
+void loop_sleep_us( int64_t sleep_us ) {
     loop_sleep_ns( sleep_us * 1000 );
 }
 
-void loop_sleep_ms( int64_t sleep_ms ) {    // in-accurate // TODO
+void loop_sleep_ms( int64_t sleep_ms ) {
     loop_sleep_ns( sleep_ms * 1000000 );
 }
 
-void loop_sleep( int64_t sleep_s ) {    // in-accurate // TODO
+void loop_sleep( int64_t sleep_s ) {
     loop_sleep_ns( sleep_s * 1000000000 );
 }
 
@@ -143,8 +145,12 @@ void loop_setup_PRIVATE( void ( *setup_funct )(), void ( *loop_funct )(), uint32
     waves_all_generate();
     printf( "waves_all_generate took: %li us\n", loop_measure_us( MEASURE_STOP ) );
 
+    spriteManager_setup();
+    printf( "spriteManager_setup took: %li us\n", loop_measure_us( MEASURE_STOP ) );
+
     setup_funct();
-    printf( "setup_funct took: %li us\n", loop_measure_us( MEASURE_STOP ) );
+    printf( "PRG setup function took: %li us\n", loop_measure_us( MEASURE_STOP ) );
+
 
     tv_clear( 0 );
     while ( loop_quit == false ) loop_loop( loop_funct );

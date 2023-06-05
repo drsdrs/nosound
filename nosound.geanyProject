@@ -28,18 +28,14 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=0
-FILE_NAME_0=194;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2FPRG%2Fdemo_entity%2Fmain.c;0;4
-FILE_NAME_1=1518;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fclasses%2FMonoIMG.c;0;4
-FILE_NAME_2=1481;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fclasses%2FEntity.c;0;4
-FILE_NAME_3=655;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2FprgManager.c;0;4
-FILE_NAME_4=1180;None;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.clang-format;0;4
-FILE_NAME_5=1023;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fnosound.c;0;4
-FILE_NAME_6=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fclasses%2FColor12.c;0;4
-FILE_NAME_7=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fvideo%2Ftv.c;0;4
-FILE_NAME_8=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Faudio%2Fbeeper.c;0;4
-FILE_NAME_9=1975;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fwaves.c;0;4
-FILE_NAME_10=234;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fclasses%2FVect2.c;0;4
+current_page=4
+FILE_NAME_0=1827;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fclasses%2FEntity.c;0;4
+FILE_NAME_1=308;CMake;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Ftemplates%2FCMakeLists.txt;0;4
+FILE_NAME_2=206;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Ftemplates%2Fspritesheet.json;0;4
+FILE_NAME_3=6317;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2FspriteManager.c;0;4
+FILE_NAME_4=490;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Faudio%2Falsa.c;0;4
+FILE_NAME_5=392;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2FPRG%2Fdemo_audio%2Fmain.c;0;4
+FILE_NAME_6=677;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fnosound.c;0;4
 
 [VTE]
 last_dir=/home/drs/projects/nosound
@@ -55,13 +51,13 @@ EX_00_LB=_Execute
 EX_00_CM=./buildRun.sh
 EX_00_WD=/home/drs/projects/nosound
 CFT_00_LB=_Compile
-CFT_00_CM=./buildRun.sh
+CFT_00_CM=gdb -ex run ./buildRun.sh
 CFT_00_WD=/home/drs/projects/nosound
 filetypes=C;
 
 [code-format]
 clang-format-path=clang-format
 style=custom
-auto-format=false
+auto-format=true
 auto-format-trigger-chars=)}];
 format-on-save=false

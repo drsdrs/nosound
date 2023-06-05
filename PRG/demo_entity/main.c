@@ -6,26 +6,33 @@ uint64_t deltaAvg;
 uint64_t startMem;
 int      i = 0;
 
+
+//		TODO		fuck it, use images as spritessheets
+// ONE default size for spritesheet, like 512/1024
+// one spritesheet per project, "sprites.png"
+// convert all colors to color12..... alpha???
 uint8_t imgData [ 3 + 16 ] = {    //
     8,                            // WIDTH
     8,                            // HEIGHT
     2,                            // FRAMES
+    0b00111100,                   //
+    0b01111110,                   //
+    0b01110110,                   //
     0b11111111,                   //
+    0b11111111,                   //
+    0b01111110,                   //
+    0b01111110,                   //
+    0b00111100,                   //
+
+    0b00111100,                   //
+    0b01110110,                   //
+    0b01111111,                   //
+    0b11111000,                   //
     0b11110000,                   //
-    0b10011001,                   //
-    0b11100111,                   //
-    0b10111101,                   //
-    0b01000010,                   //
-    0b00001111,                   //
-    0b11111111,                   //
-    0b11111111,                   //
-    0b11110000,                   //
-    0b10011001,                   //
-    0b11111111,                   //
-    0b11111111,                   //
-    0b01000010,                   //
-    0b00001111,                   //
-    0b11111111 };
+    0b01111111,                   //
+    0b01111110,                   //
+    0b00111100,                   //
+     };
 
 uint8_t imgData1 [ 3 + 8 ] = { 16,         4,          1,          0b11111111,
                                0b11111111, 0b11000000, 0b00000000, 0b11000000,

@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 extern const char* prg_name_get();
 extern void        prg_change( char* prgName );

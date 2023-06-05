@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 extern void  waves_all_generate();
 extern float waves_sine12_get( uint16_t i );
