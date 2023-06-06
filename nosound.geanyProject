@@ -37,7 +37,7 @@ FILE_NAME_4=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Finclude%2F
 FILE_NAME_5=61;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Finclude%2FColor12.h;0;4
 FILE_NAME_6=867;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fvideo%2Ftv.c;0;4
 FILE_NAME_7=502;None;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.gitignore;0;4
-FILE_NAME_8=646;YAML;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.github%2Fworkflows%2Fdeploy_pages.yml;0;4
+FILE_NAME_8=341;YAML;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.github%2Fworkflows%2Fdeploy_pages.yml;0;4
 
 [VTE]
 last_dir=/home/drs/projects/nosound

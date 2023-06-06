@@ -3,7 +3,6 @@
 # https://ntamonsec.blogspot.com/2020/06/github-actions-doxygen-documentation.html
 name: Deploy Documentation
 
-
 # Controls when the action will run.
 on:
   push:
