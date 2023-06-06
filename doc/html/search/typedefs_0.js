@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entity_0',['Entity',['../entity_8c.html#a779e7136b459d2d01b30a7e4326b5df4',1,'entity.c']]]
+  ['sprite_0',['Sprite',['../spriteManager_8h.html#abb1060e0b7ecf8b4eba2c1bb55cfe5e2',1,'spriteManager.h']]]
 ];

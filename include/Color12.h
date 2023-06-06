@@ -1,6 +1,6 @@
 /**
  *  @file color12.h
- *  @brief color management
+ *  @brief color12 struct and helpers
  */
 
 
@@ -22,8 +22,8 @@ typedef uint8_t Color4;
  * range 0-255 */
 typedef struct RGB {
     float r; /**<Red */
-    float g; /**<Blue */
-    float b; /**<Green */
+    float g; /**<Green */
+    float b; /**<Blue */
 } RGB;
 
 /** Color palette basic - 16 colors */

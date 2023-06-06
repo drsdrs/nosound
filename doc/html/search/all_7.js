@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['handle_0',['handle',['../alsa_8c.html#a1a6ba6b38f763e4f4bada06bc5aab388',1,'alsa.c']]],
-  ['height_1',['height',['../structMonoIMG.html#a169e465bbb4d56220a2be0ecbe9b8db2',1,'MonoIMG']]],
-  ['height_2',['HEIGHT',['../tv_8c.html#a86b0f2e3dbb99f17c514557aa2be0bf7',1,'tv.c']]],
-  ['height2_3',['HEIGHT2',['../tv_8c.html#a46d70d7d77b22cc077fca04fcf40eb3a',1,'tv.c']]],
-  ['hsl2rgb_4',['hsl2rgb',['../color12_8c.html#ad73d7fb0a15851246ca439bb3146aa09',1,'color12.c']]],
-  ['hue2rgb_5',['hue2rgb',['../color12_8c.html#af369a113a2fa54f4ff955ee15a0258cb',1,'color12.c']]]
+  ['sprite_0',['Sprite',['../structSprite.html',1,'Sprite'],['../spriteManager_8h.html#abb1060e0b7ecf8b4eba2c1bb55cfe5e2',1,'Sprite:&#160;spriteManager.h']]],
+  ['spritemanager_2eh_1',['spriteManager.h',['../spriteManager_8h.html',1,'']]],
+  ['spritemanager_5fdraw_2',['spriteManager_draw',['../spriteManager_8h.html#a7aa9929c8b2c08753ea00804cffd6de6',1,'spriteManager.c']]],
+  ['spritemanager_5ffind_3',['spriteManager_find',['../spriteManager_8h.html#a53f82f8c203b6df92d1ee0ba8a4e52c6',1,'spriteManager.c']]],
+  ['spritemanager_5fget_4',['spriteManager_get',['../spriteManager_8h.html#a420647a722f9577cf3ff06c306a98d92',1,'spriteManager.c']]],
+  ['spritemanager_5fnew_5',['spriteManager_new',['../spriteManager_8h.html#a327a23ccca98993562483f9a13a3d642',1,'spriteManager.c']]],
+  ['spritemanager_5fsetup_6',['spriteManager_setup',['../spriteManager_8h.html#a54df73db35e99e825fb007fdf9b0d20b',1,'spriteManager.c']]]
 ];

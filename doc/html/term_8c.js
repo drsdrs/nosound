@@ -1,6 +1,0 @@
-var term_8c =
-[
-    [ "term_newLine", "term_8c.html#a5854a85dad47d6ed174dfee2a7178e59", null ],
-    [ "term_color_reset", "term_8c.html#ae58e3a65a052d98b06cf57d177614912", null ],
-    [ "term_color_set", "term_8c.html#ae35df60fdaaec15507b2c26c5e67bcdb", null ]
-];

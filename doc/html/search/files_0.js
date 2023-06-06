@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['alsa_2ec_0',['alsa.c',['../alsa_8c.html',1,'']]]
+  ['beeper_2eh_0',['beeper.h',['../beeper_8h.html',1,'']]]
 ];

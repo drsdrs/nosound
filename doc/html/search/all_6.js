@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gamepad_0',['gamepad',['../tv_8c.html#a19dda9d819a817d8e184ea8e5939d8ba',1,'tv.c']]],
-  ['getnotephase_1',['getNotePhase',['../beeper_8c.html#a5cca425fbbcfe4ba09b705eb2ac0125c',1,'beeper.c']]]
+  ['r_0',['r',['../structRGB.html#a2c6aeb2c12bd1d3ad1315925ee8d964b',1,'RGB']]],
+  ['rgb_1',['RGB',['../structRGB.html',1,'']]]
 ];
