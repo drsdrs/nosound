@@ -28,7 +28,7 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=7
+current_page=8
 FILE_NAME_0=5236;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2FspriteManager.c;0;4
 FILE_NAME_1=519;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Finclude%2FspriteManager.h;0;4
 FILE_NAME_2=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Finclude%2Ftv_COLORS.h;0;4
@@ -37,7 +37,7 @@ FILE_NAME_4=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Finclude%2F
 FILE_NAME_5=61;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Finclude%2FColor12.h;0;4
 FILE_NAME_6=867;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fvideo%2Ftv.c;0;4
 FILE_NAME_7=509;None;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.gitignore;0;4
-FILE_NAME_8=597;YAML;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.github%2Fworkflows%2Fdeploy_pages.yml;0;4
+FILE_NAME_8=1068;YAML;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.github%2Fworkflows%2Fdeploy_pages.yml;0;4
 
 [VTE]
 last_dir=/home/drs/projects/nosound
