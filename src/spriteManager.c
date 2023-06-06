@@ -15,6 +15,10 @@ SDL_Rect            rect_source;
 SDL_Rect            rect_target;
 static SDL_Texture *texture = NULL;
 
+
+Sprite *spriteManager_collection;
+uint16_t sprite_cnt;
+
 Sprite sprite_new( char *name, int width, int height, int frames, int *texture_positions ) {
     Sprite sprite = {};
     sprite.name   = name;
@@ -52,14 +56,23 @@ int json_string_from_token( char *JSON_STRING, jsmntok_t *tPos ) {
     // TODO !!!
 }
 
-Sprite *spriteManager_sprite_find( char *spriteName ) {
+Sprite *spriteManager_find( char *spriteName ) {
+	for (size_t i = 0; i < sprite_cnt; i++) {
+		if( strcmp( spriteName, spriteManager_collection[i].name )==0 ) return &spriteManager_collection[i];
+		//printf("1ERR: sprite: \"%s\" not found!!!\n", spriteManager_collection[i].name);
+	}
+	printf("ERR: sprite: \"%s\" not found!!!\n", spriteName);
+	return NULL;
 }
 
-Sprite *spriteManager_sprite_collection;
-
+Sprite *spriteManager_get( int spriteNr ) {
+	if(spriteNr<sprite_cnt && spriteNr>=0) return &spriteManager_collection[spriteNr];
+	printf("ERR: spriteNr: \"%i\" not found!!!\n", spriteNr);
+	exit(1);
+}
 void spriteManager_json_spritesheet_parse() {
-    int sprite_cnt                  = 0;
-    spriteManager_sprite_collection = (Sprite *)calloc( 1, sizeof( Sprite ) );
+	sprite_cnt = 0;
+    spriteManager_collection = (Sprite *)calloc( 1, sizeof( Sprite ) );
     Sprite current_sprite           = sprite_new( NULL, -1, -1, -1, NULL );
 
     int         maxTokens = 1024;
@@ -81,24 +94,24 @@ void spriteManager_json_spritesheet_parse() {
 
     for ( size_t tokenPos = 1; tokenPos < r; tokenPos++ ) {
         if ( json_equal( JSON_STRING, &t[tokenPos], "width" ) == 0 ) { /* We may use strndup() to fetch string value */
-            printf( "- Width: %i\n", json_number_from_token( JSON_STRING, &t[tokenPos + 1] ) );
+            //printf( "- Width: %i\n", json_number_from_token( JSON_STRING, &t[tokenPos + 1] ) );
             current_sprite.size.x = json_number_from_token( JSON_STRING, &t[tokenPos + 1] );
             tokenPos++;
         } else if ( json_equal( JSON_STRING, &t[tokenPos], "height" ) == 0 ) {
-            printf( "- Height: %i\n", json_number_from_token( JSON_STRING, &t[tokenPos + 1] ) );
+            //printf( "- Height: %i\n", json_number_from_token( JSON_STRING, &t[tokenPos + 1] ) );
             current_sprite.size.y = json_number_from_token( JSON_STRING, &t[tokenPos + 1] );
             tokenPos++;
         } else if ( json_equal( JSON_STRING, &t[tokenPos], "frames" ) == 0 ) {
             size_t j;
             int    texture_pos_amount = t[tokenPos + 1].size;
-            printf( "- Frames %i: sprite_cnt: %i\n", texture_pos_amount, sprite_cnt );
+            //printf( "- Frames %i: sprite_cnt: %i\n", texture_pos_amount, sprite_cnt );
 
             current_sprite.texture_positions = malloc( sizeof( int ) * texture_pos_amount * 2 );
             current_sprite.frames            = texture_pos_amount;
             int texture_pos                  = 0;
             for ( size_t j = 0; j < texture_pos_amount * 3; j += 3 ) {
-                printf( "  X: %i  - ", json_number_from_token( JSON_STRING, &t[tokenPos + j + 3] ) );
-                printf( "  Y: %i\n", json_number_from_token( JSON_STRING, &t[tokenPos + j + 4] ) );
+                //printf( "  X: %i  - ", json_number_from_token( JSON_STRING, &t[tokenPos + j + 3] ) );
+                //printf( "  Y: %i\n", json_number_from_token( JSON_STRING, &t[tokenPos + j + 4] ) );
                 current_sprite.texture_positions[texture_pos++] = json_number_from_token( JSON_STRING, &t[tokenPos + j + 3] );
                 current_sprite.texture_positions[texture_pos++] = json_number_from_token( JSON_STRING, &t[tokenPos + j + 4] );
             }
@@ -109,15 +122,15 @@ void spriteManager_json_spritesheet_parse() {
 
             } else {    // save sprite and inc
                         // alloc mem
-                Sprite *tmp = (Sprite *)realloc( spriteManager_sprite_collection, sizeof( Sprite ) * ( sprite_cnt + 2 ) );
+                Sprite *tmp = (Sprite *)realloc( spriteManager_collection, sizeof( Sprite ) * ( sprite_cnt + 2 ) );
                 if ( tmp == NULL ) {
                     printf( "Memory allocation error in spriteManager\n" );
                     exit( 1 );
                 }
-                spriteManager_sprite_collection = tmp;
+                spriteManager_collection = tmp;
                 // save old current sprite
-                spriteManager_sprite_collection[sprite_cnt] = current_sprite;
-                printf( "- Saving sprite nr.: %i name: %s + %s\n", sprite_cnt, current_sprite.name, spriteManager_sprite_collection[sprite_cnt].name );
+                spriteManager_collection[sprite_cnt] = current_sprite;
+                printf( "- Saving sprite nr.: %i name: %s + %s\n", sprite_cnt, current_sprite.name, spriteManager_collection[sprite_cnt].name );
                 // make new current sprite
                 current_sprite = sprite_new( NULL, -1, -1, -1, NULL );
                 //
@@ -126,20 +139,21 @@ void spriteManager_json_spritesheet_parse() {
             if ( current_sprite.name == NULL ) {
                 char *spriteName    = strndup( JSON_STRING + t[tokenPos].start, t[tokenPos].end - t[tokenPos].start );
                 current_sprite.name = spriteName;
-                printf( "\n## -- new sprite name: %s \n", spriteName );
+                //printf( "\n## -- new sprite name: %s \n", spriteName );
             }
 
         } else {
-            printf( "?????? %.*s \n", t[tokenPos].end - t[tokenPos].start, JSON_STRING + t[tokenPos].start );
+            //printf( "?????? %.*s \n", t[tokenPos].end - t[tokenPos].start, JSON_STRING + t[tokenPos].start );
         }
     }
-    spriteManager_sprite_collection[sprite_cnt] = current_sprite;
-    printf( "- Saving sprite nr.: %i name: %s + %s\n", sprite_cnt, current_sprite.name, spriteManager_sprite_collection[sprite_cnt].name );
+    spriteManager_collection[sprite_cnt] = current_sprite;
+    printf( "- Saving sprite nr.: %i name: %s + %s\n", sprite_cnt, current_sprite.name, spriteManager_collection[sprite_cnt].name );
     for ( size_t ii = 0; ii < sprite_cnt + 1; ii++ ) {
-        printf( "YYY %s\n", spriteManager_sprite_collection[ii].name );
-        printf( "XX %i\n", spriteManager_sprite_collection[ii].frames );
+        //printf( "YYY %s\n", spriteManager_collection[ii].name );
+        //printf( "XX %i\n", spriteManager_collection[ii].size.x );
     }
-    free(JSON_STRING);
+    sprite_cnt++;
+    free( JSON_STRING );
 }
 
 void spriteManager_setup() {

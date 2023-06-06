@@ -81,8 +81,8 @@ void async_callback( snd_async_handler_t *ahandler ) {
     }
 }
 
-int  alsa_setup() {
-    alsa_audio_buffer = (uint8_t *)malloc( 4096*sizeof( uint8_t ) );
+int alsa_setup() {
+    alsa_audio_buffer = (uint8_t *)malloc( 4096 * sizeof( uint8_t ) );
     memset( alsa_audio_buffer, 127 /*silence*/, 4096 );
 
     snd_pcm_hw_params_t *hw_params;
