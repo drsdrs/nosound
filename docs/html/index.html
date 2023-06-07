@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>nosound: Main Page</title>
+<title>nosound: nosound - tv.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
@@ -23,6 +23,7 @@
 /* @license-end */
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="docstyle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
@@ -97,20 +98,35 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">nosound Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">nosound - <a class="el" href="tv_8h.html">tv.h</a> </div></div>
 </div><!--header-->
 <div class="contents">
-<ul><li><a href="index.html"><span>Main&#160;Page</span></a>
-</li><li><a href="annotated.html"><span>Data&#160;Structures</span></a>
-<ul><li><a href="annotated.html"><span>Data&#160;Structures</span></a>
-</li><li><a href="functions.html"><span>Data&#160;Fields</span></a>
-</li></ul>
-</li><li><a href="files.html"><span>Files</span></a>
-<ul><li><a href="files.html"><span>File&#160;List</span></a>
-</li><li><a href="globals.html"><span>Globals</span></a>
-</li></ul>
-</li></ul>
+<div class="textblock"><p><a class="anchor" id="md_README"></a>Little C programming framework. (WIP - work in progress)</p>
+<h2><a class="anchor" id="run-in-dev-mode"></a>
+Run in dev mode.</h2>
+<p>'./buildRun.sh arg0'</p>
+<p>arg0 = start program</p>
+<p>use "prgManagerUI" to start program selection screen</p>
+<p>Source file "main.c" in the PRG folder are watched and compiled on change.</p>
+<h1><a class="anchor" id="how-to-use"></a>
+How to use</h1>
+<h2><a class="anchor" id="mainc"></a>
+main.c</h2>
+<p>PRG/*/main.c must contains:</p>
+<p>1: 'void <a class="el" href="demo_2main_8c.html#a4fc01d736fe50cf5b977f755b675f11d">setup()</a>{}' 2: 'void <a class="el" href="demo_2main_8c.html#afe461d27b9c48d5921c00d521181f12f">loop()</a>{}'</p>
+<h2><a class="anchor" id="loop-function-timeout"></a>
+loop function timeout</h2>
+<p>The loop function gets executed in constant time intervals.</p>
+<p>The 'setTimeout( interval )' function sets the loop time in nanoseconds.</p>
+<h2><a class="anchor" id="inputs"></a>
+Inputs</h2>
+<p>Input keys are polled in the time between loops.</p>
+<p>Use 'tv_key_pressed( keyToCheck )</p>
+<h2><a class="anchor" id="todo"></a>
+TODO</h2>
+<p>TODO desc. of header files to use for audio/video </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

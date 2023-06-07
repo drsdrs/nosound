@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "nosound", "index.html", [
+    [ "nosound - tv.h", "index.html", "index" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Fields", "functions.html", [
@@ -47,8 +48,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Color12_8c.html",
-"loopManager_8c.html#a9f97879924b943513ff75273850e4efd",
-"tv_8c.html#afef475a02f61a6791038b19b9ebdecf7"
+"keys_8c_source.html",
+"tv_8c.html#a86b0f2e3dbb99f17c514557aa2be0bf7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
