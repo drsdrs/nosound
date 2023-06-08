@@ -7,7 +7,7 @@
 #include "path.h"
 #include "prg.h"
 #include "spriteManager.h"
-#include "tv.h"
+#include "sdlHelper.h"
 
 #define SPRITESHEET_SIZE 1024
 

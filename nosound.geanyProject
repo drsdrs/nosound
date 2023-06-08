@@ -28,11 +28,8 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=2
-FILE_NAME_0=0;YAML;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.github%2Fworkflows%2Fdeploy_pages.yml;0;4
-FILE_NAME_1=11;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fassets%2Fdocstyle.css;0;4
-FILE_NAME_2=23;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2FREADME.md;0;4
-FILE_NAME_3=948;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2FPRG%2FprgManagerUI%2Fmain.c;0;4
+current_page=0
+FILE_NAME_0=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.gitmodules;0;4
 
 [VTE]
 last_dir=/home/drs/projects/nosound

@@ -2,22 +2,22 @@
 uint16_t lastBtnsPressed;
 uint16_t lastBtnsReleased;
 
-uint16_t tv_key_pressed( uint16_t compairBtns ) {
+uint16_t key_pressed( uint16_t compairBtns ) {
     if ( compairBtns == 0 ) return lastBtnsPressed;
     return ( compairBtns == lastBtnsPressed );
 }
 
-uint16_t tv_key_released( uint16_t compairBtns ) {
+uint16_t key_released( uint16_t compairBtns ) {
     if ( compairBtns == 0 ) return lastBtnsReleased;
     return ( compairBtns == lastBtnsReleased );
 }
 
-void tv_keys_clear() {
+void keys_clear() {
     lastBtnsPressed  = 0;
     lastBtnsReleased = 0;
 }
 
-void tv_key_poll() {
+void key_poll() {
     static uint16_t tempBtnValues;
     SDL_Event       e;
     if ( SDL_PollEvent( &e ) == 0 ) return;

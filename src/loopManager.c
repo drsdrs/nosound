@@ -7,7 +7,7 @@
 #include "loopManager.h"
 #include "spriteManager.h"
 #include "prgManager.h"
-#include "tv.h"
+#include "sdlHelper.h"
 #include "waves.h"
 
 uint64_t loop_delta_full_ns;
@@ -29,7 +29,7 @@ void loop_sleep_ns( int64_t sleep_ns ) {
     while ( slept_ns_temp < sleep_ns ) {    // ~ 55 us 1 cycle
                                             // printf("slept_ns_temp %ins\n", slept_ns_temp);
         // for (size_t i = 0; i < 18; i++) {
-        tv_key_poll();
+        key_poll();
         SDL_Delay( 0 );
         //}
         clock_gettime( CLOCK_MONOTONIC_RAW, &end );
@@ -65,10 +65,10 @@ void loop_loop( void ( *loop_funct )() ) {
 
     tv_clear( 0 );
     loop_funct();
-    tv_render();
+    render();
 
-    tv_keys_clear();
-    tv_key_poll();
+    keys_clear();
+    key_poll();
     loop_frames++;
 
     clock_gettime( CLOCK_MONOTONIC_RAW, &end );
@@ -95,7 +95,7 @@ void loop_exit() {
     printf( "void loop_exit()\n\n" );
     loop_quit = true;
     Beeper_exit();
-    tv_exit();
+    sdlHelper_exit();
 }
 
 void loop_interval_set( int64_t new_interval ) {
@@ -136,8 +136,8 @@ void loop_setup_PRIVATE( void ( *setup_funct )(), void ( *loop_funct )(), uint32
 
     loop_measure_us( MEASURE_START );
 
-    tv_setup();
-    printf( "tv_setup took: %li us\n", loop_measure_us( MEASURE_STOP ) );
+    sdlHelper_setup();
+    printf( "sdlHelper_setup took: %li us\n", loop_measure_us( MEASURE_STOP ) );
 
     Beeper_setup();
     printf( "Beeper_setup took: %li us\n", loop_measure_us( MEASURE_STOP ) );

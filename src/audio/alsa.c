@@ -36,7 +36,7 @@ static void alsa_write( int nframes, uint8_t *samples ) {
 }
 
 void async_callback( snd_async_handler_t *ahandler ) {
-    // tv_key_poll(0);
+    // key_poll(0);
     snd_timer_t      *handle = snd_async_handler_get_timer( ahandler );
     snd_timer_read_t  tr;
     snd_pcm_sframes_t frames_to_deliver;

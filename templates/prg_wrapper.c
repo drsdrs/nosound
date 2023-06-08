@@ -1,6 +1,6 @@
 #include "loopManager.h"
 #include "spriteManager.h"
-#include "tv.h"
+#include "sdlHelper.h"
 #include "prg.h"
 
 #include "../main.c"

@@ -22,7 +22,7 @@ add_library( prgManager     STATIC src/prgManager.c )
 add_library( loopManager    STATIC src/loopManager.c)
 add_library( spriteManager  STATIC src/spriteManager.c)
 
-add_library( tv             STATIC src/video/tv.c)
+add_library( tv             STATIC src/video/sdlHelper.c)
 
 add_library( path           STATIC src/utils/path.c)
 add_library( string         STATIC src/utils/stringHelper.c)
@@ -34,16 +34,15 @@ add_library( Vect2          STATIC src/classes/Vect2.c)
 add_library( Color12        STATIC src/classes/Color12.c)
 
 add_library( SDL2_inprint   STATIC ext/SDL_inprint/inprint2.c)
-add_library( cJSON   		STATIC ext/cJSON.c)
 
 
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BINARY_DIR} )
 add_executable( ${projectName} ${SOURCES} )
+target_compile_options(${projectName} PRIVATE -Wall -Wextra -Wpedantic -Werror)
 
 target_link_libraries( ${projectName}
     PRIVATE
 	m
-	cJSON
     SDL2
     #SDL_image
 	SDL2_inprint

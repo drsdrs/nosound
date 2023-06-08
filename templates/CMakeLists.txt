@@ -23,7 +23,7 @@ add_library( loopManager    STATIC ../../../src/loopManager.c)
 add_library( spriteManager  STATIC ../../../src/spriteManager.c)
 
 
-add_library( tv             STATIC ../../../src/video/tv.c)
+add_library( tv             STATIC ../../../src/video/sdlHelper.c)
 
 add_library( path           STATIC ../../../src/utils/path.c)
 add_library( string         STATIC ../../../src/utils/stringHelper.c)

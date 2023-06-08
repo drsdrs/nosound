@@ -1,9 +1,9 @@
-# nosound - tv.h
+# nosound - sdlHelper.h
 Little C programming framework.
 (WIP - work in progress)
 
 
-### Run in dev mode.
+#### Run in dev mode.
 './buildRun.sh arg0'
 
 arg0 = start program
@@ -20,6 +20,7 @@ Source file "main.c" in the PRG folder are watched and compiled on change.
 PRG/*/main.c must contains:
 
 1: 'void setup(){}'
+
 2: 'void loop(){}'
 
 ### loop function timeout

@@ -21,7 +21,7 @@ void seq_pattern_draw() {
 
 void setup() {
     loop_interval_set( 860000 );
-    tv_scale_set( 1 );
+    scale_set( 1 );
 }
 
 void loop() {
@@ -29,10 +29,10 @@ void loop() {
     tv_clear( COLORS [ 16 - cc ] );
     cc++;
     cc %= 0xf;
-    tv_border( 0, 0, ROWS, 2, 0, COLORS [ 4 ] );
+    border( 0, 0, ROWS, 2, 0, COLORS [ 4 ] );
     tv_print( WIDTH / 2, 8, COLORS [ cc ], "LALALALALALA" );
-    tv_border( 0, 16, ROWS / 3 * 2 + 1, LINES - 2, 0, COLORS [ 2 ] );
-    tv_border( ( 1 + ROWS / 3 * 2 ) * 8, 16, ROWS / 3, LINES - 2, 0, COLORS [ 10 ] );
-    tv_render();
+    border( 0, 16, ROWS / 3 * 2 + 1, LINES - 2, 0, COLORS [ 2 ] );
+    border( ( 1 + ROWS / 3 * 2 ) * 8, 16, ROWS / 3, LINES - 2, 0, COLORS [ 10 ] );
+    render();
     // seq_pattern_draw();
 }

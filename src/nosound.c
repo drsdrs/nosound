@@ -29,10 +29,10 @@
  * */
 int main( int argc, char const* argv[] ) {
     const char* startPrgName;
-    if ( argv[1] != NULL ) {
+    if ( argv[1] != NULL && argc>0 ) {
         startPrgName = argv[1];
     } else {
-        startPrgName = "demo_sprite";    // argv[1];
+        startPrgName = "program_starter";
     }
     const char* cleanup = NULL;    // argv[2];
     printf( "Cleanup? %s\n", cleanup );
