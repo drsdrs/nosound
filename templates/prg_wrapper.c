@@ -1,6 +1,7 @@
 #include "loopManager.h"
 #include "spriteManager.h"
 #include "sdlHelper.h"
+#include "beeper.h"
 #include "prg.h"
 
 #include "../main.c"

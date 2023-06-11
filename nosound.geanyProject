@@ -28,8 +28,15 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=0
-FILE_NAME_0=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.gitmodules;0;4
+current_page=4
+FILE_NAME_0=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2FprgManager.c;0;4
+FILE_NAME_1=504;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Faudio%2Fbeeper.c;0;4
+FILE_NAME_2=1;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Faudio%2FBeeper_async_mod.c;0;4
+FILE_NAME_3=1373;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2FPRG%2Fprogram_starter%2Fmain.c;0;4
+FILE_NAME_4=86;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Ftemplates%2Fprg_wrapper.c;0;4
+FILE_NAME_5=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Futils%2Fprg.c;0;4
+FILE_NAME_6=89;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Finput%2Fkeys.c;0;4
+FILE_NAME_7=633;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fnosound.c;0;4
 
 [VTE]
 last_dir=/home/drs/projects/nosound

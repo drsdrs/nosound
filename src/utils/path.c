@@ -1,6 +1,4 @@
-#include "path.h"
 
-#include <math.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
@@ -8,10 +6,13 @@
 
 #include "stringHelper.h"
 
+#include "path.h"
+
 char* path_cwd_get() {
     static char cwdPath [ 0xff ];
     if ( getcwd( cwdPath, sizeof( cwdPath ) ) != NULL ) { // TODO make path only once
-        int bytes = fmin( readlink( "/proc/self/exe", cwdPath, 0xff ), 0xff - 1 );
+        int bytes = readlink( "/proc/self/exe", cwdPath, 0xff );
+        if( 0xff-1<bytes) bytes = 0xff-1;
         if ( bytes >= 0 ) cwdPath [ bytes ] = '\0';
     }
     return cwdPath;

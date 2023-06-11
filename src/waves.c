@@ -1,9 +1,12 @@
-#include "waves.h"
-
-#include <math.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <math.h>
+
+#include "waves.h"
+
+//#define M_PI 3.14
+//double sin( double rad ){ return rad/100; }
 
 float WAVES_SINE_8 [ 256 ];
 float WAVES_SINE_12 [ 0x1000 ];

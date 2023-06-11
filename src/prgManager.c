@@ -153,7 +153,7 @@ void prgManager_activePrg_kill() {
 // make common filewatcher for all files ???
 int  watchCalls;
 void prgManager_watch_exit() {
-    printf( " prgManager_watch_exit   prgManager_watch_quit = %i; pointer: %i\n",
+    printf( " prgManager_watch_exit   prgManager_watch_quit = %i; pointer: %hhn\n",
             prgManager_watch_quit, &prgManager_watch_quit );
     prgManager_watch_quit = true;
 }
@@ -167,7 +167,7 @@ void prgManager_watch( const char* prgName ) {
     prgManager_watch_running = true;
     uint8_t runOnceAtStart   = true;
     term_color_set( 6 );
-    printf( "Watching: %s nr: %i", prgName, &watchCalls );
+    printf( "Watching: %s nr: %i", prgName, watchCalls );
     term_color_reset();
     term_newLine();
     while ( !prgManager_watch_quit ) {

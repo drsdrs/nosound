@@ -1,12 +1,12 @@
-#include "beeper.h"
 
-#include <pthread.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
 
-#include "alsa.h"
+#include "alsaHelper.h"
 #include "waves.h"
+
+#include "beeper.h"
 
 int   waveType      = 0;
 float waveTone      = 440;
@@ -23,33 +23,34 @@ uint32_t chCntOn [ 8 ];
 uint16_t chPwm [ 8 ] = { 1, 1, 1, 1, 1, 1, 1, 1 };
 
 uint16_t notePhase [ 8 * 16 +1 ];
-#define noteAmount 16
+#define notesPerOctave 16
 
-double noteDivider [ noteAmount ] = {
-    0,                  //		0	UNISON
-    (double)1 / 15,     //		0#	SEMITONE
-    (double)1 / 8,      //		1	WHOLE THIRD
-    (double)1 / 5,      //		1#	MINOR THIRD
-    (double)2 / 8,      //		2	MAJOR THIRD
-    (double)2 / 7,      //		2# 	? MISSING KEY ? BLACK KEY
-    (double)1 / 3,      //		3	PERFECT FORTH
-    (double)2 / 5,      //		3#	TRITONE
-    (double)1 / 2,      //		4	PERFECT FIFTH 	= 	1.5
-    (double)3 / 5,      //		4#	MINOR SIXTH
-    (double)2 / 3,      //		5	MAJOR SIXT
-    (double)5 / 7,      //		5# 	? MISSING KEY ? BLACK KEY
-    (double)6 / 8,      //		6 	? MISSING KEY ? WHITE KEY
-    (double)4 / 5,      //		6#	MINOR SEVENTH
-    (double)7 / 8,      //		7	MAJOR SEVENTH
-    (double)14 / 15,    //		7# 	MISSING KEY ? BLACK KEY
+
+double noteDivider [ notesPerOctave ] = {
+    0,                  //      0   UNISON
+    (double)1 / 15,     //      0#  SEMITONE
+    (double)1 / 8,      //      1   WHOLE THIRD
+    (double)1 / 5,      //      1#  MINOR THIRD
+    (double)2 / 8,      //      2   MAJOR THIRD
+    (double)2 / 7,      //      2#  ? MISSING KEY ? BLACK KEY
+    (double)1 / 3,      //      3   PERFECT FORTH
+    (double)2 / 5,      //      3#  TRITONE
+    (double)1 / 2,      //      4   PERFECT FIFTH   =   1.5
+    (double)3 / 5,      //      4#  MINOR SIXTH
+    (double)2 / 3,      //      5   MAJOR SIXT
+    (double)5 / 7,      //      5#  ? MISSING KEY ? BLACK KEY
+    (double)6 / 8,      //      6   ? MISSING KEY ? WHITE KEY
+    (double)4 / 5,      //      6#  MINOR SEVENTH
+    (double)7 / 8,      //      7   MAJOR SEVENTH
+    (double)14 / 15,    //      7#  MISSING KEY ? BLACK KEY
                         //(double)1/1
 };
 
 void makeFrequencys() {
     int index;
     for ( int oct = 0; oct < 8; oct++ ) {
-        for ( int note = 0; note < noteAmount; note++ ) {
-            index               = note + ( oct * noteAmount );
+        for ( int note = 0; note < notesPerOctave; note++ ) {
+            index               = note + ( oct * notesPerOctave );
             double noteFreq     = 4.4 * ( ( 1 << oct ) + ( noteDivider [ note ] * ( 1 << oct ) ) );
             notePhase [ index ] = (uint32_t)( SAMPLE_RATE / noteFreq );
             //notePhase [ index + 127 ] = (uint32_t)( SAMPLE_RATE / noteFreq );
@@ -59,7 +60,7 @@ void makeFrequencys() {
 }
 
 uint16_t getNotePhase( uint8_t oct, uint8_t note ) {
-    return notePhase [ note + oct * noteAmount ];
+    return notePhase [ note + oct * notesPerOctave ];
 }
 
 void setFreqPwm( int ch ) {
@@ -113,13 +114,20 @@ void Beeper_pwm_set( uint8_t channel, uint8_t pwm ) {
     if ( chPwm [ channel ] != pwm ) chPwm [ channel ] = pwm;
 }
 
-void Beeper_set( uint8_t channel, uint8_t note, uint8_t pwm ) {    // 3bit 7bit 4bit = 7-127-15
+void Beeper_set( uint8_t channel, uint8_t note, uint8_t pwm ) {    // 3bit 7bit 4bit = 7-127-15 = 14bit
     Beeper_pwm_set( channel, pwm );
     Beeper_note_set( channel, note );
 }
 
-pthread_t ptid [ 8 ];    // no volatile needed ! only if in async
-uint8_t   async_runnig [ 8 ];
+#include <pthread.h>
+#include <SDL2/SDL.h>
+
+#define PITCH_MOD_LINEAR 0
+#define PITCH_MOD_SINE   1
+#define PITCH_MOD_RANDOM 2
+
+pthread_t ptid[8];    // no volatile needed ! only if in async
+uint8_t   async_runnig[8];
 
 struct async_args {
     uint8_t  channel;
@@ -132,9 +140,10 @@ struct async_args {
 };
 
 void* async( void* arguments ) {
-    // printf("Start sync thread\n");
+    printf( "Start sync thread\n" );
     float    transform_state = 0;
     uint16_t total_time_us   = 0;
+    float    tempVal;
 
     struct async_args* args = arguments;
     // printf("args %f - %i - %i\n", args->step_inc, args->step_delay_us, args->channel);
@@ -146,23 +155,22 @@ void* async( void* arguments ) {
     while ( total_time_us < args->length_us ) {
         switch ( args->type ) {
             case PITCH_MOD_LINEAR:
-                chFreq [ args->channel ] =
-                    notePhase [ args->note_start ] * ( 1 - transform_state ) +
-                    notePhase [ args->note_end ] * transform_state;
+                chFreq[args->channel] =
+                    notePhase[args->note_start] * ( 1 - transform_state ) +
+                    notePhase[args->note_end] * transform_state;
                 if ( transform_state >= 1 )
                     total_time_us = args->length_us;    // break out of main while loop
                 break;
             case PITCH_MOD_SINE:
-                float sine_val = waves_sine12_get( (uint16_t)( transform_state * 0xfff ) );
-                // printf("sine: %f\n", sine_val);
-                chFreq [ args->channel ] = notePhase [ args->note_start ] * ( 1 - sine_val ) +
-                                           notePhase [ args->note_end ] * sine_val;
+                tempVal               = waves_sine12_get( (uint16_t)( transform_state * 0xfff ) );
+                chFreq[args->channel] = notePhase[args->note_start] * ( 1 - tempVal ) +
+                                        notePhase[args->note_end] * tempVal;
                 break;
             case PITCH_MOD_RANDOM:
                 if ( transform_state > 1 ) transform_state--;
-                float rndTemp            = (float)( ( rand() & 0xfff ) * transform_state ) / 0xfff;
-                chFreq [ args->channel ] = notePhase [ args->note_start ] * ( 1 - rndTemp ) +
-                                           notePhase [ args->note_end ] * rndTemp;
+                tempVal               = (float)( ( rand() & 0xfff ) * transform_state ) / 0xfff;
+                chFreq[args->channel] = notePhase[args->note_start] * ( 1 - tempVal ) +
+                                        notePhase[args->note_end] * tempVal;
                 break;
         }
 
@@ -170,13 +178,12 @@ void* async( void* arguments ) {
         total_time_us += args->step_delay_us;
         transform_state += args->step_inc;
     }
-    chFreq [ args->channel ] = 0;
-    // printf("EXIT sync thread\n");
+    chFreq[args->channel] = 0;
+    printf( "EXIT sync thread\n" );
     pthread_exit( NULL );
 }
 
-void Beeper_note_fade( uint8_t channel, uint8_t note_start, uint8_t note_end, float step_inc,
-                       uint16_t step_delay_us, uint16_t length_us ) {
+void Beeper_note_fade( uint8_t channel, uint8_t note_start, uint8_t note_end, float step_inc, uint16_t step_delay_us, uint16_t length_us ) {
     struct async_args* args = (struct async_args*)malloc( sizeof( struct async_args ) );
     args->channel           = channel;
     args->note_start        = note_start;
@@ -184,17 +191,19 @@ void Beeper_note_fade( uint8_t channel, uint8_t note_start, uint8_t note_end, fl
     args->step_inc          = step_inc;
     args->step_delay_us     = step_delay_us;
     args->length_us         = length_us;
-    args->type              = PITCH_MOD_RANDOM;
+    args->type              = PITCH_MOD_LINEAR;
 
-    if ( async_runnig [ channel ] == true ) {
+    if ( async_runnig[channel] == true ) {
         // printf("Stop sync thread %i\n", async_runnig);
-        pthread_cancel( ptid [ channel ] );
-        async_runnig [ channel ] = false;
+        pthread_cancel( ptid[channel] );
+        async_runnig[channel] = false;
     }
-    pthread_create( &ptid [ channel ], NULL, &async, (void*)args );
-    async_runnig [ channel ] = true;
+    pthread_create( &ptid[channel], NULL, &async, (void*)args );
+    async_runnig[channel] = true;
     // SDL_Delay(200);
 }
+
+
 
 void Beeper_setup() {
     makeFrequencys();

@@ -141,7 +141,7 @@ void spriteManager_json_spritesheet_parse() {
 void spriteManager_setup() {
     texture = IMG_LoadTexture( renderer, path_spritesheet_get( prg_name_get() ) );
     if ( texture == NULL ) {
-        printf( "ERR, cant load texture: %ld\n", texture );
+        printf( "ERR, cant load texture: %ld\n", (long)texture );
         exit( 1 );
     };
     spriteManager_json_spritesheet_parse();
