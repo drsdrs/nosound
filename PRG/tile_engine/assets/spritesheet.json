@@ -1,0 +1,103 @@
+{
+	"cow": { "width": 8, "height": 8, "frames": [[0,0], [0,8], [0,16], [0,24]] },
+	"goat": { "width": 8, "height": 8, "frames": [[8,0], [8,8], [8,16], [8,24]] },
+	"pig": { "width": 8, "height": 8, "frames": [[16,0], [16,8], [16,16], [16,24]] },
+	"sheep": { "width": 8, "height": 8, "frames": [[24,0], [24,8], [24,16], [24,24]] },
+// 4
+	"goose": { "width": 8, "height": 8, "frames": [[32,0], [32,8], [32,16], [32,24]] },
+	"duck": { "width": 8, "height": 8, "frames": [[40,0], [40,8], [40,16], [40,24]] },
+	"chicken": { "width": 8, "height": 8, "frames": [[48,0], [48,8], [48,16], [48,24]] },
+	"chick": { "width": 8, "height": 8, "frames": [[56,0], [56,8], [56,16], [56,24]] },
+// 8
+	"fox": { "width": 8, "height": 8, "frames": [[64,0], [64,8], [64,16], [64,24]] },
+	"racoon": { "width": 8, "height": 8, "frames": [[72,0], [72,8], [72,16], [72,24]] },
+	"dog0": { "width": 8, "height": 8, "frames": [[80,16], [80,24], [80,32], [80,40]] },
+	"dog1": { "width": 8, "height": 8, "frames": [[88,16], [88,24], [88,32], [88,40]] },
+// 12
+	"dog2": { "width": 8, "height": 8, "frames": [[96,16], [96,24], [96,32], [96,40]] },
+	"cat3": { "width": 8, "height": 8, "frames": [[104,16], [104,24], [104,32], [104,40]] },
+	"cat4": { "width": 8, "height": 8, "frames": [[112,16], [112,24], [112,32], [112,40]] },
+	"cat5": { "width": 8, "height": 8, "frames": [[120,16], [120,24], [120,32], [120,40]] },
+// nr .	16
+	"grass_00": { "width": 8, "height": 8, "frames": [[128, 0]] },
+	"grass_01": { "width": 8, "height": 8, "frames": [[136, 0]] },
+	"grass_02": { "width": 8, "height": 8, "frames": [[144, 0]] },
+	"grass_03": { "width": 8, "height": 8, "frames": [[152, 0]] },
+	"grass_04": { "width": 8, "height": 8, "frames": [[128, 8]] },
+	"grass_05": { "width": 8, "height": 8, "frames": [[136, 8]] },
+	"grass_06": { "width": 8, "height": 8, "frames": [[144, 8]] },
+	"grass_07": { "width": 8, "height": 8, "frames": [[152, 8]] },
+// 24
+	"grass_10": { "width": 8, "height": 8, "frames": [[160, 0]] },
+	"grass_11": { "width": 8, "height": 8, "frames": [[168, 0]] },
+	"grass_12": { "width": 8, "height": 8, "frames": [[174, 0]] },
+	"grass_13": { "width": 8, "height": 8, "frames": [[182, 0]] },
+	"grass_14": { "width": 8, "height": 8, "frames": [[160, 8]] },
+	"grass_15": { "width": 8, "height": 8, "frames": [[168, 8]] },
+	"grass_16": { "width": 8, "height": 8, "frames": [[174, 8]] },
+	"grass_17": { "width": 8, "height": 8, "frames": [[182, 8]] },
+// 32
+	"grass_20": { "width": 8, "height": 8, "frames": [[128, 24]] },
+	"grass_21": { "width": 8, "height": 8, "frames": [[136, 24]] },
+	"grass_22": { "width": 8, "height": 8, "frames": [[144, 24]] },
+	"grass_23": { "width": 8, "height": 8, "frames": [[152, 24]] },
+	"grass_24": { "width": 8, "height": 8, "frames": [[128, 32]] },
+	"grass_25": { "width": 8, "height": 8, "frames": [[136, 32]] },
+	"grass_26": { "width": 8, "height": 8, "frames": [[144, 32]] },
+	"grass_27": { "width": 8, "height": 8, "frames": [[152, 32]] },
+// 40
+	"grass_30": { "width": 8, "height": 8, "frames": [[160, 24]] },
+	"grass_31": { "width": 8, "height": 8, "frames": [[168, 24]] },
+	"grass_32": { "width": 8, "height": 8, "frames": [[174, 24]] },
+	"grass_33": { "width": 8, "height": 8, "frames": [[182, 24]] },
+	"grass_34": { "width": 8, "height": 8, "frames": [[160, 32]] },
+	"grass_35": { "width": 8, "height": 8, "frames": [[168, 32]] },
+	"grass_36": { "width": 8, "height": 8, "frames": [[174, 32]] },
+	"grass_37": { "width": 8, "height": 8, "frames": [[182, 32]] },
+// 48
+	"water_0": { "width": 8, "height": 8, "frames": [[192, 8]] },
+	"water_1": { "width": 8, "height": 8, "frames": [[200, 8]] },
+	"water_2": { "width": 8, "height": 8, "frames": [[192, 16]] },
+	"water_3": { "width": 8, "height": 8, "frames": [[200, 16]] },
+	"water_4": { "width": 8, "height": 8, "frames": [[192, 24]] },
+	"water_5": { "width": 8, "height": 8, "frames": [[200, 24]] },
+	"water_6": { "width": 8, "height": 8, "frames": [[192, 32]] },
+	"water_7": { "width": 8, "height": 8, "frames": [[200, 32]] },
+	"water_8": { "width": 8, "height": 8, "frames": [[192, 40]] },
+	"water_9": { "width": 8, "height": 8, "frames": [[200, 40]] },
+// 58
+	"tile_0": {"width": 8, "height": 8, "frames": [[0, 32]] },
+	"tile_1": {"width": 8, "height": 8, "frames": [[0, 40]] },
+	"tile_2": {"width": 8, "height": 8, "frames": [[0, 48]] },
+	"tile_3": {"width": 8, "height": 8, "frames": [[0, 56]] },
+	"tile_4": {"width": 8, "height": 8, "frames": [[0, 64]] },
+	"tile_5": {"width": 8, "height": 8, "frames": [[0, 72]] },
+	"tile_6": {"width": 8, "height": 8, "frames": [[0, 80]] },
+	"tile_7": {"width": 8, "height": 8, "frames": [[0, 88]] },
+	"tile_8": {"width": 8, "height": 8, "frames": [[0, 96]] },
+	"tile_9": {"width": 8, "height": 8, "frames": [[0, 104]] },
+	"tile_10": {"width": 8, "height": 8, "frames": [[0, 112]] },
+	"tile_11": {"width": 8, "height": 8, "frames": [[0, 120]] },
+// 70
+	"plant_0": {"width": 8, "height": 8, "frames": [[0, 152],[8, 152],[16, 152],[24, 152],[32, 152],[40, 152]] },
+	"plant_1": {"width": 8, "height": 8, "frames": [[0, 160],[8, 160],[16, 160],[24, 160],[32, 168],[40, 160]] },
+	"plant_2": {"width": 8, "height": 8, "frames": [[0, 168],[8, 168],[16, 168],[24, 168],[32, 168],[40, 168]] },
+	"plant_3": {"width": 8, "height": 8, "frames": [[0, 176],[8, 176],[16, 176],[24, 176],[32, 176],[40, 176]] },
+	"plant_4": {"width": 8, "height": 8, "frames": [[0, 184],[8, 184],[16, 184],[24, 184],[32, 184],[40, 184]] },
+// 75
+	"bg_grass": { "width": 8, "height": 8, "frames": [
+		[128,0], [128,8], [136,0], [136,8], [144,0], [144,8], [152,0], [152,8],	[160,0], [160,8], [168,0], [168,8],	[176,0], [176,8], [184,0], [184,8], ] },
+	"bg_dry": { "width": 8, "height": 8, "frames": [
+		[128,0], [128,8], [136,0], [136,8], [144,0], [144,8], [152,0], [152,8],	[160,0], [160,8], [168,0], [168,8],	[176,0], [176,8], [184,0], [184,8], ] },
+	"bg_water": { "width": 8, "height": 8, "frames": [
+		[128,0], [128,8], [136,0], [136,8], [144,0], [144,8], [152,0], [152,8],	[160,0], [160,8], [168,0], [168,8],	[176,0], [176,8], [184,0], [184,8], ] },
+// 78
+	"worker_0": {"width": 8, "height": 8, "frames": [[208, 0],[208, 8],[208, 16],[208, 24]] },
+	"worker_1": {"width": 8, "height": 8, "frames": [[208, 32],[208, 40],[208, 48],[208, 56]] },
+	"worker_2": {"width": 8, "height": 8, "frames": [[208, 64],[208, 72],[208, 80],[208, 88]] },
+	"worker_3": {"width": 8, "height": 8, "frames": [[208, 96],[208, 104],[208, 112],[208, 120]] },
+	"worker_4": {"width": 8, "height": 8, "frames": [[208, 128],[208, 136],[208, 144],[208, 152]] },
+	"worker_5": {"width": 8, "height": 8, "frames": [[208, 160],[208, 168],[208, 176],[208, 184]] },
+
+}
+

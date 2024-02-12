@@ -7,7 +7,7 @@ Sprite *spriteCollection[16];
 void setup() {
     tv_clear( 1 );
     scale_set( 2 );
-    loop_interval_set( 0 );
+    fps_set( 3000 );
     startMem                = prg_memory_get();
     int texturePositions[8] = { 0, 0, 0, 8, 0, 16, 0, 24 };
     for ( i = 0; i < 16; i++ ) {
@@ -19,7 +19,8 @@ void loop() {
     spriteManager_draw(
         spriteCollection[0],
         vect2_new( ( loop_lifetime_ns / 40000000 / 2 ) % WIDTH, HEIGHT2 - 8 ),
-        ( loop_lifetime_ns / 40000000 ) & 0b11 );
+        ( loop_lifetime_ns / 40000000 ) & 0b11
+    );
     spriteManager_draw( spriteCollection[1], vect2_new( ( loop_lifetime_ns / 100000000 / 4 ) % WIDTH, HEIGHT2 ), ( loop_lifetime_ns / 100000000 ) & 0b11 );
     spriteManager_draw( spriteCollection[2], vect2_new( ( loop_lifetime_ns / 150000000 / 4 ) % WIDTH, HEIGHT2 + 24 ), ( loop_lifetime_ns / 150000000 ) & 0b11 );
     spriteManager_draw( spriteCollection[3], vect2_new( ( loop_lifetime_ns / 45000000 / 2 ) % WIDTH, HEIGHT2 + 16 ), ( loop_lifetime_ns / 145000000 ) & 0b11 );
@@ -40,10 +41,10 @@ void loop() {
     deltaAvg = deltaAvg * 0.99f + loop_delta_full_ns * 0.01f;
 
     //// make PRG_debug out of this -->
-    tv_print( WIDTH / 2, HEIGHT / 12 * 2, 0xfff, "Memory %.3f Mb\n", (float)prg_memory_get() / 1000 );
-    tv_print( WIDTH / 2, HEIGHT / 12 * 3, 0xfff, "fps: %.3f", 1 / ( (float)loop_delta_full_ns / 1000000000 ) );
-    // tv_print( WIDTH / 2, HEIGHT / 8 * 5, 0xfff, "Mem: %f Mb\n", (float)prg_memory_get() / 1000
+    print_center( WIDTH / 2, HEIGHT / 12 * 2, 0xfff, "Memory %.3f Mb\n", (float)prg_memory_get() / 1000 );
+    print_center( WIDTH / 2, HEIGHT / 12 * 3, 0xfff, "fps: %.3f", 1 / ( (float)loop_delta_full_ns / 1000000000 ) );
+    // print_center( WIDTH / 2, HEIGHT / 8 * 5, 0xfff, "Mem: %f Mb\n", (float)prg_memory_get() / 1000
     // );
-    // tv_print( WIDTH / 2, HEIGHT / 8 * 7, 0xfff, "fps: %f ", 1 / ( deltaAvg /
+    // print_center( WIDTH / 2, HEIGHT / 8 * 7, 0xfff, "fps: %f ", 1 / ( deltaAvg /
     //  1000000000.0f ) );
 }
