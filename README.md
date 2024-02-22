@@ -1,4 +1,4 @@
-# nosound - sdlHelper.h
+# nosound - tv.h
 Little C programming framework.
 (WIP - work in progress)
 
@@ -34,6 +34,7 @@ Input keys are polled in the time between loops.
 Use 'tv_key_pressed( keyToCheck )
 
 # STATIC KEYS
+
 [tstlink](/include/tv_KEYS.h)
 
 ### TODO
