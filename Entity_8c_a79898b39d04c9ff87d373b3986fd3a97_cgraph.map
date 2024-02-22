@@ -1,0 +1,9 @@
+<map id="Entity_collection_act_all" name="Entity_collection_act_all">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,166,56"/>
+<area shape="rect" id="Node000002" href="$Entity_8c.html#a60685ea54606acc1edf9d7d6ecb98597" title=" " alt="" coords="216,5,304,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,29,200,24,201,29,167,34"/>
+<area shape="rect" id="Node000004" href="$Entity_8c.html#ad3e36f1fdef8fd8991e800e159bf7588" title=" " alt="" coords="214,55,306,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,52,198,56,198,62,166,57"/>
+<area shape="rect" id="Node000003" href="$MonoIMG_8c.html#a67dc4bf4eab83457c720fb130344dd50" title=" " alt="" coords="354,5,467,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,16,338,16,338,21,304,21"/>
+</map>

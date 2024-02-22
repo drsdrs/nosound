@@ -1,0 +1,9 @@
+<map id="eat" name="eat">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,45,80"/>
+<area shape="rect" id="Node000002" href="$collection_8c.html#a69f71f92af4a6ffc6ca3f8f75e166ce2" title=" " alt="" coords="107,5,229,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="44,58,92,40,109,34,111,39,94,45,46,63"/>
+<area shape="rect" id="Node000003" href="$collection_8c.html#af61b96aebed9dd814d4a16b78f3de014" title=" " alt="" coords="93,55,243,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="45,65,77,65,77,70,45,70"/>
+<area shape="rect" id="Node000004" href="$tile__engine_2main_8c.html#a6be8529e3307adb5da2742f5bc93b1ef" title=" " alt="" coords="120,104,216,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="46,72,94,90,111,96,109,101,92,95,44,77"/>
+</map>

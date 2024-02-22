@@ -1,0 +1,7 @@
+<map id="set_pixel" name="set_pixel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,78,31"/>
+<area shape="rect" id="Node000002" href="$sdlHelper_8c.html#a0683fe6721e98934877ab90a2d67a7f2" title=" " alt="" coords="126,5,173,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,16,110,16,110,21,78,21"/>
+<area shape="rect" id="Node000003" href="$sdlHelper_8c.html#a6cc746d04c4ac2c0e1e3d5388684c3d5" title=" " alt="" coords="221,5,290,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="173,16,205,16,205,21,173,21"/>
+</map>

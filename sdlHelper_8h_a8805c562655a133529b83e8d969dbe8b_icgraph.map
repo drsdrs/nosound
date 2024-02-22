@@ -1,0 +1,10 @@
+<map id="tv_clear" name="tv_clear">
+<area shape="rect" id="Node000001" title=" " alt="" coords="325,56,392,82"/>
+<area shape="rect" id="Node000002" href="$loopManager_8c.html#a19c585c7c927758f871a4d341fa079bd" title=" " alt="" coords="201,5,277,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="312,52,270,34,272,29,314,47"/>
+<area shape="rect" id="Node000003" href="$loopManager_8c.html#a5ae1a4d682c7d614f0369cfb752e6412" title=" " alt="" coords="5,31,153,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="309,67,153,53,153,47,310,62"/>
+<area shape="rect" id="Node000004" href="$demo__sprite_2main_8c.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="212,107,266,132"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="314,91,267,111,265,106,312,86"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,29,154,34,153,29,185,24"/>
+</map>

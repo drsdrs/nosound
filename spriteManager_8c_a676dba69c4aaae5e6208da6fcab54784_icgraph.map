@@ -1,0 +1,7 @@
+<map id="spriteManager_json_spritesheet_parse" name="spriteManager_json_spritesheet_parse">
+<area shape="rect" id="Node000001" title=" " alt="" coords="391,5,525,46"/>
+<area shape="rect" id="Node000002" href="$spriteManager_8c.html#a54df73db35e99e825fb007fdf9b0d20b" title="common setup function" alt="" coords="201,13,343,39"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="375,28,343,28,343,23,375,23"/>
+<area shape="rect" id="Node000003" href="$loopManager_8c.html#a5ae1a4d682c7d614f0369cfb752e6412" title=" " alt="" coords="5,13,153,39"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,28,153,28,153,23,185,23"/>
+</map>

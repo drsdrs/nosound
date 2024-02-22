@@ -1,0 +1,9 @@
+<map id="Beeper_set" name="Beeper_set">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,93,56"/>
+<area shape="rect" id="Node000002" href="$beeper_8c.html#a72deb942d53bd05bf3afcf5dd60cfe4a" title=" " alt="" coords="142,5,262,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,34,126,28,127,33,93,39"/>
+<area shape="rect" id="Node000004" href="$beeper_8c.html#a02a1079fdde6983501d352ade4fc8820" title=" " alt="" coords="141,55,263,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="93,48,126,53,125,58,93,53"/>
+<area shape="rect" id="Node000003" href="$beeper_8c.html#a6c8ac042df37feabf8ba0ccdea2eead6" title=" " alt="" coords="311,5,406,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,16,295,16,295,21,262,21"/>
+</map>

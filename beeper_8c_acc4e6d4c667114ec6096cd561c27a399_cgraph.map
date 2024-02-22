@@ -1,0 +1,16 @@
+<map id="Beeper_setup" name="Beeper_setup">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,107,80"/>
+<area shape="rect" id="Node000002" href="$alsaHelper_8c.html#aea1bf42132dcac84dd8a87f1668a06af" title=" " alt="" coords="173,29,257,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,57,157,49,158,54,108,62"/>
+<area shape="rect" id="Node000007" href="$beeper_8c.html#af1c0d2f0b8546bfcf95f49909650fc70" title=" " alt="" coords="155,79,275,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="108,73,140,77,139,83,107,78"/>
+<area shape="rect" id="Node000003" href="$alsa_8c.html#a0ce3aa106ebe2ead4e973a2f822adc58" title=" " alt="" coords="509,5,589,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,37,493,19,494,25,258,42"/>
+<area shape="rect" id="Node000004" href="$alsa_8c.html#a0ac502f495258539dc94eab92f1374e0" title=" " alt="" coords="323,55,433,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="258,46,308,54,308,59,257,51"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="425,51,493,31,495,36,426,57"/>
+<area shape="rect" id="Node000005" href="$beeper_8c.html#a14378adcd3dc6de705ee96f58d16d614" title=" " alt="" coords="481,55,617,80"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="434,65,466,65,466,70,434,70"/>
+<area shape="rect" id="Node000006" href="$beeper_8c.html#a6c8ac042df37feabf8ba0ccdea2eead6" title=" " alt="" coords="665,55,760,80"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="617,65,649,65,649,70,617,70"/>
+</map>

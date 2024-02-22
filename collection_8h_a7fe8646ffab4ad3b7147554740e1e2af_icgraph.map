@@ -1,0 +1,11 @@
+<map id="entity_add" name="entity_add">
+<area shape="rect" id="Node000001" title=" " alt="" coords="346,31,427,56"/>
+<area shape="rect" id="Node000002" href="$tile__engine_2main_8c.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="242,5,295,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="330,34,295,26,296,21,332,29"/>
+<area shape="rect" id="Node000003" href="$tile__engine_2main_8c.html#a47eb1571443fd16250fe23ce4d5785dc" title=" " alt="" coords="238,55,298,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="332,57,299,64,298,59,331,52"/>
+<area shape="rect" id="Node000004" href="$tile__engine_2main_8c.html#a45c6d8a3b71fb1db3050c189a9190537" title=" " alt="" coords="99,55,190,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="222,70,190,70,190,65,222,65"/>
+<area shape="rect" id="Node000005" href="$tile__engine_2main_8c.html#afe461d27b9c48d5921c00d521181f12f" title=" " alt="" coords="5,55,51,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="83,70,51,70,51,65,83,65"/>
+</map>

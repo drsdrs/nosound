@@ -1,0 +1,25 @@
+<map id="spriteManager_setup" name="spriteManager_setup">
+<area shape="rect" id="Node000001" title="common setup function" alt="" coords="5,56,148,82"/>
+<area shape="rect" id="Node000002" href="$path_8c.html#a8119343a745ac4f979ec4a7851111dd6" title=" " alt="" coords="196,56,338,82"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,66,180,66,180,72,148,72"/>
+<area shape="rect" id="Node000004" href="$prg_8c.html#a346255006735c8db32566278eb684af7" title=" " alt="" coords="421,5,524,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,53,195,41,306,27,405,19,405,25,306,33,196,46,134,58"/>
+<area shape="rect" id="Node000006" href="$spriteManager_8c.html#a676dba69c4aaae5e6208da6fcab54784" title=" " alt="" coords="200,149,334,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="104,80,214,139,212,143,102,85"/>
+<area shape="rect" id="Node000003" href="$stringHelper_8c.html#ae4a8933be4c70f8f22dbc6304c754974" title=" " alt="" coords="606,81,721,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,71,591,87,590,92,338,76"/>
+<area shape="rect" id="Node000005" href="$path_8c.html#ac10f81c166b9088e272a807b22428ad6" title=" " alt="" coords="612,5,715,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="524,16,597,16,597,21,524,21"/>
+<area shape="poly" id="edge11_Node000006_Node000004" title=" " alt="" coords="295,146,439,38,443,42,298,150"/>
+<area shape="rect" id="Node000007" href="$file_8c.html#a399c2496678c18fed24119ced9c8fad5" title=" " alt="" coords="438,205,507,231"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="335,182,423,204,422,209,334,188"/>
+<area shape="rect" id="Node000008" href="$spriteManager_8c.html#a8598bfd0597cbb47a198855f3b58f2a3" title=" " alt="" coords="431,255,514,280"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="297,187,339,215,387,241,416,252,414,257,385,246,336,220,294,192"/>
+<area shape="rect" id="Node000009" href="$spriteManager_8c.html#ab81c714cd1677529cf3312ea5762602b" title=" " alt="" coords="389,304,556,330"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="284,188,327,240,355,267,387,291,396,295,393,300,385,295,352,271,323,243,280,191"/>
+<area shape="rect" id="Node000010" href="$path_8c.html#a4d8db69a673c9b6703b11472433ea9f7" title=" " alt="" coords="386,107,558,132"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="334,150,401,134,402,139,335,155"/>
+<area shape="rect" id="Node000011" href="$spriteManager_8c.html#a327a23ccca98993562483f9a13a3d642" title="get a new instance of a Sprite" alt="" coords="405,156,539,182"/>
+<area shape="poly" id="edge12_Node000006_Node000011" title=" " alt="" coords="335,166,390,166,390,172,335,172"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="558,105,590,101,591,106,559,111"/>
+</map>

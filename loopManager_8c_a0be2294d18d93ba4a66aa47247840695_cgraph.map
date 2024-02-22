@@ -1,0 +1,21 @@
+<map id="loop_sleep_ms" name="loop_sleep_ms">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,114,106"/>
+<area shape="rect" id="Node000002" href="$loopManager_8c.html#a1c54c10f0688d1e02e9d5b3433370fbe" title=" " alt="" coords="162,80,266,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,90,146,90,146,96,114,96"/>
+<area shape="rect" id="Node000003" href="$sdlHelper_8c.html#a34c8e08ca4162449fdbe5a76aeefc4f9" title=" " alt="" coords="314,80,382,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="266,90,299,90,299,96,266,96"/>
+<area shape="rect" id="Node000004" href="$loopManager_8c.html#a4e959168387735d46ec596eabc9060b2" title=" " alt="" coords="438,55,511,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,83,422,75,423,80,383,89"/>
+<area shape="rect" id="Node000008" href="$prg_8c.html#a74c9389d748be676e6fed1db45787dd0" title=" " alt="" coords="430,104,519,130"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="383,97,415,103,414,108,382,102"/>
+<area shape="rect" id="Node000005" href="$beeper_8c.html#a6c54e4ecb34a083f104e9ee50375089b" title=" " alt="" coords="578,5,668,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="510,53,567,34,569,39,512,58"/>
+<area shape="rect" id="Node000007" href="$sdlHelper_8c.html#a01d9943a243a410cd36e5d2c095770a9" title=" " alt="" coords="571,55,675,80"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="511,65,556,65,556,70,511,70"/>
+<area shape="rect" id="Node000006" href="$alsaHelper_8c.html#ae412a173f6c0a1cf5740e4560805c0e0" title=" " alt="" coords="746,5,823,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="668,16,730,16,730,21,668,21"/>
+<area shape="rect" id="Node000009" href="$path_8c.html#a2ef5f1d7fb5a4183c084426675c9dc86" title=" " alt="" coords="567,104,679,130"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="519,114,551,114,551,120,519,120"/>
+<area shape="rect" id="Node000010" href="$stringHelper_8c.html#ae4a8933be4c70f8f22dbc6304c754974" title=" " alt="" coords="727,104,841,130"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="680,114,711,114,711,120,680,120"/>
+</map>

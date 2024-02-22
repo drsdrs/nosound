@@ -1,0 +1,12 @@
+<map id="alsa_setup" name="alsa_setup">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,90,55"/>
+<area shape="rect" id="Node000002" href="$alsa_8c.html#a0ce3aa106ebe2ead4e973a2f822adc58" title=" " alt="" coords="324,5,404,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,36,308,20,308,25,90,42"/>
+<area shape="rect" id="Node000003" href="$alsa_8c.html#a0ac502f495258539dc94eab92f1374e0" title=" " alt="" coords="138,55,248,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="91,47,123,53,122,58,90,52"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="239,51,308,31,309,36,241,57"/>
+<area shape="rect" id="Node000004" href="$beeper_8c.html#a14378adcd3dc6de705ee96f58d16d614" title=" " alt="" coords="296,55,431,80"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="248,65,281,65,281,70,248,70"/>
+<area shape="rect" id="Node000005" href="$beeper_8c.html#a6c8ac042df37feabf8ba0ccdea2eead6" title=" " alt="" coords="479,55,575,80"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="432,65,464,65,464,70,432,70"/>
+</map>

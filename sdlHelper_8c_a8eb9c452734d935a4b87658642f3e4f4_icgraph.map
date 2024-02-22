@@ -1,0 +1,11 @@
+<map id="scale_set" name="scale_set">
+<area shape="rect" id="Node000001" title=" " alt="" coords="496,31,574,56"/>
+<area shape="rect" id="Node000002" href="$sdlHelper_8c.html#a8a863dbd670d8a88ef204748e7a9e8e2" title=" " alt="" coords="364,5,448,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="481,36,448,29,449,24,482,30"/>
+<area shape="rect" id="Node000005" href="$demo__beeper__noteFade_2main_8c.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="380,55,433,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="482,56,434,65,433,60,481,51"/>
+<area shape="rect" id="Node000003" href="$sdlHelper_8c.html#a649d63e66d2c13acd354b71aea30d8a8" title=" " alt="" coords="201,5,316,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="349,21,316,21,316,16,349,16"/>
+<area shape="rect" id="Node000004" href="$loopManager_8c.html#a5ae1a4d682c7d614f0369cfb752e6412" title=" " alt="" coords="5,5,153,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,21,153,21,153,16,185,16"/>
+</map>

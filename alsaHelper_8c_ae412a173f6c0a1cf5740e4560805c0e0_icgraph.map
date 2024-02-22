@@ -1,0 +1,26 @@
+<map id="alsa_stop" name="alsa_stop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="883,155,961,180"/>
+<area shape="rect" id="Node000002" href="$beeper_8c.html#a6c54e4ecb34a083f104e9ee50375089b" title=" " alt="" coords="746,155,835,180"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="868,170,836,170,836,165,868,165"/>
+<area shape="rect" id="Node000003" href="$loopManager_8c.html#a4e959168387735d46ec596eabc9060b2" title=" " alt="" coords="626,155,698,180"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="730,170,699,170,699,165,730,165"/>
+<area shape="rect" id="Node000004" href="$sdlHelper_8c.html#a34c8e08ca4162449fdbe5a76aeefc4f9" title=" " alt="" coords="509,92,578,118"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="621,149,568,121,571,116,624,145"/>
+<area shape="rect" id="Node000009" href="$program__starter_2main_8c.html#afe461d27b9c48d5921c00d521181f12f" title=" " alt="" coords="56,104,102,130"/>
+<area shape="poly" id="edge13_Node000003_Node000009" title=" " alt="" coords="611,183,531,199,427,212,371,214,313,213,256,206,200,194,168,182,139,165,94,132,97,128,142,161,171,177,201,189,257,201,313,207,371,209,427,206,530,194,610,178"/>
+<area shape="rect" id="Node000005" href="$loopManager_8c.html#a19c585c7c927758f871a4d341fa079bd" title=" " alt="" coords="217,5,293,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="494,92,461,82,293,32,294,27,462,77,495,87"/>
+<area shape="rect" id="Node000007" href="$loopManager_8c.html#a1c54c10f0688d1e02e9d5b3433370fbe" title=" " alt="" coords="357,92,461,118"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="494,108,462,108,462,102,494,102"/>
+<area shape="rect" id="Node000006" href="$loopManager_8c.html#a5ae1a4d682c7d614f0369cfb752e6412" title=" " alt="" coords="5,5,153,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="201,21,153,21,153,16,201,16"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="375,85,308,45,286,34,288,29,310,40,377,81"/>
+<area shape="rect" id="Node000008" href="$loopManager_8c.html#a8325afe21188e6aadb2990e2a805bf52" title=" " alt="" coords="213,55,297,80"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="341,91,296,80,298,75,343,86"/>
+<area shape="rect" id="Node000010" href="$loopManager_8c.html#a0be2294d18d93ba4a66aa47247840695" title=" " alt="" coords="201,104,309,130"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="341,113,310,115,309,110,341,107"/>
+<area shape="rect" id="Node000012" href="$loopManager_8c.html#af0efcbf2e5a4547caf4ace07b44c505c" title=" " alt="" coords="203,153,307,179"/>
+<area shape="poly" id="edge12_Node000007_Node000012" title=" " alt="" coords="362,126,290,155,288,150,360,121"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="199,86,103,113,101,108,198,81"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="185,120,102,120,102,114,185,114"/>
+</map>

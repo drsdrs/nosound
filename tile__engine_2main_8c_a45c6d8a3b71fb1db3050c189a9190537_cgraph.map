@@ -1,0 +1,15 @@
+<map id="plant_action" name="plant_action">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,97,130"/>
+<area shape="rect" id="Node000002" href="$tile__engine_2main_8c.html#a47eb1571443fd16250fe23ce4d5785dc" title=" " alt="" coords="145,104,205,130"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,114,129,114,129,120,97,120"/>
+<area shape="rect" id="Node000003" href="$collection_8c.html#a7fe8646ffab4ad3b7147554740e1e2af" title=" " alt="" coords="288,5,368,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,102,212,71,252,40,272,30,274,35,254,44,216,75,188,106"/>
+<area shape="rect" id="Node000004" href="$collection_8c.html#a51d0b6809cc534ba15e63381c9d1b6f9" title=" " alt="" coords="281,55,376,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="205,105,252,89,270,83,272,88,254,94,206,110"/>
+<area shape="rect" id="Node000005" href="$collection_8c.html#a69f71f92af4a6ffc6ca3f8f75e166ce2" title=" " alt="" coords="267,104,389,130"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="206,114,252,114,252,120,206,120"/>
+<area shape="rect" id="Node000006" href="$collection_8c.html#af61b96aebed9dd814d4a16b78f3de014" title=" " alt="" coords="253,153,403,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="206,124,254,140,272,146,270,151,252,145,205,129"/>
+<area shape="rect" id="Node000007" href="$tile__engine_2main_8c.html#a6be8529e3307adb5da2742f5bc93b1ef" title=" " alt="" coords="280,203,376,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="188,128,216,159,254,189,267,196,264,200,252,194,212,163,184,132"/>
+</map>

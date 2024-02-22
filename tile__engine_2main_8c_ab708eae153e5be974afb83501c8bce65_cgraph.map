@@ -1,0 +1,9 @@
+<map id="worker_action" name="worker_action">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,108,56"/>
+<area shape="rect" id="Node000002" href="$tile__engine_2main_8c.html#abfa1f9dd23842081c3223487369aeeb2" title=" " alt="" coords="156,31,209,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,41,140,41,140,46,108,46"/>
+<area shape="rect" id="Node000003" href="$collection_8c.html#af61b96aebed9dd814d4a16b78f3de014" title=" " alt="" coords="257,5,407,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="209,36,241,31,242,36,210,42"/>
+<area shape="rect" id="Node000004" href="$tile__engine_2main_8c.html#a6be8529e3307adb5da2742f5bc93b1ef" title=" " alt="" coords="284,55,380,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="210,45,269,55,268,60,209,50"/>
+</map>

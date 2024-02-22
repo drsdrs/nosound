@@ -1,0 +1,5 @@
+<map id="Sprite" name="Sprite">
+<area shape="rect" id="Node000001" title="Sprite definition." alt="" coords="5,94,61,120"/>
+<area shape="rect" id="Node000002" href="$structVect2.html" title="2d vector struct" alt="" coords="5,5,61,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="36,47,36,94,30,94,30,47"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="loop_sleep_ns" name="loop_sleep_ns">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,110,106"/>
+<area shape="rect" id="Node000002" href="$sdlHelper_8c.html#a34c8e08ca4162449fdbe5a76aeefc4f9" title=" " alt="" coords="158,80,226,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,90,142,90,142,96,110,96"/>
+<area shape="rect" id="Node000003" href="$loopManager_8c.html#a4e959168387735d46ec596eabc9060b2" title=" " alt="" coords="282,55,354,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,83,266,75,267,80,227,89"/>
+<area shape="rect" id="Node000007" href="$prg_8c.html#a74c9389d748be676e6fed1db45787dd0" title=" " alt="" coords="274,104,362,130"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="227,97,259,103,258,108,226,102"/>
+<area shape="rect" id="Node000004" href="$beeper_8c.html#a6c54e4ecb34a083f104e9ee50375089b" title=" " alt="" coords="422,5,511,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="354,53,411,34,412,39,356,58"/>
+<area shape="rect" id="Node000006" href="$sdlHelper_8c.html#a01d9943a243a410cd36e5d2c095770a9" title=" " alt="" coords="415,55,518,80"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="355,65,399,65,399,70,355,70"/>
+<area shape="rect" id="Node000005" href="$alsaHelper_8c.html#ae412a173f6c0a1cf5740e4560805c0e0" title=" " alt="" coords="589,5,667,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="512,16,574,16,574,21,512,21"/>
+<area shape="rect" id="Node000008" href="$path_8c.html#a2ef5f1d7fb5a4183c084426675c9dc86" title=" " alt="" coords="410,104,523,130"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="363,114,395,114,395,120,363,120"/>
+<area shape="rect" id="Node000009" href="$stringHelper_8c.html#ae4a8933be4c70f8f22dbc6304c754974" title=" " alt="" coords="571,104,685,130"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="523,114,555,114,555,120,523,120"/>
+</map>

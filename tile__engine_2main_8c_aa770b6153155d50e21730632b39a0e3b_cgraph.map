@@ -1,0 +1,9 @@
+<map id="animal_action" name="animal_action">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,107,56"/>
+<area shape="rect" id="Node000002" href="$tile__engine_2main_8c.html#abfa1f9dd23842081c3223487369aeeb2" title=" " alt="" coords="155,31,208,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,41,139,41,139,46,107,46"/>
+<area shape="rect" id="Node000003" href="$collection_8c.html#af61b96aebed9dd814d4a16b78f3de014" title=" " alt="" coords="256,5,406,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="208,36,240,31,241,36,209,42"/>
+<area shape="rect" id="Node000004" href="$tile__engine_2main_8c.html#a6be8529e3307adb5da2742f5bc93b1ef" title=" " alt="" coords="283,55,379,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="209,45,268,55,267,60,208,50"/>
+</map>
