@@ -1,0 +1,13 @@
+<map id="spriteManager_setup" name="spriteManager_setup">
+<area shape="rect" id="node1" title="common setup function" alt="" coords="5,56,164,83"/>
+<area shape="rect" id="node2" href="$path_8h.html#ac9195322d4b0508d6a0b858764a854dd" title=" " alt="" coords="212,56,371,83"/>
+<area shape="rect" id="node4" href="$prg_8h.html#a0619d0c731d351426f79bbcf59e04f78" title=" " alt="" coords="457,5,572,32"/>
+<area shape="rect" id="node6" href="$spriteManager_8c.html#a676dba69c4aaae5e6208da6fcab54784" title=" " alt="" coords="216,150,367,191"/>
+<area shape="rect" id="node3" href="$stringHelper_8h.html#ad6b376c6c1d72d42fe7cb39db316d480" title=" " alt="" coords="659,81,787,108"/>
+<area shape="rect" id="node5" href="$path_8h.html#afe3a28d4db7b41afeffd28e1bf5309e3" title=" " alt="" coords="667,5,779,32"/>
+<area shape="rect" id="node7" href="$file_8h.html#a4b83e49468ddde00598d5fe0b93f1a43" title=" " alt="" coords="475,208,554,235"/>
+<area shape="rect" id="node8" href="$spriteManager_8c.html#a8598bfd0597cbb47a198855f3b58f2a3" title=" " alt="" coords="469,259,561,285"/>
+<area shape="rect" id="node9" href="$spriteManager_8c.html#ab81c714cd1677529cf3312ea5762602b" title=" " alt="" coords="421,309,608,336"/>
+<area shape="rect" id="node10" href="$path_8h.html#a727ce7258132eccc7a7ccc5bcbe56d80" title=" " alt="" coords="419,107,611,133"/>
+<area shape="rect" id="node11" href="$spriteManager_8c.html#a327a23ccca98993562483f9a13a3d642" title="get a new instance of a Sprite" alt="" coords="439,157,590,184"/>
+</map>

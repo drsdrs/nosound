@@ -1,0 +1,11 @@
+<map id="loop_sleep_ns" name="loop_sleep_ns">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,120,108"/>
+<area shape="rect" id="node2" href="$sdlHelper_8h.html#a34c8e08ca4162449fdbe5a76aeefc4f9" title=" " alt="" coords="168,81,244,108"/>
+<area shape="rect" id="node3" href="$loopManager_8h.html#a4e959168387735d46ec596eabc9060b2" title=" " alt="" coords="299,56,382,83"/>
+<area shape="rect" id="node7" href="$prg_8h.html#a74c9389d748be676e6fed1db45787dd0" title=" " alt="" coords="292,107,389,133"/>
+<area shape="rect" id="node4" href="$beeper_8h.html#a6c54e4ecb34a083f104e9ee50375089b" title=" " alt="" coords="451,5,551,32"/>
+<area shape="rect" id="node6" href="$sdlHelper_8h.html#a01d9943a243a410cd36e5d2c095770a9" title=" " alt="" coords="443,56,559,83"/>
+<area shape="rect" id="node5" href="$alsa_8h.html#ae412a173f6c0a1cf5740e4560805c0e0" title=" " alt="" coords="634,5,718,32"/>
+<area shape="rect" id="node8" href="$path_8h.html#ac3b33e9ee5785e0f0bae2f04cc14394b" title=" " alt="" coords="437,107,564,133"/>
+<area shape="rect" id="node9" href="$stringHelper_8h.html#ad6b376c6c1d72d42fe7cb39db316d480" title=" " alt="" coords="612,107,740,133"/>
+</map>

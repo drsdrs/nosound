@@ -1,0 +1,26 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node1" title=" " alt="" coords="5,233,64,260"/>
+<area shape="rect" id="node2" href="$collection_8c.html#a7fe8646ffab4ad3b7147554740e1e2af" title=" " alt="" coords="141,5,231,32"/>
+<area shape="rect" id="node3" href="$collection_8c.html#a51d0b6809cc534ba15e63381c9d1b6f9" title=" " alt="" coords="132,56,240,83"/>
+<area shape="rect" id="node4" href="$prg_8h.html#a326e6f77d028a24d96103dd8fd3ab6a7" title=" " alt="" coords="151,107,221,133"/>
+<area shape="rect" id="node6" href="$collection_8c.html#a64d5320f2828963b9085acc65e8185eb" title=" " alt="" coords="112,157,260,184"/>
+<area shape="rect" id="node7" href="$loopManager_8h.html#a0be2294d18d93ba4a66aa47247840695" title=" " alt="" coords="127,208,245,235"/>
+<area shape="rect" id="node15" href="$perling_8c.html#a369b3220d04dfcdb7d082548d5e8450e" title=" " alt="" coords="149,259,223,285"/>
+<area shape="rect" id="node20" href="$sdlHelper_8h.html#a76ea0779671e00ab72242fdcbdf46d0a" title=" " alt="" coords="136,309,236,336"/>
+<area shape="rect" id="node21" href="$sdlHelper_8h.html#a7d9edd8b0a8d0d2f737eb5ee0b0a5040" title=" " alt="" coords="154,360,218,387"/>
+<area shape="rect" id="node22" href="$sdlHelper_8h.html#a8eb9c452734d935a4b87658642f3e4f4" title=" " alt="" coords="145,411,227,437"/>
+<area shape="rect" id="node23" href="$sdlHelper_8h.html#a8805c562655a133529b83e8d969dbe8b" title=" " alt="" coords="149,461,223,488"/>
+<area shape="rect" id="node5" href="$loopManager_8h.html#a5fe6c9f99a3227468e0e7d48c119d77a" title=" " alt="" coords="308,107,443,133"/>
+<area shape="rect" id="node8" href="$loopManager_8c.html#a1c54c10f0688d1e02e9d5b3433370fbe" title=" " alt="" coords="318,208,433,235"/>
+<area shape="rect" id="node9" href="$sdlHelper_8h.html#a34c8e08ca4162449fdbe5a76aeefc4f9" title=" " alt="" coords="507,208,583,235"/>
+<area shape="rect" id="node10" href="$loopManager_8h.html#a4e959168387735d46ec596eabc9060b2" title=" " alt="" coords="654,208,737,235"/>
+<area shape="rect" id="node13" href="$prg_8h.html#a74c9389d748be676e6fed1db45787dd0" title=" " alt="" coords="647,259,744,285"/>
+<area shape="rect" id="node11" href="$beeper_8h.html#a6c54e4ecb34a083f104e9ee50375089b" title=" " alt="" coords="805,157,905,184"/>
+<area shape="rect" id="node12" href="$sdlHelper_8h.html#a01d9943a243a410cd36e5d2c095770a9" title=" " alt="" coords="797,208,913,235"/>
+<area shape="rect" id="node14" href="$path_8h.html#ac3b33e9ee5785e0f0bae2f04cc14394b" title=" " alt="" coords="792,259,919,285"/>
+<area shape="rect" id="node16" href="$perling_8c.html#aedcfadb36e2749eb7dafcd56c051c755" title=" " alt="" coords="339,259,412,285"/>
+<area shape="rect" id="node17" href="$perling_8c.html#a0217acdda1d699354774af02e79d3f29" title=" " alt="" coords="512,259,577,285"/>
+<area shape="rect" id="node18" href="$perling_8c.html#af89ba8e2b0578dd6413d35e07a46ff6b" title=" " alt="" coords="491,309,599,336"/>
+<area shape="rect" id="node19" href="$perling_8c.html#abb5fc4a0d8a975da6f8bc1f72599195e" title=" " alt="" coords="658,309,733,336"/>
+<area shape="rect" id="node24" href="$sdlHelper_8c.html#a6cc746d04c4ac2c0e1e3d5388684c3d5" title=" " alt="" coords="337,461,413,488"/>
+</map>

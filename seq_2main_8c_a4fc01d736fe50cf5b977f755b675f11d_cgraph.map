@@ -1,0 +1,10 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,64,133"/>
+<area shape="rect" id="node2" href="$beeper_8h.html#af8289cd242ce2fe5bdc08b4d047c4b69" title=" " alt="" coords="112,56,207,83"/>
+<area shape="rect" id="node6" href="$prg_8h.html#a326e6f77d028a24d96103dd8fd3ab6a7" title=" " alt="" coords="125,107,194,133"/>
+<area shape="rect" id="node8" href="$sdlHelper_8h.html#a8eb9c452734d935a4b87658642f3e4f4" title=" " alt="" coords="118,157,201,184"/>
+<area shape="rect" id="node3" href="$beeper_8c.html#a72deb942d53bd05bf3afcf5dd60cfe4a" title=" " alt="" coords="257,5,387,32"/>
+<area shape="rect" id="node5" href="$beeper_8c.html#a02a1079fdde6983501d352ade4fc8820" title=" " alt="" coords="255,56,389,83"/>
+<area shape="rect" id="node4" href="$beeper_8c.html#a6c8ac042df37feabf8ba0ccdea2eead6" title=" " alt="" coords="437,5,540,32"/>
+<area shape="rect" id="node7" href="$loopManager_8h.html#a5fe6c9f99a3227468e0e7d48c119d77a" title=" " alt="" coords="255,107,389,133"/>
+</map>

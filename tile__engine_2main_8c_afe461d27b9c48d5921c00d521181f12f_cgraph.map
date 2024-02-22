@@ -1,0 +1,17 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node1" title=" " alt="" coords="5,201,56,228"/>
+<area shape="rect" id="node2" href="$tile__engine_2main_8c.html#aa770b6153155d50e21730632b39a0e3b" title=" " alt="" coords="124,24,239,51"/>
+<area shape="rect" id="node6" href="$collection_8c.html#a7cb6326631e6e1d635a300a50ce034fe" title=" " alt="" coords="436,208,577,235"/>
+<area shape="rect" id="node7" href="$tile__engine_2main_8c.html#a45c6d8a3b71fb1db3050c189a9190537" title=" " alt="" coords="130,125,233,152"/>
+<area shape="rect" id="node11" href="$sdlHelper_8h.html#ab48a1d16b7475ef1b208b5dd1335aba6" title=" " alt="" coords="155,227,207,253"/>
+<area shape="rect" id="node12" href="$spriteManager_8h.html#a610f7998cfcaed7e28359ff44c4d2661" title="Draw sprite." alt="" coords="104,277,259,304"/>
+<area shape="rect" id="node13" href="$spriteManager_8h.html#ad79e2f130ba58858a5cb0487d1d0d137" title="Get sprite by number." alt="" coords="109,328,253,355"/>
+<area shape="rect" id="node14" href="$Vect2_8h.html#a85658f123d8866f543e2e9e8c7f3a9f4" title="Get vect2 from X and Y choordinates." alt="" coords="135,379,227,405"/>
+<area shape="rect" id="node15" href="$tile__engine_2main_8c.html#ab708eae153e5be974afb83501c8bce65" title=" " alt="" coords="125,75,238,101"/>
+<area shape="rect" id="node3" href="$tile__engine_2main_8c.html#abfa1f9dd23842081c3223487369aeeb2" title=" " alt="" coords="311,49,369,76"/>
+<area shape="rect" id="node4" href="$collection_8c.html#af61b96aebed9dd814d4a16b78f3de014" title=" " alt="" coords="421,56,592,83"/>
+<area shape="rect" id="node5" href="$tile__engine_2main_8c.html#a6be8529e3307adb5da2742f5bc93b1ef" title=" " alt="" coords="453,5,560,32"/>
+<area shape="rect" id="node8" href="$tile__engine_2main_8c.html#a47eb1571443fd16250fe23ce4d5785dc" title=" " alt="" coords="307,113,373,140"/>
+<area shape="rect" id="node9" href="$collection_8c.html#a7fe8646ffab4ad3b7147554740e1e2af" title=" " alt="" coords="461,157,552,184"/>
+<area shape="rect" id="node10" href="$collection_8c.html#a51d0b6809cc534ba15e63381c9d1b6f9" title=" " alt="" coords="453,107,561,133"/>
+</map>

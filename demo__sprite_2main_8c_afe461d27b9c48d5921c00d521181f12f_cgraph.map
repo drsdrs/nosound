@@ -1,0 +1,7 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,56,108"/>
+<area shape="rect" id="node2" href="$prg_8h.html#ac2acea4d55dd590cb60334474ba46063" title=" " alt="" coords="115,5,248,32"/>
+<area shape="rect" id="node3" href="$sdlHelper_8h.html#a76ea0779671e00ab72242fdcbdf46d0a" title=" " alt="" coords="131,56,231,83"/>
+<area shape="rect" id="node4" href="$spriteManager_8h.html#a610f7998cfcaed7e28359ff44c4d2661" title="Draw sprite." alt="" coords="104,107,259,133"/>
+<area shape="rect" id="node5" href="$Vect2_8h.html#a85658f123d8866f543e2e9e8c7f3a9f4" title="Get vect2 from X and Y choordinates." alt="" coords="135,157,227,184"/>
+</map>

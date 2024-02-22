@@ -1,0 +1,9 @@
+<map id="prg_name_get" name="prg_name_get">
+<area shape="rect" id="node1" title=" " alt="" coords="612,107,727,133"/>
+<area shape="rect" id="node2" href="$prg_8h.html#a2861d7a01c2e868ea4a578334bfddeea" title=" " alt="" coords="431,5,546,32"/>
+<area shape="rect" id="node3" href="$prg_8h.html#a676998df41be9e44241916e7b3ba39b6" title=" " alt="" coords="430,56,547,83"/>
+<area shape="rect" id="node4" href="$program__starter_2main_8c.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="459,107,518,133"/>
+<area shape="rect" id="node5" href="$spriteManager_8c.html#a676dba69c4aaae5e6208da6fcab54784" title=" " alt="" coords="413,158,564,199"/>
+<area shape="rect" id="node6" href="$spriteManager_8h.html#a54df73db35e99e825fb007fdf9b0d20b" title="common setup function" alt="" coords="207,195,365,221"/>
+<area shape="rect" id="node7" href="$loopManager_8h.html#a5ae1a4d682c7d614f0369cfb752e6412" title=" " alt="" coords="5,195,159,221"/>
+</map>

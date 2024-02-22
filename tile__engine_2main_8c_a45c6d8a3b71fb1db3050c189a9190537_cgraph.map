@@ -1,0 +1,9 @@
+<map id="plant_action" name="plant_action">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,108,133"/>
+<area shape="rect" id="node2" href="$tile__engine_2main_8c.html#a47eb1571443fd16250fe23ce4d5785dc" title=" " alt="" coords="156,107,223,133"/>
+<area shape="rect" id="node3" href="$collection_8c.html#a7fe8646ffab4ad3b7147554740e1e2af" title=" " alt="" coords="311,5,401,32"/>
+<area shape="rect" id="node4" href="$collection_8c.html#a51d0b6809cc534ba15e63381c9d1b6f9" title=" " alt="" coords="302,56,410,83"/>
+<area shape="rect" id="node5" href="$collection_8c.html#a7cb6326631e6e1d635a300a50ce034fe" title=" " alt="" coords="285,107,427,133"/>
+<area shape="rect" id="node6" href="$collection_8c.html#af61b96aebed9dd814d4a16b78f3de014" title=" " alt="" coords="271,157,441,184"/>
+<area shape="rect" id="node7" href="$tile__engine_2main_8c.html#a6be8529e3307adb5da2742f5bc93b1ef" title=" " alt="" coords="303,208,409,235"/>
+</map>

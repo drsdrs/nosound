@@ -1,0 +1,10 @@
+<map id="setup" name="setup">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,64,133"/>
+<area shape="rect" id="node2" href="$prg_8h.html#a326e6f77d028a24d96103dd8fd3ab6a7" title=" " alt="" coords="149,5,219,32"/>
+<area shape="rect" id="node4" href="$prg_8h.html#ac2acea4d55dd590cb60334474ba46063" title=" " alt="" coords="117,56,251,83"/>
+<area shape="rect" id="node5" href="$sdlHelper_8h.html#a8eb9c452734d935a4b87658642f3e4f4" title=" " alt="" coords="143,107,225,133"/>
+<area shape="rect" id="node6" href="$spriteManager_8h.html#ad79e2f130ba58858a5cb0487d1d0d137" title="Get sprite by number." alt="" coords="112,157,256,184"/>
+<area shape="rect" id="node7" href="$sdlHelper_8h.html#a8805c562655a133529b83e8d969dbe8b" title=" " alt="" coords="147,208,221,235"/>
+<area shape="rect" id="node3" href="$loopManager_8h.html#a5fe6c9f99a3227468e0e7d48c119d77a" title=" " alt="" coords="304,5,439,32"/>
+<area shape="rect" id="node8" href="$sdlHelper_8c.html#a6cc746d04c4ac2c0e1e3d5388684c3d5" title=" " alt="" coords="333,208,409,235"/>
+</map>
