@@ -1,4 +1,4 @@
-# nosound - sdlHelper.h
+# nosound
 Little C programming framework.
 (WIP - work in progress)
 
