@@ -10,8 +10,7 @@ arg0 = start program
 
 use "prgManagerUI" to start program selection screen
 
-
-Source file "main.c" in the PRG folder are watched and compiled on change.
+Source file "main.c" in the PRG sub-folder are watched and compiled on change.
 
 
 ## How to use
@@ -34,6 +33,8 @@ Input keys are polled in the time between loops.
 
 Use 'tv_key_pressed( keyToCheck )
 
+# STATIC KEYS
+[tstlink](/include/tv_KEYS.h)
 
 ### TODO
 TODO desc. of header files to use for audio/video

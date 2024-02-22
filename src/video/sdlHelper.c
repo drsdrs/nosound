@@ -13,10 +13,10 @@ SDL_Surface*  pixels;
 SDL_Renderer* renderer;
 SDL_Joystick* gamepad;
 
-uint16_t RES_W        = 640;
-uint16_t RES_H        = 480;
-uint16_t SOURCE_RES_W = 640;
-uint16_t SOURCE_RES_H = 480;
+#define RES_W 800
+#define RES_H 800
+uint16_t SOURCE_RES_W = RES_W;
+uint16_t SOURCE_RES_H = RES_H;
 
 uint8_t CHAR_HEIGHT  = 8;
 uint8_t CHAR_HEIGHT2 = 4;
@@ -28,145 +28,9 @@ uint8_t  SCALE;
 uint8_t ROWS;
 uint8_t LINES;
 
+char tempPrintString[80*60];
+
 const int JOYSTICK_DEAD_ZONE = 8000;
-
-#include "../input/keys.c"
-#include "drawPrimitives.c"
-
-void sdlHelper_exit() {
-    static uint8_t exit_flag = false;
-    if ( exit_flag == true ) return;
-    SDL_JoystickClose( gamepad );
-    SDL_DestroyRenderer( renderer );
-    SDL_DestroyWindow( window );
-    SDL_Quit();
-    kill_inline_font();
-    exit_flag = true;
-}
-
-void setColor( int col ) {
-    if ( col < 0 ) return;
-    SDL_SetRenderDrawColor( renderer,
-                            ( ( col >> 8 ) & 0xf ) * 17,    //  red
-                            ( ( col >> 4 ) & 0xf ) * 17,    //  green
-                            ( col & 0xf ) * 17,             //  blue
-                            255 );                          //  alpha
-}
-
-void tv_clear( int col ) {
-    setColor( col );
-    SDL_RenderClear( renderer );
-}
-
-void render() {
-    SDL_RenderPresent( renderer );
-}
-
-void pixel( int x, int y, int col ) {
-    setColor( col );
-    SDL_RenderDrawPoint( renderer, x, y );
-}
-
-void rect( int x, int y, int w, int h, int col, int filled ) {
-    static SDL_Rect rect;
-    rect.x = x;
-    rect.y = y;
-    rect.h = h;
-    rect.w = w;
-    setColor( col );
-    if ( filled ) {
-        SDL_RenderFillRect( renderer, &rect );
-    } else {
-        SDL_RenderDrawRect( renderer, &rect );
-    }
-}
-
-void line( int x0, int y0, int x1, int y1, int col ) {
-    setColor( col );
-    SDL_RenderDrawLine( renderer, x0, y0, x1, y1 );
-}
-void lineX( int x, int col ) {
-    setColor( col );
-    SDL_RenderDrawLine( renderer, x, 0, x, HEIGHT );
-}
-void lineY( int y, int col ) {
-    setColor( col );
-    SDL_RenderDrawLine( renderer, 0, y, WIDTH, y );
-}
-
-void tv_char( int x, int y, int ch, int col ) {
-    int color = ( ( ( ( col >> 8 ) & 0xf ) * 17 ) << 16 ) +
-                ( ( ( ( col >> 4 ) & 0xf ) * 17 ) << 8 ) + ( ( col & 0xf ) * 17 );
-    incolor( color, /* unused */ 0 );
-    inprint_char( renderer, ch, x, y );
-}
-
-void tv_print( int x, int y, int col, char* fmt, ... ) {
-    char*     str        = malloc( sizeof( str ) * 80 * 60 );
-    const int strHeight2 = 4 - 1;
-    const int color      = ( ( ( ( col >> 8 ) & 0xf ) * 17 ) << 16 ) + ( ( ( ( col >> 4 ) & 0xf ) * 17 ) << 8 ) + ( ( col & 0xf ) * 17 );
-    va_list   va;
-    va_start( va, fmt );
-    vsprintf( str, fmt, va );
-    va_end( va );
-    incolor( color, /* unused */ 0 );
-    const int strWidth2 = ( strlen( str ) * 4 ) - 1;
-    inprint( renderer, str, x - strWidth2, y - strHeight2 );
-    free( str );
-}
-
-void border( uint16_t border_x, uint16_t border_y, uint16_t border_width, uint16_t border_height, uint8_t border_type, uint8_t color ) {
-    char symbol;
-    border_width--;
-    border_height--;
-    for ( size_t x = 0; x <= 1; x++ ) {
-        for ( size_t y = 1; y < border_height; y++ ) {
-            if ( x == 0 ) {
-                symbol = ASCII_BORDER_LEFT;
-            } else if ( x == 1 ) {
-                symbol = ASCII_BORDER_RIGHT;
-            }
-            tv_char( border_x + x * border_width * 8, border_y + y * 8, symbol, color );
-        }
-    }
-    for ( size_t x = 1; x < border_width; x++ ) {
-        for ( size_t y = 0; y <= 1; y++ ) {
-            if ( y == 0 ) {
-                symbol = ASCII_BORDER_TOP;
-            } else if ( y == 1 ) {
-                symbol = ASCII_BORDER_BOTTOM;
-            }
-            tv_char( border_x + x * 8, border_y + y * border_height * 8, symbol, color );
-        }
-    }
-
-    if ( border_type ) {
-        symbol = ASCII_BORDER_ROUND_TOP_LEFT;
-    } else {
-        symbol = ASCII_BORDER_TOP_LEFT;
-    }
-    tv_char( border_x, border_y, symbol, color );
-
-    if ( border_type ) {
-        tv_char( border_x + (border_width)*8, border_y - 8, ASCII_BORDER_ROUND_TOP_RIGHT, color );
-    } else {
-        tv_char( border_x + (border_width)*8, border_y, ASCII_BORDER_TOP_RIGHT, color );
-    }
-
-    if ( border_type ) {
-        symbol = ASCII_BORDER_ROUND_BOTTOM_LEFT;
-    } else {
-        symbol = ASCII_BORDER_BOTTOM_LEFT;
-    }
-    tv_char( border_x, border_y + border_height * 8, symbol, color );
-
-    if ( border_type ) {
-        symbol = ASCII_BORDER_ROUND_BOTTOM_RIGHT;
-    } else {
-        symbol = ASCII_BORDER_BOTTOM_RIGHT;
-    }
-    tv_char( border_x + (border_width)*8, border_y + border_height * 8, symbol, color );
-}
 
 uint16_t lastBtnsPressed;
 uint16_t lastBtnsReleased;
@@ -184,6 +48,12 @@ uint16_t key_released( uint16_t compairBtns ) {
 void keys_clear() {
     lastBtnsPressed  = 0;
     lastBtnsReleased = 0;
+}
+
+uint16_t key_wait() {
+    while ( lastBtnsPressed == 0 || lastBtnsReleased == 0 ) loop_sleep_us( 1 );
+    if ( lastBtnsPressed != 0 ) return lastBtnsPressed;
+    if ( lastBtnsReleased != 0 ) return lastBtnsReleased;
 }
 
 void key_poll() {
@@ -286,6 +156,148 @@ void key_poll() {
     }
 }
 
+
+void sdlHelper_exit() {
+	printf("sdlHelper_exit()\n");
+    kill_inline_font();
+    SDL_DestroyWindow( window );
+    SDL_JoystickClose( gamepad );
+    SDL_DestroyRenderer( renderer );
+    SDL_Quit();
+}
+
+void setColor( int col ) {
+    if ( col < 0 ) return;
+    SDL_SetRenderDrawColor( renderer,
+                            ( ( col >> 8 ) & 0xf ) * 17,    //  red
+                            ( ( col >> 4 ) & 0xf ) * 17,    //  green
+                            ( col & 0xf ) * 17,             //  blue
+                            255 );                          //  alpha
+}
+
+void tv_clear( int col ) {
+    setColor( col );
+    SDL_RenderClear( renderer );
+}
+
+void render() {
+    SDL_RenderPresent( renderer );
+}
+
+void pixel( int x, int y, int col ) {
+    setColor( col );
+    SDL_RenderDrawPoint( renderer, x, y );
+}
+
+void rect( int x, int y, int w, int h, int col, int filled ) {
+    static SDL_Rect rect;
+    rect.x = x;
+    rect.y = y;
+    rect.h = h;
+    rect.w = w;
+    setColor( col );
+    if ( filled ) {
+        SDL_RenderFillRect( renderer, &rect );
+    } else {
+        SDL_RenderDrawRect( renderer, &rect );
+    }
+}
+
+void line( int x0, int y0, int x1, int y1, int col ) {
+    setColor( col );
+    SDL_RenderDrawLine( renderer, x0, y0, x1, y1 );
+}
+void lineX( int x, int col ) {
+    setColor( col );
+    SDL_RenderDrawLine( renderer, x, 0, x, HEIGHT );
+}
+void lineY( int y, int col ) {
+    setColor( col );
+    SDL_RenderDrawLine( renderer, 0, y, WIDTH, y );
+}
+
+void tv_char( int x, int y, int ch, int col ) {
+    int color = ( ( ( ( col >> 8 ) & 0xf ) * 17 ) << 16 ) +
+                ( ( ( ( col >> 4 ) & 0xf ) * 17 ) << 8 ) + ( ( col & 0xf ) * 17 );
+    incolor( color, /* unused */ 0 );
+    inprint_char( renderer, ch, x, y );
+}
+
+void print( int x, int y, int col, char* fmt, ... ) {
+    const int color      = ( ( ( ( col >> 8 ) & 0xf ) * 17 ) << 16 ) + ( ( ( ( col >> 4 ) & 0xf ) * 17 ) << 8 ) + ( ( col & 0xf ) * 17 );
+    va_list   va;
+    va_start( va, fmt );
+    vsprintf( tempPrintString, fmt, va );
+    va_end( va );
+    incolor( color, /* unused */ 0 );
+    inprint( renderer, tempPrintString, x, y );
+
+}
+void print_center( int x, int y, int col, char* fmt, ... ) {
+    const int strHeight2 = 4 - 1;
+    const int color      = ( ( ( ( col >> 8 ) & 0xf ) * 17 ) << 16 ) + ( ( ( ( col >> 4 ) & 0xf ) * 17 ) << 8 ) + ( ( col & 0xf ) * 17 );
+    va_list   va;
+    va_start( va, fmt );
+    vsprintf( tempPrintString, fmt, va );
+    va_end( va );
+    incolor( color, /* unused */ 0 );
+    const int strWidth2 = ( strlen( tempPrintString ) * 4 ) - 1;
+    inprint( renderer, tempPrintString, x - strWidth2, y - strHeight2 );
+}
+
+void border( uint16_t border_x, uint16_t border_y, uint16_t border_width, uint16_t border_height, uint8_t border_type, uint8_t color ) {
+    char symbol;
+    border_width--;
+    border_height--;
+    for ( size_t x = 0; x <= 1; x++ ) {
+        for ( size_t y = 1; y < border_height; y++ ) {
+            if ( x == 0 ) {
+                symbol = ASCII_BORDER_LEFT;
+            } else if ( x == 1 ) {
+                symbol = ASCII_BORDER_RIGHT;
+            }
+            tv_char( border_x + x * border_width * 8, border_y + y * 8, symbol, color );
+        }
+    }
+    for ( size_t x = 1; x < border_width; x++ ) {
+        for ( size_t y = 0; y <= 1; y++ ) {
+            if ( y == 0 ) {
+                symbol = ASCII_BORDER_TOP;
+            } else if ( y == 1 ) {
+                symbol = ASCII_BORDER_BOTTOM;
+            }
+            tv_char( border_x + x * 8, border_y + y * border_height * 8, symbol, color );
+        }
+    }
+
+    if ( border_type ) {
+        symbol = ASCII_BORDER_ROUND_TOP_LEFT;
+    } else {
+        symbol = ASCII_BORDER_TOP_LEFT;
+    }
+    tv_char( border_x, border_y, symbol, color );
+
+    if ( border_type ) {
+        tv_char( border_x + (border_width)*8, border_y - 8, ASCII_BORDER_ROUND_TOP_RIGHT, color );
+    } else {
+        tv_char( border_x + (border_width)*8, border_y, ASCII_BORDER_TOP_RIGHT, color );
+    }
+
+    if ( border_type ) {
+        symbol = ASCII_BORDER_ROUND_BOTTOM_LEFT;
+    } else {
+        symbol = ASCII_BORDER_BOTTOM_LEFT;
+    }
+    tv_char( border_x, border_y + border_height * 8, symbol, color );
+
+    if ( border_type ) {
+        symbol = ASCII_BORDER_ROUND_BOTTOM_RIGHT;
+    } else {
+        symbol = ASCII_BORDER_BOTTOM_RIGHT;
+    }
+    tv_char( border_x + (border_width)*8, border_y + border_height * 8, symbol, color );
+}
+
 uint8_t scale_set( int8_t scale ) {
     if ( scale > 5 || scale < 0 ) {
         printf( "Wrong scale: %i\n", scale );
@@ -304,8 +316,8 @@ uint8_t scale_set( int8_t scale ) {
 }
 
 void initWindow( uint8_t scale ) {
-    RES_W *= 1;
-    RES_H *= 1;
+    //RES_W *= 1;
+    //RES_H *= 1;
 
     window   = SDL_CreateWindow("SDL pixels", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, RES_W, RES_H, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL );
     renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED );

@@ -28,15 +28,13 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=4
-FILE_NAME_0=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2FprgManager.c;0;4
-FILE_NAME_1=504;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Faudio%2Fbeeper.c;0;4
-FILE_NAME_2=1;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Faudio%2FBeeper_async_mod.c;0;4
-FILE_NAME_3=1373;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2FPRG%2Fprogram_starter%2Fmain.c;0;4
-FILE_NAME_4=86;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Ftemplates%2Fprg_wrapper.c;0;4
-FILE_NAME_5=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Futils%2Fprg.c;0;4
-FILE_NAME_6=89;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Finput%2Fkeys.c;0;4
-FILE_NAME_7=633;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2Fnosound.c;0;4
+current_page=5
+FILE_NAME_0=2067;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2FprgManager.c;0;4
+FILE_NAME_1=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Fsrc%2FspriteManager.c;0;4
+FILE_NAME_2=148;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2FREADME.md;0;4
+FILE_NAME_3=609;C++;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2Finclude%2Ftv_KEYS.h;0;4
+FILE_NAME_4=939;C;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2FPRG%2Ftile_engine%2Fmain.c;0;4
+FILE_NAME_5=263;YAML;0;EUTF-8;1;1;0;%2Fhome%2Fdrs%2Fprojects%2Fnosound%2F.github%2Fworkflows%2Fdeploy_pages.yml;0;4
 
 [VTE]
 last_dir=/home/drs/projects/nosound

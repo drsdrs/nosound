@@ -26,4 +26,4 @@ extern Sprite *spriteManager_find( char *spriteName );
 /** Get sprite by number */
 extern Sprite *spriteManager_get( int spriteNr );
 /** Draw sprite */
-extern void    spriteManager_draw( Sprite *sprite, Vect2 drawPos, uint16_t frame );
+extern void    spriteManager_draw( Sprite *sprite, Vect2 drawPos, uint16_t frame, uint8_t flipVertical );

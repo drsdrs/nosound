@@ -4,12 +4,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/resource.h>
 #include <unistd.h>
+#include <sys/resource.h>
 
 #include "path.h"
+#include "loopManager.h"
+
 #include "prg.h"
-char path[0xff];
+
+void fps_set( double fps ) {
+    loop_interval_set( 1000000 / fps );
+}
+
+double fps_get() {
+    return 1 / ( (float)loop_delta_full_ns / 1000000000 );
+}
 
 const char* prg_name_get() {
     char* path  = path_cwd_get();
@@ -32,8 +41,7 @@ void prg_change( char* prgName ) {
     char* argv[] = { path_binary_get( prgName ), NULL };
     printf( "PRG_CHANGE: %s\n", path_binary_get( prgName ) );
     int child_status = execvp( argv[0], argv );
-    printf( "ERROR - prg_change -?? Unknown command status: %i\t%s\n", child_status,
-            argv[0] ); /* If execvp returns, it must have failed. */
+    printf( "ERROR - prg_change -?? Unknown command status: %i\t%s\n", child_status, argv[0] ); /* If execvp returns, it must have failed. */
     exit( 0 );
 }
 
@@ -46,7 +54,7 @@ uint64_t prg_memory_get() {
 void prg_data_save( uint16_t pos, uint8_t val ) {
     FILE* f;
     char  buf[1] = { val };
-    f = fopen( path_savefile_get( prg_name_get() ), "w" );    // Opening in write mode
+    f            = fopen( path_savefile_get( prg_name_get() ), "w" );    // Opening in write mode
 
     if ( f == NULL ) {
         printf( "Error data_local_save\ttrg: %s\n", path_savefile_get( prg_name_get() ) );

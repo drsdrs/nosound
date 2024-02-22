@@ -33,7 +33,8 @@ int main( int argc, char const* argv[] ) {
     if ( argv[1] != NULL && argc>0 ) {
         startPrgName = argv[1];
     } else {
-        startPrgName = "program_starter";
+        startPrgName = "tile_engine";
+        //startPrgName = "program_starter";
     }
     const char* cleanup = NULL;    // argv[2];
     printf( "Cleanup? %s\n", cleanup );

@@ -98,22 +98,22 @@ uint8_t prgManager_compile( const char* prgName, int waitForProcess ) {
     file_copy( "templates/prg_wrapper.c", path_wrapper_get( prgName ) );
     file_copy( "templates/CMakeLists.txt", path_cmakelist_get( prgName ) );
 
-    // if ( !file_exist( path_spritesheet_get( prgName ) ) ) {
-    file_copy( "templates/spritesheet.png", path_spritesheet_get( prgName ) );
-    file_copy( "templates/spritesheet.json", path_spritesheetAtlas_get( prgName ) );
+    //if ( !file_exist( path_spritesheet_get( prgName ) ) ) {
+		file_copy( "templates/spritesheet.png", path_spritesheet_get( prgName ) );
+		file_copy( "templates/spritesheet.json", path_spritesheetAtlas_get( prgName ) );
     //}
 
-    //if ( !file_exist( path_savefile_get( prgName ) ) ) {
+    if ( !file_exist( path_savefile_get( prgName ) ) ) {
         file_write( path_savefile_get( prgName ), "" );
-    //}
+    }
 
     char* argvCmake [] = { "cmake",
                            "-B",
                            path_build_get( prgName ),
                            "-S",
                            path_build_get( prgName ),
-                           "-D",
-                           "CMAKE_BUILD_TYPE=Debug",
+                           //"-D",
+                           //"CMAKE_BUILD_TYPE=Debug",
                            "-G",
                            "Ninja",
                            NULL };
@@ -142,7 +142,7 @@ void prgManager_activePrg_kill() {
         kill( prgActivePid, SIGKILL );
         prgRunning   = false;
         prgActivePid = -1;
-    } else {
+    } else if(prgActivePid!=-1) {
         printf( "\n***\n**\n*KILL running prg went wrong, prgRunning: %i prgActivePid: %i \n",
                 prgRunning, prgActivePid );
     }

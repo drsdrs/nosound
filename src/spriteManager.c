@@ -74,7 +74,7 @@ void spriteManager_json_spritesheet_parse() {
     spriteManager_collection = (Sprite *)calloc( 1, sizeof( Sprite ) );
     Sprite current_sprite    = spriteManager_new( NULL, -1, -1, -1, NULL );
 
-    int         maxTokens = 1024;
+    int         maxTokens = 1024*8;  // TODO fix maxsize for JSON
     jsmn_parser p;
     jsmntok_t   t[maxTokens];
     jsmn_init( &p );
@@ -83,6 +83,8 @@ void spriteManager_json_spritesheet_parse() {
 
     if ( r < 0 ) {
         printf( "\n\nFailed to parse JSON: %d\n", r );
+        printf( "Maybe increase maxTokens" );
+        exit(1);
         return;
     }
 
@@ -147,7 +149,7 @@ void spriteManager_setup() {
     spriteManager_json_spritesheet_parse();
 }
 
-void spriteManager_draw( Sprite *sprite, Vect2 drawPos, uint16_t frame ) {
+void spriteManager_draw( Sprite *sprite, Vect2 drawPos, uint16_t frame, uint8_t flipVertical ) {
     rect_target.x = drawPos.x;
     rect_target.y = drawPos.y;
     rect_target.w = sprite->size.x;
@@ -158,5 +160,9 @@ void spriteManager_draw( Sprite *sprite, Vect2 drawPos, uint16_t frame ) {
     rect_source.w = sprite->size.x;
     rect_source.h = sprite->size.y;
 
-    SDL_RenderCopy( renderer, texture, &rect_source, &rect_target );
+	SDL_RendererFlip flip = 0;
+	if(flipVertical){ flip = SDL_FLIP_HORIZONTAL;}
+	SDL_RenderCopyEx(renderer, texture, &rect_source, &rect_target, 0, NULL, flip);
+
+    //SDL_RenderCopy( renderer, texture, &rect_source, &rect_target );
 }

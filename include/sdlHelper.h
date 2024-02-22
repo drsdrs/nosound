@@ -26,16 +26,17 @@ extern void    render();
 extern void    tv_clear( int color );
 extern void    pixel( int x, int y, int col );
 extern void    tv_char( int x, int y, const int ch, int col );
-extern void    tv_print( int x, int y, int col, char* fmt, ... );
+extern void    print_center( int x, int y, int col, char* fmt, ... );
+extern void    print( int x, int y, int  , char* fmt, ... );
 // extern void text(int x, int y, int* ch, int col);
 extern void line( int x0, int y0, int x1, int y1, int col );
 extern void lineX( int x, int col );
 extern void lineY( int y, int col );
 extern void border( uint16_t border_x, uint16_t border_y, uint16_t border_width,
-                       uint16_t border_height, uint8_t border_type, uint8_t color );
+                    uint16_t border_height, uint8_t border_type, uint8_t color );
 
 extern void     rect( int x, int y, int w, int h, int col, int filled );
-extern uint16_t key_pressed( uint16_t compairBtns );
-extern uint16_t key_released( uint16_t compairBtns );
 extern void     key_poll();
 extern void     keys_clear();
+extern uint16_t key_wait();
+

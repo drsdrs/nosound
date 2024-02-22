@@ -10,6 +10,7 @@
 #include "prgManager.h"
 #include "sdlHelper.h"
 #include "waves.h"
+#include "term.h"
 
 uint64_t loop_delta_full_ns;
 uint64_t loop_lifetime_ns;
@@ -27,17 +28,12 @@ void loop_sleep_ns( int64_t sleep_ns ) {
     static struct timespec start, end;
     uint32_t               slept_ns_temp = 0;
     clock_gettime( CLOCK_MONOTONIC_RAW, &start );
-    while ( slept_ns_temp < sleep_ns ) {    // ~ 55 us 1 cycle
-                                            // printf("slept_ns_temp %ins\n", slept_ns_temp);
-        // for (size_t i = 0; i < 18; i++) {
+    while ( slept_ns_temp < sleep_ns ) {
         key_poll();
         SDL_Delay( 0 );
-        //}
         clock_gettime( CLOCK_MONOTONIC_RAW, &end );
-        slept_ns_temp =
-            ( end.tv_sec - start.tv_sec ) * 1000000000 + ( end.tv_nsec - start.tv_nsec );
+        slept_ns_temp = ( end.tv_sec - start.tv_sec ) * 1000000000 + ( end.tv_nsec - start.tv_nsec );
     }
-
     slept_ns += slept_ns_temp;
 }
 
@@ -78,11 +74,7 @@ void loop_loop( void ( *loop_funct )() ) {
 
     diff_ns = ( ( loop_interval_us * 1000 ) + slept_ns ) - ( loop_delta_ns );
 
-    if ( diff_ns < 0 ) {    //
-                            // printf("Loop needs too much time, overrun us:%li\n", diff_ns );
-    } else {
-        // printf("bev sleep\n");
-        // printf("aft sleep\n");
+    if ( diff_ns < 0 ) {    // printf("Loop needs too much time, overrun us:%li\n", diff_ns );
     }
 
     loop_sleep_ns( diff_ns );
@@ -94,9 +86,9 @@ void loop_loop( void ( *loop_funct )() ) {
 
 void loop_exit() {
     printf( "void loop_exit()\n\n" );
-    loop_quit = true;
-    Beeper_exit();
     sdlHelper_exit();
+    Beeper_exit();
+    loop_quit = true;
 }
 
 void loop_interval_set( int64_t new_interval ) {
@@ -131,7 +123,8 @@ long int loop_measure_us( uint8_t start_end ) {
 }
 
 void loop_setup_PRIVATE( void ( *setup_funct )(), void ( *loop_funct )(), uint32_t new_interval ) {
-    printf( "Start loop_setup_PRIVATE\n" );
+	term_color_set(2);
+    printf( "\n------------------\nStart loop_setup_PRIVATE( void ( *setup_funct )(), void ( *loop_funct )(), uint32_t new_interval )\n" );
     loop_frames      = 0;
     loop_interval_us = new_interval;
 
@@ -152,10 +145,12 @@ void loop_setup_PRIVATE( void ( *setup_funct )(), void ( *loop_funct )(), uint32
     setup_funct();
     printf( "PRG setup function took: %li us\n", loop_measure_us( MEASURE_STOP ) );
 
+	printf("Setup done. \n----------------\n");
+	term_color_reset();
 
     tv_clear( 0 );
     while ( loop_quit == false ) loop_loop( loop_funct );
 
     printf( "Final PRG exit in loop_setup_PRIVATE\n" );
-    exit( 0 );
+    //exit( 0 );
 }

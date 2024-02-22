@@ -9,6 +9,8 @@ set( SOURCES
     ../../../src/audio/beeper.c
     ../../../src/waves.c
 
+	../../../src/video/drawPrimitives.c
+
     ../../../src/prgManager.c
     ../../../src/loopManager.c
     ../../../src/spriteManager.c
